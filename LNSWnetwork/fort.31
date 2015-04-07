@@ -1,0 +1,27 @@
+ *** WARNING   该支路的电阻大于等于电抗。R =  0.02740X =  0.01522                                                        *** WARNING 
+ *** WARNING   L     黑塔河22220. 黑漠河22220.        .0274.01522      .01157                                            *** WARNING 
+ *** WARNING   该支路的电阻大于等于电抗。R =  0.01444X =  0.01444                                                        *** WARNING 
+ *** WARNING   L     辽辽阳20220. 辽佟二堡220.2 1600 .01444.01444      .02242                                            *** WARNING 
+ *** WARNING   该支路的电阻大于等于电抗。R =  0.00010X =  0.00010                                                        *** WARNING 
+ *** WARNING   L     蒙东巴林500. 蒙东巴青500.        .0001 .0001                                                        *** WARNING 
+ *** WARNING   该支路的电阻大于等于电抗。R =  0.00010X =  0.00010                                                        *** WARNING 
+ *** WARNING   L     蒙东巴林500. 蒙东巴0 500.        .0001 .0001                                                        *** WARNING 
+ *** WARNING   该卡中变压器分接头偏离正常值过大。                                                                        *** WARNING 
+ *** WARNING   T     蒙东霍F   1. 蒙东霍2 220.       .00123.13061               1.24725                                  *** WARNING 
+ *** WARNING   该卡中变压器分接头偏离正常值过大。                                                                        *** WARNING 
+ *** WARNING   T     蒙东霍H   1. 蒙东霍2 220.  120. .00123.13061               1. 247.                                  *** WARNING 
+ *** WARNING   LTC变压器(辽穆家51 500.0和辽穆家N2 202.0之间)抽头的 控制范围(  908.00 -   298.00)过大。                   *** WARNING 
+ *** WARNING   LTC变压器(辽穆家51 500.0和辽穆家P2 202.0之间)抽头的 控制范围(  908.00 -   298.00)过大。                   *** WARNING 
+ *** WARNING   节点"华北等0  500.0"的有功出力-1468.7小于0。                                                              *** WARNING 
+ *** WARNING   节点"辽鞍钢0   16.0"的无功出力  266.1较大。                                                               *** WARNING 
+ *** WARNING   节点"辽鞍钢4   13.8"的无功出力   88.8较大。                                                               *** WARNING 
+ *** WARNING   节点"辽鞍钢6   13.8"的无功出力   89.1较大。                                                               *** WARNING 
+ *** WARNING   节点"辽长甸G2  13.8"的无功出力   62.7较大。                                                               *** WARNING 
+ *** WARNING   节点"辽燕山1   20.0"的无功出力 -254.0较小。                                                               *** WARNING 
+ *** WARNING   节点"辽燕山2   20.0"的无功出力 -273.7较小。                                                               *** WARNING 
+0*** WARNING    节点 辽高岭P1 106.0 分区 1A 输出误差:   0.012MW有功     3.25Mvar无功                                     *** WARNING 
+0*** WARNING    节点 辽高岭P2 106.0 分区 1A 输出误差:   0.012MW有功     3.25Mvar无功                                     *** WARNING 
+0*** WARNING    节点 辽穆家N2 202.0 分区 1D 输出误差:  -0.021MW有功     5.21Mvar无功                                     *** WARNING 
+0*** WARNING    节点 辽穆家P2 202.0 分区 1D 输出误差:  -0.021MW有功     5.21Mvar无功                                     *** WARNING 
+0*** WARNING    节点 秦高岭P2 106.0 分区 1B 输出误差:  -0.088MW有功     8.64Mvar无功                                     *** WARNING 
+0*** WARNING    节点 秦高岭P3 106.0 分区 1B 输出误差:  -0.088MW有功     8.64Mvar无功                                     *** WARNING 
