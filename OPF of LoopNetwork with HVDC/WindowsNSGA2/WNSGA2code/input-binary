@@ -1,0 +1,17 @@
+Number of Real and Binary Variables (0 nbinary)
+Number of Objectives (2)
+Number of Constraints (2)
+Population size (100)
+Maximum generations (100)
+Crossover probability (0.9)
+Type of Crossover: Single-point (1), uniform (2)
+String length for 1st binary variable (15)
+Lower and upper bound of 1st binary variable (0.0 10.0)
+String length for 2nd binary variable (15)
+Lower and upper bound of 2nd binary variable (0.0 10.0)
+.
+.
+String length for nbinary binary variable (15)
+Lower and upper bound of nbinary binary variable (0.0 10.0)
+Bitwise mutation probability (1/overall string length)
+Seed for random number generator (0.0 - 1.0)

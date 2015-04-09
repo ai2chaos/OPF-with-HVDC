@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FC30FCE9-657E-4834-8425-C2A2462B6BB4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LinuxNSGA2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="NSGA2code\global.h" />
+    <ClInclude Include="NSGA2code\rand.h" />
+    <ClInclude Include="NSGA2code\unistd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NSGA2code\allocate.c" />
+    <ClCompile Include="NSGA2code\auxiliary.c" />
+    <ClCompile Include="NSGA2code\crossover.c" />
+    <ClCompile Include="NSGA2code\crowddist.c" />
+    <ClCompile Include="NSGA2code\decode.c" />
+    <ClCompile Include="NSGA2code\display.c" />
+    <ClCompile Include="NSGA2code\dominance.c" />
+    <ClCompile Include="NSGA2code\eval.c" />
+    <ClCompile Include="NSGA2code\fillnds.c" />
+    <ClCompile Include="NSGA2code\initialize.c" />
+    <ClCompile Include="NSGA2code\list.c" />
+    <ClCompile Include="NSGA2code\merge.c" />
+    <ClCompile Include="NSGA2code\mutation.c" />
+    <ClCompile Include="NSGA2code\nsga2r.c" />
+    <ClCompile Include="NSGA2code\problemdef.c" />
+    <ClCompile Include="NSGA2code\rand.c" />
+    <ClCompile Include="NSGA2code\rank.c" />
+    <ClCompile Include="NSGA2code\report.c" />
+    <ClCompile Include="NSGA2code\sort.c" />
+    <ClCompile Include="NSGA2code\tourselect.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NSGA2code\input_data\bnh.in" />
+    <None Include="NSGA2code\input_data\ctp1.in" />
+    <None Include="NSGA2code\input_data\ctp2.in" />
+    <None Include="NSGA2code\input_data\ctp3.in" />
+    <None Include="NSGA2code\input_data\ctp4.in" />
+    <None Include="NSGA2code\input_data\ctp5.in" />
+    <None Include="NSGA2code\input_data\ctp6.in" />
+    <None Include="NSGA2code\input_data\ctp7.in" />
+    <None Include="NSGA2code\input_data\ctp8.in" />
+    <None Include="NSGA2code\input_data\fon.in" />
+    <None Include="NSGA2code\input_data\kur.in" />
+    <None Include="NSGA2code\input_data\osy.in" />
+    <None Include="NSGA2code\input_data\pol.in" />
+    <None Include="NSGA2code\input_data\sch1.in" />
+    <None Include="NSGA2code\input_data\sch2.in" />
+    <None Include="NSGA2code\input_data\srn.in" />
+    <None Include="NSGA2code\input_data\tnk.in" />
+    <None Include="NSGA2code\input_data\vnt.in" />
+    <None Include="NSGA2code\input_data\zdt1.in" />
+    <None Include="NSGA2code\input_data\zdt2.in" />
+    <None Include="NSGA2code\input_data\zdt3.in" />
+    <None Include="NSGA2code\input_data\zdt4.in" />
+    <None Include="NSGA2code\input_data\zdt5.in" />
+    <None Include="NSGA2code\input_data\zdt6.in" />
+    <None Include="NSGA2code\Makefile" />
+    <None Include="NSGA2code\Notice" />
+    <None Include="NSGA2code\nsga2r" />
+    <None Include="NSGA2code\Readme" />
+    <None Include="NSGA2code\Revision" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

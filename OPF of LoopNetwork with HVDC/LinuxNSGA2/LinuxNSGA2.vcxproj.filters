@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="资源文件\input_data">
+      <UniqueIdentifier>{9587abaf-185e-42aa-9523-cdc8a7d5be8d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NSGA2code\global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NSGA2code\rand.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NSGA2code\unistd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NSGA2code\allocate.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\auxiliary.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\crossover.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\crowddist.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\decode.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\display.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\dominance.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\eval.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\fillnds.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\initialize.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\list.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\merge.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\mutation.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\nsga2r.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\problemdef.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\rand.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\rank.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\report.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\sort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NSGA2code\tourselect.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NSGA2code\input_data\bnh.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp1.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp2.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp3.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp4.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp5.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp6.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp7.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\ctp8.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\fon.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\kur.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\osy.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\pol.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\sch1.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\sch2.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\srn.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\tnk.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\vnt.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt1.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt2.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt3.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt4.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt5.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\input_data\zdt6.in">
+      <Filter>资源文件\input_data</Filter>
+    </None>
+    <None Include="NSGA2code\Makefile">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="NSGA2code\Notice">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="NSGA2code\nsga2r">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="NSGA2code\Readme">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="NSGA2code\Revision">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

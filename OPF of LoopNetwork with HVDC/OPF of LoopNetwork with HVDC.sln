@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PQLoadFlow", "PQLoadFlow\PQLoadFlow.vcxproj", "{F8E0A992-05FD-4D0D-811C-3C353A12DA8A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinuxNSGA2", "LinuxNSGA2\LinuxNSGA2.vcxproj", "{FC30FCE9-657E-4834-8425-C2A2462B6BB4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsNSGA2", "WindowsNSGA2\WindowsNSGA2.vcxproj", "{1CF6A5C3-05C6-4B03-8B84-487ED90D8F80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +19,14 @@ Global
 		{F8E0A992-05FD-4D0D-811C-3C353A12DA8A}.Debug|Win32.Build.0 = Debug|Win32
 		{F8E0A992-05FD-4D0D-811C-3C353A12DA8A}.Release|Win32.ActiveCfg = Release|Win32
 		{F8E0A992-05FD-4D0D-811C-3C353A12DA8A}.Release|Win32.Build.0 = Release|Win32
+		{FC30FCE9-657E-4834-8425-C2A2462B6BB4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC30FCE9-657E-4834-8425-C2A2462B6BB4}.Debug|Win32.Build.0 = Debug|Win32
+		{FC30FCE9-657E-4834-8425-C2A2462B6BB4}.Release|Win32.ActiveCfg = Release|Win32
+		{FC30FCE9-657E-4834-8425-C2A2462B6BB4}.Release|Win32.Build.0 = Release|Win32
+		{1CF6A5C3-05C6-4B03-8B84-487ED90D8F80}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1CF6A5C3-05C6-4B03-8B84-487ED90D8F80}.Debug|Win32.Build.0 = Debug|Win32
+		{1CF6A5C3-05C6-4B03-8B84-487ED90D8F80}.Release|Win32.ActiveCfg = Release|Win32
+		{1CF6A5C3-05C6-4B03-8B84-487ED90D8F80}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
