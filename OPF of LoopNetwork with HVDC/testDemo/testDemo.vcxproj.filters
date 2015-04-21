@@ -15,12 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dataStruct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="datadef.c">
+    <ClCompile Include="ImportData.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

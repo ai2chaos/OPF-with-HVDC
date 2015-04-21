@@ -42,7 +42,6 @@ typedef struct
 	Columns 106-111 Step size (F)
 	Columns 113-119 Minimum voltage, MVAR or MW limit (F)
 	Columns 120-126 Maximum voltage, MVAR or MW limit (F)
-
 	*/
 	int i, j;	// i is headend node, j is end node
 	int LFarea, LossZone;	//LFarea is not zero
@@ -93,22 +92,22 @@ typedef struct
 
 typedef struct Generator_Type
 {
-	double P, Q;	//P, Q is positive.
-	int i;
-	double V;
+	double *P, *Q;	//P, Q is positive.
+	int *i;
+	double *V;
 }Generator;
 
 typedef struct Load_type
 {
-	double P, Q;	//P, Q is negative.
-	int i;
-	double V;
+	double *P, *Q;	//P, Q is negative.
+	int *i;
+	double *V;
 }Load;
 
 typedef struct PVNode_Type
 {
-	double V;	//
-	int i;
+	double *V;	//
+	int *i;
 }PVNode;
 
 

@@ -82,9 +82,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="datadef.c" />
     <ClCompile Include="HelloWorld.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\testDemo\dataStruct.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
