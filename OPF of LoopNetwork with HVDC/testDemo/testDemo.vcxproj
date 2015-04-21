@@ -80,6 +80,9 @@
   <ItemGroup>
     <ClInclude Include="dataStruct.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="datadef.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
