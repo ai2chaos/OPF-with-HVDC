@@ -10,8 +10,12 @@ int main (void)
 	ch = getc (fp);
 	while (ch != EOF)
 	{
+		if ()
+		{
+		}
 		putchar (ch);
 		ch = getc (fp);
 	}
+	getchar ();
 	return 0;
 }
