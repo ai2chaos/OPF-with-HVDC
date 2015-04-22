@@ -89,6 +89,7 @@
     <None Include="..\..\IEEE data\th数据格式说明.doc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\PQLoadFlow\dataStruct.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

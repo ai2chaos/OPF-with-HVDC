@@ -5,7 +5,9 @@
 
 #ifndef _DATASTRUCT_H_
 #define _DATASTRUCT_H_
-#define _TestCase_
+
+//#define _TestCase_
+#define _IEEE14_
 
 typedef struct 	
 {
@@ -113,13 +115,19 @@ typedef struct PVNode_Type
 
 
 #	ifdef _IEEE14_
+#define IEEE14 014ieee.DAT
+#define Nbus 14
+#define Nbranch 20
+#define Ng 5
+#define NL 11
+#define Npv 3
 #	endif
 
 #	ifdef _TestCase_
 #define Nbus 5
 #define Nbranch 5
 #define Ng 2
-#define Nl 3
+#define NL 3
 #define Npv 1
 #	endif
 
