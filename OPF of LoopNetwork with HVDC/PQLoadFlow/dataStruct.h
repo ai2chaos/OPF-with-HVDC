@@ -85,7 +85,7 @@ typedef struct
 	Columns 124 - 127 Remote controlled bus number
 	*/
 	int BusNum;
-	char Name[10];
+	char Name[3][4];
 	int LFarea, LossZone;	//LFarea is not zero
 	int Type;
 	float Vol, Deg, PL, QL, PG, QG, BaseVol, DesiredVol, MaxVol, MinVol;
