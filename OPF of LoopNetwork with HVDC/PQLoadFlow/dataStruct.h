@@ -5,6 +5,7 @@
 
 #ifndef _DATASTRUCT_H_
 #define _DATASTRUCT_H_
+#define _TestCase_
 
 typedef struct 	
 {
@@ -57,7 +58,7 @@ typedef struct
 {
 	/*
 	Columns  1 - 4   Bus number (I) *
-	Columns  7 - 17   Name (A) (left justify) *
+	Columns  6 - 17   Name (A) (left justify) *
 	Columns 19 - 20   Load flow area number (I) Don't use zero! *
 	Columns 21 - 23   Loss zone number (I)
 	Columns 25 - 26   Type (I) *

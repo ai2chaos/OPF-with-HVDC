@@ -1,0 +1,22 @@
+IEEE 17 machine system
+lftype.h
+*********************
+SYSFREQ  ...   60 
+*******
+MAC_CMXD Mbus-3   bus-3    100  100.00    0.0040
+MAC_CMXD Mbus-6   bus-6    100   34.56     .0437
+MAC_CMXD Mbus-15  bus-15   100   80.00     .0100
+MAC_CMXD Mbus-27  bus-27   100   80.00     .0050
+MAC_CMXD Mbus-73  bus-73   100   16.79     .0507
+MAC_CMXD Mbus-76  bus-76   100   32.49     .0206
+MAC_CMXD Mbus-99  bus-99   100    6.65     .1131
+MAC_CMXD Mbus-101 bus-101  100    2.66     .3115
+MAC_CMXD Mbus-108 bus-108  100   29.60     .0535
+MAC_CMXD Mbus-114 bus-114  100    5.00     .1770
+MAC_CMXD Mbus-118 bus-118  100   11.31     .1049
+MAC_CMXD Mbus-121 bus-121  100   19.79     .0297
+MAC_CMXD Mbus-124 bus-124  100  200.00     .0020
+MAC_CMXD Mbus-125 bus-125  100  200.00     .0020
+MAC_CMXD Mbus-126 bus-126  100  100.00     .0040
+MAC_CMXD Mbus-130 bus-130  100   28.60     .0559
+MAC_CMXD Mbus-131 bus-131  100   20.66     .0544

@@ -19,4 +19,30 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\IEEE data\readme.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="..\..\IEEE data\readme_english.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="..\..\IEEE data\TH_FORMAT.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\IEEE data\th数据格式说明.doc">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="testDemo.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
 </Project>

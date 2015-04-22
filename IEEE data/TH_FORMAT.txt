@@ -1,0 +1,261 @@
+			TH Format Description
+
+				By Yiwei ZHANG
+
+
+First record£º     HERDER
+Second record£º    Format Description File
+Other records as following£º
+   	There is no limit on the order or the following 
+      various records.
+   	Any record with first character of '*' is comment record.
+   	The parameters are in free format.
+
+SYSBASE: system base
+
+	1: "SYSBASE"
+	2:  "***"        Any character string 
+	3: base         System base 
+	4: state         0 or 1
+
+
+
+SYSFREQ: system frequency
+
+	1: "SYSFERQ"
+	2: "***"     Any character string 
+	3: freq      System frequency in HZ 
+
+
+
+THLINE: line
+
+	1: "THLINE"   
+	2: Oname     Line name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Line resistance in p.u.
+	6: x         Line reactance in p.u.
+
+
+LINE
+
+	1: "THLINE"   
+	2: Oname     Line name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Line resistance in p.u.
+	6: x         Line reactance in p.u.
+	7: -B/2      Semi in p.u. 
+	8: rate      Line rated power 
+	9: br1       Sending break state
+       10: br2       Ending break state
+
+
+
+THTRFO:  transformer    I --- r+jx ---- 1:n ----J
+
+	1: "THTRFO"   
+	2: Oname     Transformer name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Resistance in p.u.
+	6: x         Reactance in p.u.
+	7: n*100     Tap 
+
+
+
+TRFO:  transformer    I --- r+jx ---- 1:n ----J
+
+	1: "TRFO"   
+	2: Oname     Transformer name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Resistance in p.u.
+	6: x         Reactance in p.u.
+	7: n*100     Tap
+	8: rate      Line rated power 
+	9: br1       Sending break state
+       10: br2       Ending break state
+
+
+
+THFORB2: transformer   I --- r+jx ---- 1:n ----J
+                          |                  |
+                        -B/2               -B/2
+                          |                  |
+
+        1: "THFORB2"
+	2: Oname     Transformer name
+	3: name1     Beginning bus name 
+        4: name2     Ending bus name
+	5: r         Resistance in p.u.
+	6: x         Reactance in p.u.
+	7: g1        Sending side shunt conductance in p.u.
+	8: b1        Sending side shunt susceptance in p.u.
+	9: g2        Ending side shunt conductance in p.u.
+       10: b2        Ending side shunt susceptance in p.u.
+       11: n*100     Tap
+
+
+         
+THTRPH:  phase transformer    I --- r+jx ---- 1:n(phase)----J
+
+	1: "TRFO"   
+	2: Oname     Transformer name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Resistance in p.u.
+	6: x         Reactance in p.u.
+	7: n*100     Tap
+	8: phase     Phase in degree
+
+
+
+TAP : LTC    --n10:1--(1+st1*dv1):1 -- r+jx --1:(1+st2*dv2)-1:n20
+
+	1: LTC
+	2: object name
+	3: name1     Beginning bus name
+	4: name2     Ending bus name
+	5: r         Resistance in p.u.
+	6: x         Reactance in p.u.
+	7: g1        Sending side shunt conductance in p.u.
+	8: b1        Sending side shunt susceptance in p.u.
+	9: g2        Ending side shunt conductance in p.u.
+       10: b2        Ending side shunt susceptance in p.u.
+       11: n1*100    Sending tap
+       12: n2*100    Ending tap
+       13: n10       Sendind tap step 
+       14: n20       Ending tap step 
+       15: st1       Initial sending tap in int 
+       16: st2       Initial ending tap in int
+       17: side      Controllable side
+       18: stmax     Maximum number of step tap in int 
+       19: stmin     Minimum number step tap in int
+       20: rate      Rated power
+       21: br1       Sending state
+       22: br2       Ending state
+
+
+
+TAPCV: LTC control parameter
+
+	1: TAPCV
+	2: object name	    LTC name
+	3: bus name         Controlled bus
+	4: Vc               Desired Votage in p.u.
+	5: Vcmax            Maximum Voltage in p.u. 
+	6: Vcmin            Minimum Voltage in p.u.       
+	7: Vimax            Maximum Voltage at beginning in p.u.
+	8: Vimin            Minimum Voltage at beginning in p.u.
+	9: Vjmax            Maximum Voltage at ending in p.u.
+       10: Vjmin            Minimum Voltage at ending in p.u.
+       11: br               State
+
+	*LTC make control only when    
+		Vimin<Vi<Vimax and Vjmin<Vj<Vjmax
+     		i:LTC's beginning j : LTC's ending
+
+
+GENER: PQ genarator
+
+	1: GENERCV 
+	2: name  	     Generator name
+	3: Bus name          To which generator connect
+	4: Pg                Active Power (MW)
+	5: Qg                Reactive Power (MVAR)
+	6: br                State
+
+
+GENERCV: PV Generator
+
+	1: GENERCV 
+	2: name  	     Generator name
+	3: Bus name          To which generator connect
+	4: Pg                Active Power (MW)
+	5: Qg                Reactive Power (MVAR)
+    	6: V                 Voltage in p.u.
+	7: br                State
+
+	* The Qg is not the solution value, i.e. 
+		it could be any value here
+
+GENERDATA: generator data
+
+   	1: GENERDATA
+	2: name              Generator name
+      3-7: 0
+	8: Pmax              Maximum active power (MW)
+	9: Pmin              Minimum active power (MW)
+       10: Qmax              Maximum reactive power (MVAR)
+       11: Qmin              Minimum reactive power (MVAR)
+       12: Vmax              Maximum Voltage (p.u)
+       13: Vmin              Minimum Voltage (p.u)
+    14-16: 0
+       17: br                State 
+	
+THLOAD: Load 
+
+    	1: THLOAD 
+	2: Object name 
+	3: Bus name        To which the load connects
+	4: Pl              Active power load in p.u.
+	5: Ql              Reactive power load in p.u.
+
+
+
+LOAD : PIZ load
+
+    	1: LOAD 
+	2: Object name 
+	3: Bus name        To which the load connects
+	4: Pp              Constant P load (MW)
+	5: Qp              Constant Q load (MVAR) 
+	6: Pi              Constant active current  (MW)
+	7: Qi              Constant reactive current (MVAR) 
+	8: Pz              Constant resistance load  (MW)
+	9: Qz              Constant reactance load (MVAR) 
+       10: V0              Voltage base for above loads
+       11: br              State
+
+THSLACK: Slack generator
+
+     	1: THSLACK 
+	2: Name           Generator name 
+     	3: V              Assigned Voltage in p.u.
+     	4: Phase          Assigned Phase in degree
+
+THSHUNT: shunt reactor or capacitors
+
+	1: THSHUNT
+	2: Object name
+	3: Bus name         To which the equipment is connected
+	4: Psh              Active power loss (p.u.)
+	5: Qsh              Reactive power (p.u., reactor = +)
+
+RES_V: bus voltage after Load Flow Solution
+	
+	1: RES_V   
+	2: bus name 
+	3: V            Voltage in p.u. 
+	4: Ph           Phase in degree
+	5: State
+   
+RES_MAC : generator output after Load flow Solution
+
+	1: REC_MAC 
+	2: Name         Generator name 
+	3: Bus name     Generator bus name
+	4: Pg           Active power  Output (MW)
+	5: Qg           Reactive power output (MVAR)
+   	6: br           State 
+
+MAC_CMXD : generator data
+   
+   	1: MAC_CMXD
+	2: Name         Generator name 
+	3: Rate         Generator rated power (MWVAR)
+	4: Tj           Time constant ( on the base of "Rate") 
+	5: X'           Transient reactance ( on the base of "Rate")
+

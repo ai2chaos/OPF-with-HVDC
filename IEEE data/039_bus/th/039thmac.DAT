@@ -1,0 +1,15 @@
+T.Athay,R.Podmore and S.Virmani,"Transient Energy Stability Analysis" 
+lftype.h
+*********************
+SYSFREQ  ...   60 
+*******
+MAC_CMXD Mbus-30 bus-30  100.0  42.00   0.031     
+MAC_CMXD Mbus-31 bus-31  100.0  30.30   0.0697    
+MAC_CMXD Mbus-32 bus-32  100.0  35.80   0.0531    
+MAC_CMXD Mbus-33 bus-33  100.0  28.60   0.0436    
+MAC_CMXD Mbus-34 bus-34  100.0  26.00   0.132     
+MAC_CMXD Mbus-35 bus-35  100.0  34.80   0.05     
+MAC_CMXD Mbus-36 bus-36  100.0  26.40   0.049           
+MAC_CMXD Mbus-37 bus-37  100.0  24.30   0.057    
+MAC_CMXD Mbus-38 bus-38  100.0  34.50   0.057  
+MAC_CMXD Mbus-39 bus-39  100.0  500.0   0.006    

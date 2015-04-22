@@ -1,0 +1,111 @@
+BPA POWER FLOW PROGRAM VERSION: 6.006 (C.V2.1.6, 99.5.20)
+ Enter program control file name > F:\IEEE模型\data\057_bus\bpa\057bpa.DAT
+ * PROGRAM CONTROL FILE NAME IS : (F:\IEEE模型\data\057_bus\bpa\057bpa.DAT)                                                          
+
+
+ START RUN WORKING SIZE=    0 NAME=                                                                                                  
+ [ INTERACTIVE RUN ]                                                                                                                 
+
+  MODULE "PFL-BEGIN" PROCESSED :  WALL CLOCK 21:13:34                                                                                
+ (POWERFLOW,CASEID=EMS,PROJECT=TEST)                                                                                                 
+ /P_INPUT_LIST,FULL\                                                                                                                 
+ /P_OUTPUT_LIST,FULL\                                                                                                                
+ /P_ANALYSIS_RPT,LEVEL=4\                                                                                                            
+ /NETWORK_DATA\                                                                                                                      
+  MODULE "PROC-BEGIN" PROCESSED :  WALL CLOCK 21:13:34                                                                               
+  MODULE "BUS_READ" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+  MODULE "BUS_SORT" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+ *** WARNING    ILLEGAL DATA RECORD IGNORED.                                                                             *** WARNING 
+ *** WARNING             (-999                                                                            )              *** WARNING 
+  MODULE "BRANCH_READ_AND_SORT" PROCESSED :  WALL CLOCK 21:13:34                                                                     
+  MODULE "BUILD_TABLE" PROCESSED :  WALL CLOCK 21:13:34                                                                              
+  MODULE "DEFINE-BASE" PROCESSED :  WALL CLOCK 21:13:34                                                                              
+  MODULE "BUILD_AREA_ZONE_TABL" PROCESSED :  WALL CLOCK 21:13:34                                                                     
+  MODULE "DATA_LIST" PROCESSED :  WALL CLOCK 21:13:34                                                                                
+  MODULE "RE_ORDER" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+  MODULE "RE_ORDER : EXT_TO_IN" PROCESSED :  WALL CLOCK 21:13:34                                                                     
+
+
+ ************************************************************************************************************************************
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *                                           Solution parameter summary                                                             *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *               Iterations               (  2 )   Decoupled     ( 0 )   Modified Newton     ( 30 )   Newton                        *
+ *               _________                                                                                                          *
+ *                                                                                                                                  *
+ *               Tolerances               (  .0050 )   Bus     (  .0050 )   Area interchange                                        *
+ *               ----------               (  .0050 )   TX      (  .0050 )   Q (reactive)                                            *
+ *                                                                                                                                  *
+ *                                        (  .1000 )   Q residual  ( 45.001 )   Phase shift                                         *
+ *                                        ( 1.0000 )   Del_angle   (  .1500 )   Del_volt                                            *
+ *                                                                                                                                  *
+ *               Miscellaneous controls   (X) Flat start                                                                            *
+ *                                        ( ) Starting tap ratio (  .500)                                                           *
+ *               ------------- --------   Type BX bus - (X) BPA  option # 1                                                         *
+ *                                                      ( ) BPA  option # 2 (V_max)                                                 *
+ *                                                      ( ) WSCC option                                                             *
+ *                                                                                                                                  *
+ *               LTC control              (X)   Type R                                                                              *
+ *               --- -------              (X)   Type R (d-c commutating LTC's)                                                      *
+ *                                        (X)   Types RN and RQ (LTC control of reactive flow)                                      *
+ *                                        (X)   Types RM and RP (LTC phase shifter control of active flow)                          *
+ *                                                                                                                                  *
+ *               AI control               (X)   OFF                                                                                 *
+ *               -- -------               ( )   Control (default)                                                                   *
+ *                                        ( )   Monitor                                                                             *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *               Debugs                   ( )   Bus         ( )   AI                                                                *
+ *               ------                   ( )   TX          ( )   D-c model                                                         *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ *                                                                                                                                  *
+ ************************************************************************************************************************************
+
+
+
+
+               57 BUSES                                                 78 BRANCHES                                                  
+                6   -- WITH ADJUSTABLE TYPES                             0   -- LTC TRANSFORMERS                                     
+                0   -- CONTROLLING AREA INTERCHANGE                      0   -- D C SYSTEMS                                          
+                0   -- PERCENTAGE VAR CONTROLLED                         0   -- IDEAL PHASE SHIFTERS                                 
+                0   -- WITH SWITCHABLE REACTANCE                                                                                     
+                0   -- AGC UNITS                                                                                                     
+                1   -- SLACK BUSES                                                                                                   
+
+
+   ITERATION  --------------------ABSOLUTE ERROR SUMMATION--------------------  -------UNSOLVED--------  -ADJUSTMENTS-  JACOBIAN     
+                   P            Q           XFMRS     AREA EXPORT  BUS VOLTAGE         AUTO        D C    SLN     BUS    MATRIX      
+         NO    (P.U. MW)    (P.U.MVAR)    (P.U.MVA)    (P.U. MW)    (P.U.KV)    BUSES XFRMS AREAS LINES  TRUNC   TYPE   STORAGE      
+         --   -----------  ------------  -----------  -----------  -----------  ----- ----- ----- -----  -----   ----   -------      
+                                                                                                                                     
+  INITIAL 1      11.29069        .00000       .00000       .00000                  44     0     0           0               577      
+  INITIAL 2        .00000      22.10040       .00000       .00000                  48     0     0           0               435      
+          1       6.43482        .26111       .00000       .00000       .00000     52     0     0     0             0       708      
+          2        .06133        .04001       .00000       .00000       .00000      2     0     0     0             0       708      
+          3        .00014        .00011       .00000       .00000       .00000      0     0     0     0             0       708      
+          4        .00001        .00002       .00000       .00000       .00000      0     0     0     0             0       708      
+          5        .00002        .00002       .00000       .00000       .00000      0     0     0     0             0       708      
+  SUCCESSFUL SOLUTION REACHED.                                                                                                       
+  ENTER DUMMY "OPTSLN5"                                                                                                              
+  MODULE "SOLUTION" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+  MODULE "RE_ORDER : INT_TO_EX" PROCESSED :  WALL CLOCK 21:13:34                                                                     
+  MODULE "OUTPUT" PROCESSED :  WALL CLOCK 21:13:34                                                                                   
+  MODULE "ANALYSIS" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+  MODULE "INTERCHG OUTPUT" PROCESSED :  WALL CLOCK 21:13:34                                                                          
+
+
+ THERE WERE   0 TYPE "I" (INFORMATIONAL) ERRORS                                                                                      
+              1 TYPE "W" (WARNING) ERRORS                                                                                            
+              0 TYPE "E" ERROR                                                                                                       
+              0 TYPE "F" (FATAL) ERRORS                                                                                              
+        AND   0 TYPE "A" (ABORT) ERRORS                                                                                              
+
+
+  MODULE "PROC_END" PROCESSED :  WALL CLOCK 21:13:34                                                                                 
+  MODULE "PROC_CASE" PROCESSED :  WALL CLOCK 21:13:34                                                                                
+  MODULE "POWERFLOW" PROCESSED :  WALL CLOCK 21:13:34                                                                                

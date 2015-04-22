@@ -1,0 +1,20 @@
+HEADER     24/03/00 3.2
+
+PARAM
+         3  1  1  1  1  0
+                  0.001          0.001           0.01
+
+TIME
+            0.001666667      0.0166667             0.
+
+TPSCRI
+                Y D       0.      0.5     0.01
+
+EVENTS
+      0. FAULTONL BUS-   2-BUS-   1-1 FUG            2.       0.       0.    0.           D
+    0.15 CLEARL   BUS-   2-BUS-   1-1                                        0.           F     0.01
+    0.15 BRANC OP BUS-   2-BUS-   1-1 S                                      0.           F     0.01
+    0.15 BRANC OP BUS-   2-BUS-   1-1 R                                      0.           F     0.01
+      3. STOP
+
+

@@ -1,0 +1,20 @@
+HEADER     24/03/00 3.2
+
+PARAM
+         3  1  1  1  1  0
+                  0.001          0.001           0.01
+
+TIME
+            0.001666667      0.0166667             0.
+
+TPSCRI
+                Y D      0.1     0.12    0.001
+
+EVENTS
+    0.12 BRANC OP BUS-   7-BUS-   6-1 S                                      0.           F     0.01
+    0.12 BRANC OP BUS-   7-BUS-   6-1 R                                      0.           F     0.01
+      0. FAULTATN BUS-   7            FUG                     0.       0.    0.           D
+    0.12 CLEARB   BUS-   7                                                   0.           F     0.01
+      5. STOP
+
+

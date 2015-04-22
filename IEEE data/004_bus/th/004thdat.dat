@@ -1,0 +1,11 @@
+Paper 91 example. Van Cumsyt. cutsem
+lftype.h
+*********************
+THLINE  LINE1   bus_1  bus_2  0. 0.2   0.  
+THLINE  LINE2   bus_2  bus_3  0. 0.05  0.  
+THLINE  LINE3   bus_2  bus_4  0. 0.03  0.
+THLOAD  LOAD1   bus_3  3.  1.
+GENER   GEN1    bus_1  200  100 1.0
+GENERCV GEN2    bus_4  100  59  1.05  1.0
+SLACK 	GEN1   	bus_1  1.08  0.  1.0
+THSHUNT SHU1	bus_3	0.	-0.5   

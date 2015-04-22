@@ -80,6 +80,20 @@
   <ItemGroup>
     <ClCompile Include="ImportData.c" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\IEEE data\readme.txt" />
+    <Text Include="..\..\IEEE data\readme_english.txt" />
+    <Text Include="..\..\IEEE data\TH_FORMAT.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\IEEE data\th数据格式说明.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="testDemo.rc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

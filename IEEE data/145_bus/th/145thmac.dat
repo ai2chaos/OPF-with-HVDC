@@ -1,0 +1,55 @@
+IEEE 50 machine system
+lftype.h
+*********************
+SYSFREQ  ...   60 
+*******
+MAC_CMXD Mbus-60 bus-60   100      1.41       0.4769
+MAC_CMXD Mbus-67 bus-67   100     52.1796      .0213
+MAC_CMXD Mbus-79 bus-79   100      6.65        .1292
+MAC_CMXD Mbus-80 bus-80   100      1.2857      .6648
+MAC_CMXD Mbus-82 bus-82   100      2.115       .5291
+MAC_CMXD Mbus-89 bus-89   100     20.5602      .0585
+MAC_CMXD Mbus-90 bus-90   100      0.7628     1.6000
+MAC_CMXD Mbus-91 bus-91   100      1.6848      .3718
+MAC_CMXD Mbus-93 bus-93   100    115.0366      .0240
+MAC_CMXD Mbus-94 bus-94   100     17.3424      .0839
+MAC_CMXD Mbus-95 bus-95   100      5.4662      .1619
+MAC_CMXD Mbus-96 bus-96   100      2.1216      .4824
+MAC_CMXD Mbus-97 bus-97   100      5.4912      .2125
+MAC_CMXD Mbus-98 bus-98   100     13.96        .0795
+MAC_CMXD Mbus-99 bus-99   100     17.108       .1146
+MAC_CMXD Mbus-100 bus-100  100     7.56        .1386
+MAC_CMXD Mbus-101 bus-101  100    12.2844      .0924
+MAC_CMXD Mbus-102 bus-102  100    78.4366      .0135
+MAC_CMXD Mbus-103 bus-103  100     8.16        .1063
+MAC_CMXD Mbus-104 bus-104  100    73.8528      .0122
+MAC_CMXD Mbus-105 bus-105  100    84.3915      .0208
+MAC_CMXD Mbus-106 bus-106  100    56.261       .0312
+MAC_CMXD Mbus-108 bus-108  100    30.432       .0248
+MAC_CMXD Mbus-109 bus-109  100     2.6622      .2029
+MAC_CMXD Mbus-110 bus-110  100   115.05        .0240
+MAC_CMXD Mbus-111 bus-111  100    73.8528      .0122
+MAC_CMXD Mbus-112 bus-112  100    12.2844      .0924
+MAC_CMXD Mbus-115  bus-115  100   97.33        .0024
+MAC_CMXD Mbus-116  bus-116  100  105.50        .0022
+MAC_CMXD Mbus-117  bus-117  100  102.16        .0017
+MAC_CMXD Mbus-118  bus-118  100  162.74        .0014
+MAC_CMXD Mbus-119  bus-119  100  348.22        .0002
+MAC_CMXD Mbus-121  bus-121  100  116.54        .0017
+MAC_CMXD Mbus-122  bus-122  100   39.24        .0089
+MAC_CMXD Mbus-124  bus-124  100  116.86        .0017
+MAC_CMXD Mbus-128  bus-128  100  503.87        .0001
+MAC_CMXD Mbus-130  bus-130  100  230.90        .0010
+MAC_CMXD Mbus-131  bus-131  100 1101.72        .0001
+MAC_CMXD Mbus-132  bus-132  100  120.35        .0016
+MAC_CMXD Mbus-134  bus-134  100  802.12        .0003
+MAC_CMXD Mbus-135  bus-135  100  232.63        .0008
+MAC_CMXD Mbus-136  bus-136  100 2018.17        .0001
+MAC_CMXD Mbus-137  bus-137  100  469.32        .0004
+MAC_CMXD Mbus-139  bus-139  100 2210.20        .0001
+MAC_CMXD Mbus-140  bus-140  100  899.19        .0003
+MAC_CMXD Mbus-141  bus-141  100 1474.22        .0001
+MAC_CMXD Mbus-142  bus-142  100  950.80        .0003
+MAC_CMXD Mbus-143  bus-143  100  204.30        .0023
+MAC_CMXD Mbus-144  bus-144  100  443.22        .0004
+MAC_CMXD Mbus-145  bus-145  100  518.08        .0018

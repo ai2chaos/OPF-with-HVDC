@@ -1,0 +1,18 @@
+CASE EMS      
+C IEEE 9 Nodes System
+LS  bus-7   100.  bus-5   100.      1  0.0                     
+LS -bus-7   100. -bus-5   100.     -1  10.                    
+MC bus-1   100. 2364.       100.    .0608
+MC bus-2   100. 640.        100.    .1198
+MC bus-3   100. 301.        100.    .1813
+LB bus-5   100             1.0  1.0
+LB bus-6   100             1.0  1.0
+LB bus-8   100             1.0  1.0
+FF          180.                                      60 1         1         
+90
+MH
+GH 3  bus-1   100                                                            
+G  bus-2   100     1
+G  bus-3   100     1
+99
+

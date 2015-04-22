@@ -1,0 +1,20 @@
+HEADER     24/03/00 3.2
+
+PARAM
+         3  1  1  1  1  0
+                0.00001        0.00001         0.0001
+
+TIME
+                  0.001           0.01             0.
+
+TPSCRI
+                Y D     0.34     0.36    0.001
+
+EVENTS
+      0. FAULTATN BUS-  75            FUG                     0.       0.    0.           D
+    0.36 BRANC OP BUS-  75-BUS-   9-1 S                                      0.           F     0.01
+    0.36 BRANC OP BUS-  75-BUS-   9-1 R                                      0.           F     0.01
+    0.36 CLEARB   BUS-  75                                                   0.           F     0.01
+      3. STOP
+
+

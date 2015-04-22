@@ -1,0 +1,431 @@
+
+
+BPA POWER FLOW PROGRAM VERSION: 6.006 (C.V2.1.6)                                                               Date: 12/08/ 3 
+
+
+
+
+* PROGRAM CONTROL FILE NAME IS : (E:\电力系统数据\data\004_bus\bpa\004bpa.dat)                                                      
+[ INTERACTIVE RUN ]                                                                                                                 
+(POWERFLOW,CASEID=EMS,PROJECT=TEST)                                                                                                 
+/P_INPUT_LIST,FULL\                                                                                                                 
+/P_OUTPUT_LIST,FULL\                                                                                                                
+/P_ANALYSIS_RPT,LEVEL=4\                                                                                                            
+/TOLERANCE,AIPOWER=0.0001,Q=0.0001\                                                                                                 
+/SOL_ITER,DECOUPLED=4,CURRENT=0,NEWTON=30\                                                                                          
+/NETWORK_DATA\                                                                                                                      
+
+
+PWRFLO case: EMS        proj: TEST                * * * OPTION SUMMARY * * *                                   Date: 12/08/ 3 
+
+
+
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               DATA FILES :             (X)   INPUT COMMAND FILE  :E:\电力系统数据\data\004_bus\b                                 *
+*                                        ( )   OLD BASE FILE :                                                                     *
+*               ---- ---- ------         ( )   BRANCH DATA FILE :                          SELECTION DATE:                         *
+*                                                 BUS DATA FILE :                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                        DATA ON   100.0 MVA BASE                                                                  *
+*                                                                                                                                  *
+*               REPORT SORT ORDER        (X)   BUS-BASE                                                                            *
+*               ------ ---- -----        ( )   ZONE-BUS-BASE                                                                       *
+*                                        ( )   AREA-BUS-BASE                                                                       *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               LISTINGS REQUESTED             PAPER       FICHE                                                                   *
+*               -------- ---------             -----       -----                                                                   *
+*                                                                                                                                  *
+*               INPUT LISTING            ( )   NONE     ( )   NONE                                                                 *
+*               ----- -------            ( )   ZONES    ( )   ZONES                                                                *
+*                                        (X)   FULL     (X)   FULL                                                                 *
+*                                                                                                                                  *
+*               OUTPUT LISTING           ( )   NONE     ( )   NONE                                                                 *
+*               ------ -------           ( )   ZONES    ( )   ZONES                                                                *
+*                                        (X)   FULL     (X)   FULL                                                                 *
+*                                                                                                                                  *
+*               ANALYSIS LISTING         ( )   LEVEL 4  ( )   LEVEL 0                                                              *
+*               -------- -------         ( )   ZONES    ( )   ZONES                                                                *
+*                                        ( )   OWNERS   ( )   OWNERS                                                               *
+*                                                                                                                                  *
+*               AREA INTER. LISTING      ( )   NONE                                                                                *
+*               ---- ------ -------      ( )   TIE LINE                                                                            *
+*                                        ( )   MATRIX                                                                              *
+*                                        (X)   FULL                                                                                *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               OWNER INTER. LISTING     (X)   NONE                                                                                *
+*               ----- ------ -------     ( )   TIE LINE                                                                            *
+*                                        ( )   MATRIX                                                                              *
+*                                        ( )   FULL                                                                                *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                        NEW BASE NOT SAVED                                                                        *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+*** WARNING    ILLEGAL DATA RECORD IGNORED.                                                                             *** WARNING 
+*** WARNING             (-999                                                                            )              *** WARNING 
+
+
+PWRFLO case: EMS        proj: TEST                * * * INPUT LISTING * * *      4 BUSSES      3 EQUIVALENT BR Date: 12/08/ 3 
+
+BS     bus_1    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM  200.0PG99990.0QH-9999.0QL 1.080VH    .0VL                      
+   L      0 bus_2    100.0 1 0    0 AMP 0 C  .00000 R   .20000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus_2    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus_1    100.0 1 0    0 AMP 0 C  .00000 R   .20000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus_3    100.0 1 0    0 AMP 0 C  .00000 R   .05000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus_4    100.0 1 0    0 AMP 0 C  .00000 R   .03000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus_3    100.0  1   300.0PL  100.0QL    .0PS  50.0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus_2    100.0 1 0    0 AMP 0 C  .00000 R   .05000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+BQ     bus_4    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM  100.0PG99990.0QH-9999.0QL 1.050VH  .000VL                      
+   L      0 bus_2    100.0 1 0    0 AMP 0 C  .00000 R   .03000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+
+
+PWRFLO case: EMS        proj: TEST                 * * * PRE-SOLUTION PROCESSING * * *                         Date: 12/08/ 3 
+
+* * REORDERING * *                                                                                                                  
+ NUMBER OF BRANCH ITEMS:    6 (MAXIMUM: 15293)                                                                                      
+
+
+PWRFLO case: EMS        proj: TEST                * * * SOLUTION OPTIONS * * *                                 Date: 12/08/ 3 
+
+
+
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                           Solution parameter summary                                                             *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               Iterations               (  4 )   Decoupled     ( 0 )   Modified Newton     ( 30 )   Newton                        *
+*               _________                                                                                                          *
+*                                                                                                                                  *
+*               Tolerances               (  .0050 )   Bus     (  .0001 )   Area interchange                                        *
+*               ----------               (  .0050 )   TX      (  .0001 )   Q (reactive)                                            *
+*                                                                                                                                  *
+*                                        (  .1000 )   Q residual  ( 45.001 )   Phase shift                                         *
+*                                        ( 1.0000 )   Del_angle   (  .1500 )   Del_volt                                            *
+*                                                                                                                                  *
+*               Miscellaneous controls   (X) Flat start                                                                            *
+*                                        ( ) Starting tap ratio (  .500)                                                           *
+*               ------------- --------   Type BX bus - (X) BPA  option # 1                                                         *
+*                                                      ( ) BPA  option # 2 (V_max)                                                 *
+*                                                      ( ) WSCC option                                                             *
+*                                                                                                                                  *
+*               LTC control              (X)   Type R                                                                              *
+*               --- -------              (X)   Type R (d-c commutating LTC's)                                                      *
+*                                        (X)   Types RN and RQ (LTC control of reactive flow)                                      *
+*                                        (X)   Types RM and RP (LTC phase shifter control of active flow)                          *
+*                                                                                                                                  *
+*               AI control               (X)   OFF                                                                                 *
+*               -- -------               ( )   Control (default)                                                                   *
+*                                        ( )   Monitor                                                                             *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               Debugs                   ( )   Bus         ( )   AI                                                                *
+*               ------                   ( )   TX          ( )   D-c model                                                         *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+
+
+PWRFLO case: EMS        proj: TEST                 * * * DIAGNOSTICS * * *                                     Date: 12/08/ 3 
+
+
+
+
+
+
+PWRFLO case: EMS        proj: TEST                * * * SOLUTION ITERATION SUMMARY * * *                       Date: 12/08/ 3 
+
+
+
+
+               4 BUSES                                                  3 BRANCHES                                                  
+               1   -- WITH ADJUSTABLE TYPES                             0   -- LTC TRANSFORMERS                                     
+               0   -- CONTROLLING AREA INTERCHANGE                      0   -- D C SYSTEMS                                          
+               0   -- PERCENTAGE VAR CONTROLLED                         0   -- IDEAL PHASE SHIFTERS                                 
+               0   -- WITH SWITCHABLE REACTANCE                                                                                     
+               0   -- AGC UNITS                                                                                                     
+               1   -- SLACK BUSES                                                                                                   
+  ITERATION  --------------------ABSOLUTE ERROR SUMMATION--------------------  -------UNSOLVED--------  -ADJUSTMENTS-  JACOBIAN     
+                  P            Q           XFMRS     AREA EXPORT  BUS VOLTAGE         AUTO        D C    SLN     BUS    MATRIX      
+        NO    (P.U. MW)    (P.U.MVAR)    (P.U.MVA)    (P.U. MW)    (P.U.KV)    BUSES XFRMS AREAS LINES  TRUNC   TYPE   STORAGE      
+        --   -----------  ------------  -----------  -----------  -----------  ----- ----- ----- -----  -----   ----   -------      
+                                                                                                                                    
+ INITIAL 1       4.00000        .00000       .00000       .00000                   2     0     0           0                12      
+ INITIAL 2        .00000        .98123       .00000       .00000                   2     0     0           0                 7      
+ INITIAL 3        .26977        .00000       .00000       .00000                   3     0     0           0                12      
+ INITIAL 4        .00000        .09933       .00000       .00000                   2     0     0           0                 7      
+         1        .06282        .00689       .00000       .00000       .00000      2     0     0     0             0        15      
+         2        .00016        .00010       .00000       .00000       .00000      0     0     0     0             0        15      
+         3        .00000        .00000       .00000       .00000       .00000      0     0     0     0             0        15      
+         4        .00000        .00000       .00000       .00000       .00000      0     0     0     0             0        15      
+         5        .00000        .00000       .00000       .00000       .00000      0     0     0     0             0        15      
+ SUCCESSFUL SOLUTION REACHED.                                                                                                       
+ ENTER DUMMY "OPTSLN5"                                                                                                              
+
+
+PWRFLO case: EMS        proj: TEST                 * * * * DETAILED OUTPUT LISTING * * * *                     Date: 12/08/ 3 
+
+A COMPLETE OUTPUT LISTING OF ALL BUSSES WILL BE GIVEN                                                                               
+bus_1     100.0  108.0KV/   .0 ZONE  1   200.0PGE     71.0QCOND     .0PLOAD      .0QLOAD               1.080PU KV      BUS TYPE S   
+       bus_2     100.0   1           1   200.0PIN     71.0QIN     .000PLOSS    77.2QLOSS                   .0QC                     
+                                         200.0PNET    71.0QNET                                          .0 SLACK ADJ                
+bus_2     100.0  101.8KV/-21.3 ZONE  1                              .0PLOAD      .0QLOAD               1.018PU KV      BUS TYPE     
+       bus_1     100.0   1           1  -200.0PIN      6.2QIN     .000PLOSS    77.2QLOSS                   .0QC                     
+       bus_3     100.0   1           1   300.0       100.2        .000         48.2                        .0                       
+       bus_4     100.0   1           1  -100.0      -106.4        .000          6.2                        .0                       
+                                            .0PNET      .0QNET                                                                      
+bus_3     100.0   98.0KV/-30.0 ZONE  1                           300.0PLOAD   100.0QLOAD                .980PU KV      BUS TYPE     
+       bus_2     100.0   1           1  -300.0PIN    -52.0QIN     .000PLOSS    48.2QLOSS                   .0QC                     
+                                                      48.0QUSED   48.0QCAP SCHEDULED                                                
+                                        -300.0PNET   -52.0QNET                                                                      
+bus_4     100.0  105.0KV/-19.7 ZONE  1   100.0PGE    112.6QCOND     .0PLOAD      .0QLOAD               1.050PU KV      BUS TYPE Q   
+       bus_2     100.0   1           1   100.0PIN    112.6QIN     .000PLOSS     6.2QLOSS                   .0QC                     
+                                         100.0PNET   112.6QNET                                                                      
+ OUTPUT CHECK  ---  LINE EXPORT SUMS     LINE IMPORT SUMS         LINE LOSSES                                                       
+                        .0    131.7          .0    131.7          .0    131.7                                                       
+                                        SUMMARY OF SYSTEM TOTALS             (MW)    (MVAR)                                         
+                                        SYSTEM INJECTION:                                                                           
+                                           GENERATION                       300.0     183.6                                         
+                                           LOAD                            -300.0    -100.0                                         
+                                           BUS SHUNT ADMITTANCE                .0      48.0                                         
+                                           UNSCHEDULED SOURCES                 .0        .0                                         
+                                        SUBTOTAL (INJECTION)                   .0     131.7                                         
+                                        SYSTEM LOSSES:                                                                              
+                                            EQUIVALENT SHUNT ADMITTANCE        .0        .0                                         
+                                            LINE AND TRANSFORMER LOSSES        .0    -131.7                                         
+                                             LINE INJECTION (QC)                         .0                                         
+                                            DC CONVERTER LOSSES                .0        .0                                         
+                                        SUBTOTAL (LOSSES)                      .0    -131.7                                         
+                                        NET SYSTEM EXPORT:                     .0        .0                                         
+
+
+PWRFLO case: EMS        proj: TEST                 * * * * OUTPUT ANALYSIS LISTING * * * *                     Date: 12/08/ 3 
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*       LEGEND:    F = FULL SUMMARY                                                                                                *
+*                  Z = RESTRICTED BY ZONES                                                                                         *
+*                  O = RESTRICTED BY OWNERS                                                                                        *
+*                  B = RESTRICTED BY BOTH                                                                                          *
+*              BLANK = NO SUMMARY REQUESTED                                                                                        *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                        PAPER    FICHE         SUMMARY NAME                                                                       *
+*                        -----    -----         -------  ----                                                                      *
+*                          (F)      ( )         Buses With Unscheduled Reactive                                                    *
+*                                                                                                                                  *
+*                          (F)      ( )         Total System Generations and Loads by Owner                                        *
+*                          (F)      ( )         System Generations,Loads,Losses and Shunts by Zones                                *
+*                          (F)      ( )         Undervoltage-Overvoltage Buses                                                     *
+*                          (F)      ( )         Transmission Lines Loaded Above  80.0% of Ratings                                  *
+*                          (F)      ( )         Transformers Loaded Above  80.0% of Ratings                                        *
+*                          (F)      ( )         Transformers Excited Above 5.0% over Tap                                            
+*                          (F)      ( )         Transmission System Losses                                                         *
+*                          (F)      ( )         BPA Industrial Loads                                                               *
+*                          (F)      ( )         DC System                                                                          *
+*                          (F)      ( )         Shunt Reactive Summary                                                             *
+*                          (F)      ( )         Summary of LTC Transformers                                                        *
+*                          (F)      ( )         Summary of LTC Reactive Utilization                                                *
+*                          (F)      ( )         Summary of Phase-shifters                                                          *
+*                          (F)      ( )         Summary of %Var-controlled buses                                                   *
+*                          (F)      ( )         Summary of AGC Control                                                             *
+*                          (F)      ( )         Summary of Type BX buses                                                           *
+*                          (F)      ( )         Summary of Adjustable Var compensation                                             *
+*                          (F)      ( )         Transmission Lines Containing Series Compensation                                  *
+*                                                                                                                                  *
+*                          (F)      ( )         Bus Quantities                                                                     *
+*                                                                                                                                  *
+*                          (F)      ( )         Spinning Reserves                                                                  *
+*                          (F)      ( )         Transmission Line Efficiency Analysis                                              *
+*                                               Lines Loaded Above  90.0 % of Nominal Ratings                                      *
+*                          (F)      ( )         Transformer Efficiency Analysis                                                    *
+*                                               Total Losses Above   .04 % of Nominal Ratings                                      *
+*                          (F)      ( )         Transformer Efficiency Analysis                                                    *
+*                                               Core Losses Above   .02 % of Nominal Ratings                                       *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+
+
+                                                  Summary of Unscheduled Reactive                                                   
+                                        OWN  ZN  BUS        BASE   TYPE   UNSCHEDULED  KV                                           
+                                                                             MVAR                                                   
+
+                   UNSCHEDULED CAPACITORS        .0                                                                                 
+                   UNSCHEDULED REACTORS          .0                                                                                 
+                   UNSCHEDULED TOTAL             .0                                                                                 
+
+
+                                        System Generations and Loads Summary by Owner                                               
+   Ownership                          /-- Generation --//--------------------------  Composite Loads --------------------------/    
+                                                           Total composite        Constant P        Constant I        Constant Z    
+                                             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR    
+                                                                                                                                    
+
+    NON-CLASSIFIED                        300.0    183.6    300.0    100.0    300.0    100.0       .0       .0       .0       .0    
+                                          _____    _____    _____    _____    _____    _____    _____    _____    _____    _____    
+    SYSTEM TOTAL                          300.0    183.6    300.0    100.0    300.0    100.0       .0       .0       .0       .0    
+
+
+                   System Generations, Loads, Losses and Bus Shunt Summary by Zones                                                 
+Zone  /-- Generation --//--------------------------  Composite Loads --------------------------//---- Losses ----//-- Bus Shunt ---/
+                           Total composite        Constant P        Constant I        Constant Z                                    
+             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR
+                                                                                                                                    
+
+ 1        300.0    183.6    300.0    100.0    300.0    100.0       .0       .0       .0       .0       .0    131.7       .0     48.0
+          -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----
+Totals    300.0    183.6    300.0    100.0    300.0    100.0       .0       .0       .0       .0       .0    131.7       .0     48.0
+
+
+                                        Summary of Undervoltage - Overvoltage Buses (Sorted by ownerships)                          
+               Own  Zone  Bus name  base    Type      Voltage        Voltage range         Violation                                
+                                                     KV       PU       minimum    maximum          PU                               
+                                                                         PU         PU                                              
+                                                                                                                                    
+
+                     1    bus_1     100.0     S    108.00   1.0800       .9500    1.0520         .0280                              
+
+
+                             Transmission Lines Loaded Above  80.0 % of Ratings   (Sorted by ownerships)                            
+Own Zn Bus1      Base Zn Bus2      Base  ID SC   Case   Thermal Bottle- Nominal     Case   Thermal Bottle- Nominal  Power    Angle  
+                                               current  rating   neck   rating             rating   neck   rating   factor  degrees 
+                                                                rating                             rating                           
+                                                  amps  amps      amps    amps       MVA     MVA    MVA     MVA                     
+
+           NO OVERLOADED LINES DETECTED                                                                                             
+
+
+                                         Transformers Loaded Above  80.0% of Ratings  (Sorted by ownerships)                        
+Own Zn Bus1      Base Zn Bus2      Base  ID SC   Case       Thermal   %     Loss-of         Bottlenk  %     Nominal    %     Power  
+                                                 Loading    Rating          Life            Rating          Rating           factor 
+                                                                            Rating                                                  
+                                                 MVA        MVA             MVA             MVA             MVA                     
+
+          NO OVERLOADED TRANSFORMERS DETECTED                                                                                       
+
+
+                                            Transformers Excited Above 5.0% over Tap (Sorted by Owner)                              
+    Own  Zn  Bus.1     Base  Bus.2    Base  Ckt Sect   Tap.1 / Tap.2      Bus.1   Ratio     <  Excitation >   Nomin    MVA          
+                                                                          Volts   Bus.1     <  Violation  >   MVA      Flow         
+                                                                          (kV)    /Tap.1      p.u.     kV     Rating                
+                                                                                                                                    
+
+          NO OVEREXCITED TRANSFORMERS FOUND                                                                                         
+
+
+                                            Transmission System Loss Summary by Owner                                               
+   Ownership                Line loss       Transformer loss      DC converter        Total loss           Miles     MW-Miles       
+                           MW      MVAR       MW      MVAR          MW      MVAR       MW      MVAR                                 
+                                                                                                                                    
+
+   NON-CLASSIFIED                                                                                                                   
+       100.0 KV             .0    131.7        .0       .0        .0       .0        .0    131.7              .0              .0    
+                         _____    _____     _____    _____     _____    _____     _____    _____           _____           _____    
+   SYSTEM TOTAL             .0    131.7        .0       .0        .0       .0        .0    131.7              .0              .0    
+
+
+                                                  BPA Industrial Loads                                                              
+Bus            Zone   Load Type       /----------------------- BPA Load Classification ----------------------/                      
+                                      /----- Firm -----//- Interruptible //-- Potential ---//-- Type Total --/                      
+                                             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR                      
+
+     Case contains no Industrial-type loads                                                                                         
+
+
+                                              Shunt Reactive Summary                                                                
+              ------------- CAPACITORS (MVAR) -----------------         ---------------- REACTORS (MVAR) ---------------            
+ AREA/ZONE    EXISTING         EXISTING    RESERVE  UNSCHEDULED         EXISTING        EXISTING     RESERVE  UNSCHEDULED           
+              APPROVED         APPROVED    UNUSED                   APPROVED        APPROVED     UNUSED                             
+              AVAILABLE          USED                                   AVAILABLE         USED                                      
+
+    1              48.0        48.0          .0          .0                  .0           .0           .0           .0              
+                  _____       _____       _____       _____               _____        _____        _____        _____              
+ TOTAL             48.0        48.0          .0          .0                  .0           .0           .0           .0              
+
+
+                                            TRANSMISSION LINES CONTAINING COMPENSATION                                              
+                                 OWN  ZONE  BUS1      BASE1  ZONE  BUS2      BASE2   ID  PERCENT                                    
+                                                                                                                                    
+
+        CASE CONTAINS NO TRANSMISSION LINES WITH SERIES COMPENSATION                                                                
+
+
+                                                  Summary of Bus Quantities                                                         
+Bus name       Voltage  Bank taps     Generation        Load           Statics and reactors     Bus  Own  Zone   Gen  Voltage/angle 
+                                     MW      MVAR    MW      MVAR    Used     Exist    Unsched  Type             PF       PU/DEG    
+                                                                     MVAR    Apprvd     MVAR                                        
+                                                                              MVAR                                                  
+
+bus_1    100.0  108.0               200.0    71.0      .0      .0       .0       .0       .0    S          1   .94    1.080/    .0  
+bus_2    100.0  101.8                  .0      .0      .0      .0       .0       .0       .0               1          1.018/ -21.3  
+bus_3    100.0   98.0                  .0      .0   300.0   100.0     48.0     48.0       .0               1           .980/ -30.0  
+bus_4    100.0  105.0               100.0   112.6      .0      .0       .0       .0       .0    Q          1   .66    1.050/ -19.7  
+                                   ______   _____   _____   _____    _____    _____    _____                                        
+          TOTAL SYSTEM              300.0   183.6   300.0   100.0     48.0     48.0       .0                                        
+          TOTAL STATICS                                               48.0     48.0       .0                                        
+          TOTAL REACTORS                                                .0       .0       .0                                        
+          TOTAL GENERATORS                  183.6                                                                                   
+          TOTAL CONDENSERS                     .0                                                                                   
+
+
+                                              Spinning Reserve Summary                                                              
+                ------- ACTIVE  POWER (1) -------     ------------------------ REACTIVE  POWER (2) -----------------------------    
+ AREA/ZONE      SUM PMAX    SUM PGEN      RESERVE     SUM QMAX    SUM QMIN  SUM Q BOOST  SUM Q BUCK   BOOST RESERVE  BUCK RESERVE   
+                   (MW)        (MW)        (MW)       AVAILABLE   AVALIABLE     USED        USED          (MVAR)        (MVAR)      
+                                                       (MVAR)       (MVAR)     (MVAR)      (MVAR)                                   
+
+    1              300.0       300.0          .0            .0          .0          .0          .0            .0            .0      
+                  ______      ______       _____        ______     _______      ______      ______        ______       _______      
+ TOTAL             300.0       300.0          .0            .0          .0          .0          .0            .0            .0      
+ Notes:                                                                                                                             
+       1. Active Spinning Reserve excludes all quantities pertaining to synchronous motors (i.e., pumped storage plants).           
+          All negative generation (synchronous motorload) is interpreted as load.                                                   
+          This exclusion is invoked by requiring PGEN and PMAX both be greater than zero.                                           
+       2. Reactive Spinning Reserve excludes all quantities pertaining to synchronous condensers.                                   
+          This exclusion is invoked by requiring both PGEN be greater than zero and the base be greater than 30 KV.                 
+
+
+                    Transmission Line Efficiency Analysis -- Lines Loaded Above  90.0 % of Nominal Ratings                          
+                                                                      |     Load    |              Losses             |  Loading    
+_________________________________________________________________________________________________________________________________   
+OWN  ZN  BUS1      BASE   ZN  BUS2      BASE   ID SC  LENGTH  COND.   | MVA    AMPS |      MW        MW/MILE    %  OF | % OF LN     
+                                                      MILES  NR AMPS  |             |                         LN FLOW |FLOW/100 MI  
+
+       NO LINE EFFICIENCY CANDIDATES DETECTED                                                                                       
+ END OF ANALYSIS LISTINGS                                                                                                           
+
+
+PWRFLO case: EMS        proj: TEST                **** CASE PROCESSING SUMMARY ****                            Date: 12/08/ 3 
+
+
+
+
+THERE WERE   0 TYPE "I" (INFORMATIONAL) ERRORS                                                                                      
+             1 TYPE "W" (WARNING) ERRORS                                                                                            
+             0 TYPE "E" ERROR                                                                                                       
+             0 TYPE "F" (FATAL) ERRORS                                                                                              
+       AND   0 TYPE "A" (ABORT) ERRORS                                                                                              
+  * * * ERROR MESSAGES ENCOUNTERED * * *                                                                                            
+*** WARNING    ILLEGAL DATA RECORD IGNORED.                                                                             *** WARNING 
+*** WARNING             (-999                                                                            )              *** WARNING 

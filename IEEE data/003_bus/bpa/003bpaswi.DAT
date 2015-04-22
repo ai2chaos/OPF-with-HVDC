@@ -1,0 +1,13 @@
+CASE EMS      
+C  3 Nodes System
+LS  bus-2   100.  bus-3   100.      1  0.0                     
+LS -bus-2   100. -bus-3   100.     -1  5.1                  
+MC bus-1   100  7770.       2220    0.3
+MC bus-3   100  99999.      9999    .0001
+
+FF      0.1 180.                                      60 1         1         
+90
+MH                                                       10
+GH 1  bus-3   100                                                            
+G  bus-1   100     1
+99

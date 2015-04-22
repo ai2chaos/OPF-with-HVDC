@@ -1,0 +1,689 @@
+
+
+BPA POWER FLOW PROGRAM VERSION: 6.006 (C.V2.1.6)                                                               Date: 04/02/ 7 
+
+
+
+
+* PROGRAM CONTROL FILE NAME IS : (F:\IEEE模型\data\030_bus\bpa\030bpa.DAT)                                                          
+[ INTERACTIVE RUN ]                                                                                                                 
+(POWERFLOW,CASEID=EMS,PROJECT=TEST)                                                                                                 
+/P_INPUT_LIST,FULL\                                                                                                                 
+/P_OUTPUT_LIST,FULL\                                                                                                                
+/P_ANALYSIS_RPT,LEVEL=4\                                                                                                            
+/NETWORK_DATA\                                                                                                                      
+
+
+PWRFLO case: EMS        proj: TEST                * * * OPTION SUMMARY * * *                                   Date: 04/02/ 7 
+
+
+
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               DATA FILES :             (X)   INPUT COMMAND FILE  :F:\IEEE模型\data\030_bus\bpa\0                                 *
+*                                        ( )   OLD BASE FILE :                                                                     *
+*               ---- ---- ------         ( )   BRANCH DATA FILE :                          SELECTION DATE:                         *
+*                                                 BUS DATA FILE :                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                        DATA ON   100.0 MVA BASE                                                                  *
+*                                                                                                                                  *
+*               REPORT SORT ORDER        (X)   BUS-BASE                                                                            *
+*               ------ ---- -----        ( )   ZONE-BUS-BASE                                                                       *
+*                                        ( )   AREA-BUS-BASE                                                                       *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               LISTINGS REQUESTED             PAPER       FICHE                                                                   *
+*               -------- ---------             -----       -----                                                                   *
+*                                                                                                                                  *
+*               INPUT LISTING            ( )   NONE     ( )   NONE                                                                 *
+*               ----- -------            ( )   ZONES    ( )   ZONES                                                                *
+*                                        (X)   FULL     (X)   FULL                                                                 *
+*                                                                                                                                  *
+*               OUTPUT LISTING           ( )   NONE     ( )   NONE                                                                 *
+*               ------ -------           ( )   ZONES    ( )   ZONES                                                                *
+*                                        (X)   FULL     (X)   FULL                                                                 *
+*                                                                                                                                  *
+*               ANALYSIS LISTING         ( )   LEVEL 4  ( )   LEVEL 0                                                              *
+*               -------- -------         ( )   ZONES    ( )   ZONES                                                                *
+*                                        ( )   OWNERS   ( )   OWNERS                                                               *
+*                                                                                                                                  *
+*               AREA INTER. LISTING      ( )   NONE                                                                                *
+*               ---- ------ -------      ( )   TIE LINE                                                                            *
+*                                        ( )   MATRIX                                                                              *
+*                                        (X)   FULL                                                                                *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               OWNER INTER. LISTING     (X)   NONE                                                                                *
+*               ----- ------ -------     ( )   TIE LINE                                                                            *
+*                                        ( )   MATRIX                                                                              *
+*                                        ( )   FULL                                                                                *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                        NEW BASE NOT SAVED                                                                        *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+*** WARNING    ILLEGAL DATA RECORD IGNORED.                                                                             *** WARNING 
+*** WARNING             (-999                                                                            )              *** WARNING 
+
+
+PWRFLO case: EMS        proj: TEST                * * * INPUT LISTING * * *     30 BUSSES     41 EQUIVALENT BR Date: 04/02/ 7 
+
+BS     bus-1    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM  261.0PG99990.0QH-9999.0QL 1.060VH    .0VL                      
+   L      0 bus-2    100.0   0    0 AMP 0 C  .01920 R   .05750 X  .00000 G   .02640 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-3    100.0   0    0 AMP 0 C  .04520 R   .18520 X  .00000 G   .02040 B      .0 MI                0 T     0 B     0IN 
+B      bus-10   100.0  1     5.8PL    2.0QL    .0PS  19.0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-17   100.0   0    0 AMP 0 C  .03240 R   .08450 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-20   100.0   0    0 AMP 0 C  .09360 R   .20900 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-21   100.0   0    0 AMP 0 C  .03480 R   .07490 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-22   100.0   0    0 AMP 0 C  .07270 R   .14990 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   T      0 bus-6    100.0   0    0 MVA 0 C  .00000 R   .55600 X  .00000 G   .00000 B 100.00  96.90     0 T     0 L     0 B     0IN 
+   L      0 bus-9    100.0   0    0 AMP 0 C  .00000 R   .11000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+BQ     bus-11   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG   24.0QH   -6.0QL 1.082VH  .000VL                      
+   L      0 bus-9    100.0   0    0 AMP 0 C  .00000 R   .20800 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-12   100.0  1    11.2PL    7.5QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-13   100.0   0    0 AMP 0 C  .00000 R   .14000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-14   100.0   0    0 AMP 0 C  .12310 R   .25590 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-15   100.0   0    0 AMP 0 C  .06620 R   .13040 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-16   100.0   0    0 AMP 0 C  .09450 R   .19870 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   T      0 bus-4    100.0   0    0 MVA 0 C  .00000 R   .25600 X  .00000 G   .00000 B 100.00  93.20     0 T     0 L     0 B     0IN 
+BQ     bus-13   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG   24.0QH   -6.0QL 1.071VH  .000VL                      
+   L      0 bus-12   100.0   0    0 AMP 0 C  .00000 R   .14000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-14   100.0  1     6.2PL    1.6QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-12   100.0   0    0 AMP 0 C  .12310 R   .25590 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-15   100.0   0    0 AMP 0 C  .22100 R   .19970 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-15   100.0  1     8.2PL    2.5QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-12   100.0   0    0 AMP 0 C  .06620 R   .13040 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-14   100.0   0    0 AMP 0 C  .22100 R   .19970 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-18   100.0   0    0 AMP 0 C  .10730 R   .21850 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-23   100.0   0    0 AMP 0 C  .10000 R   .20200 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-16   100.0  1     3.5PL    1.8QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-12   100.0   0    0 AMP 0 C  .09450 R   .19870 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-17   100.0   0    0 AMP 0 C  .05240 R   .19230 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-17   100.0  1     9.0PL    5.8QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-10   100.0   0    0 AMP 0 C  .03240 R   .08450 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-16   100.0   0    0 AMP 0 C  .05240 R   .19230 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-18   100.0  1     3.2PL     .9QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-15   100.0   0    0 AMP 0 C  .10730 R   .21850 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-19   100.0   0    0 AMP 0 C  .06390 R   .12920 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-19   100.0  1     9.5PL    3.4QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-18   100.0   0    0 AMP 0 C  .06390 R   .12920 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-20   100.0   0    0 AMP 0 C  .03400 R   .06800 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+BQ     bus-2    100.0  1    21.7PL   12.7QL    .0PS    .0QS    .0PM   40.0PG   50.0QH  -40.0QL 1.045VH  .000VL                      
+   L      0 bus-1    100.0   0    0 AMP 0 C  .01920 R   .05750 X  .00000 G   .02640 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-4    100.0   0    0 AMP 0 C  .05700 R   .17370 X  .00000 G   .01840 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-5    100.0   0    0 AMP 0 C  .04720 R   .19830 X  .00000 G   .02090 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-6    100.0   0    0 AMP 0 C  .05810 R   .17630 X  .00000 G   .01870 B      .0 MI                0 T     0 B     0IN 
+B      bus-20   100.0  1     2.2PL     .7QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-10   100.0   0    0 AMP 0 C  .09360 R   .20900 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-19   100.0   0    0 AMP 0 C  .03400 R   .06800 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-21   100.0  1    17.5PL   11.2QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-10   100.0   0    0 AMP 0 C  .03480 R   .07490 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-22   100.0   0    0 AMP 0 C  .01160 R   .02360 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-22   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-10   100.0   0    0 AMP 0 C  .07270 R   .14990 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-21   100.0   0    0 AMP 0 C  .01160 R   .02360 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-24   100.0   0    0 AMP 0 C  .11500 R   .17900 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-23   100.0  1     3.2PL    1.6QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-15   100.0   0    0 AMP 0 C  .10000 R   .20200 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-24   100.0   0    0 AMP 0 C  .13200 R   .27000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-24   100.0  1     8.7PL    6.7QL    .0PS   4.3QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-22   100.0   0    0 AMP 0 C  .11500 R   .17900 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-23   100.0   0    0 AMP 0 C  .13200 R   .27000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-25   100.0   0    0 AMP 0 C  .18850 R   .32920 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-25   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-24   100.0   0    0 AMP 0 C  .18850 R   .32920 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-26   100.0   0    0 AMP 0 C  .25440 R   .38000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-27   100.0   0    0 AMP 0 C  .10930 R   .20870 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-26   100.0  1     3.5PL    2.3QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-25   100.0   0    0 AMP 0 C  .25440 R   .38000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-27   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-25   100.0   0    0 AMP 0 C  .10930 R   .20870 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   T      0 bus-28   100.0   0    0 MVA 0 C  .00000 R   .39600 X  .00000 G   .00000 B 100.00  96.80     0 T     0 L     0 B     0IN 
+   L      0 bus-29   100.0   0    0 AMP 0 C  .21980 R   .41530 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-30   100.0   0    0 AMP 0 C  .32020 R   .60270 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-28   100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   T      0 bus-27   100.0   0    0 MVA 0 C  .00000 R   .39600 X  .00000 G   .00000 B  96.80 100.00     0 T     0 L     0 B     0IN 
+   L      0 bus-6    100.0   0    0 AMP 0 C  .01690 R   .05990 X  .00000 G   .00650 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-8    100.0   0    0 AMP 0 C  .06360 R   .20000 X  .00000 G   .02140 B      .0 MI                0 T     0 B     0IN 
+B      bus-29   100.0  1     2.4PL     .9QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-27   100.0   0    0 AMP 0 C  .21980 R   .41530 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-30   100.0   0    0 AMP 0 C  .23990 R   .45330 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-3    100.0  1     2.4PL    1.2QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-1    100.0   0    0 AMP 0 C  .04520 R   .18520 X  .00000 G   .02040 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-4    100.0   0    0 AMP 0 C  .01320 R   .03790 X  .00000 G   .00420 B      .0 MI                0 T     0 B     0IN 
+B      bus-30   100.0  1    10.6PL    1.9QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-27   100.0   0    0 AMP 0 C  .32020 R   .60270 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-29   100.0   0    0 AMP 0 C  .23990 R   .45330 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+B      bus-4    100.0  1     7.6PL    1.6QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   T      0 bus-12   100.0   0    0 MVA 0 C  .00000 R   .25600 X  .00000 G   .00000 B  93.20 100.00     0 T     0 L     0 B     0IN 
+   L      0 bus-2    100.0   0    0 AMP 0 C  .05700 R   .17370 X  .00000 G   .01840 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-3    100.0   0    0 AMP 0 C  .01320 R   .03790 X  .00000 G   .00420 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-6    100.0   0    0 AMP 0 C  .01190 R   .04140 X  .00000 G   .00450 B      .0 MI                0 T     0 B     0IN 
+BQ     bus-5    100.0  1    94.2PL   19.0QL    .0PS    .0QS    .0PM     .0PG   40.0QH  -40.0QL 1.010VH  .000VL                      
+   L      0 bus-2    100.0   0    0 AMP 0 C  .04720 R   .19830 X  .00000 G   .02090 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-7    100.0   0    0 AMP 0 C  .04600 R   .11600 X  .00000 G   .01020 B      .0 MI                0 T     0 B     0IN 
+B      bus-6    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   T      0 bus-10   100.0   0    0 MVA 0 C  .00000 R   .55600 X  .00000 G   .00000 B  96.90 100.00     0 T     0 L     0 B     0IN 
+   L      0 bus-2    100.0   0    0 AMP 0 C  .05810 R   .17630 X  .00000 G   .01870 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-28   100.0   0    0 AMP 0 C  .01690 R   .05990 X  .00000 G   .00650 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-4    100.0   0    0 AMP 0 C  .01190 R   .04140 X  .00000 G   .00450 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-7    100.0   0    0 AMP 0 C  .02670 R   .08200 X  .00000 G   .00850 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-8    100.0   0    0 AMP 0 C  .01200 R   .04200 X  .00000 G   .00450 B      .0 MI                0 T     0 B     0IN 
+   T      0 bus-9    100.0   0    0 MVA 0 C  .00000 R   .20800 X  .00000 G   .00000 B  97.80 100.00     0 T     0 L     0 B     0IN 
+B      bus-7    100.0  1    22.8PL   10.9QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-5    100.0   0    0 AMP 0 C  .04600 R   .11600 X  .00000 G   .01020 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-6    100.0   0    0 AMP 0 C  .02670 R   .08200 X  .00000 G   .00850 B      .0 MI                0 T     0 B     0IN 
+BQ     bus-8    100.0  1    30.0PL   30.0QL    .0PS    .0QS    .0PM     .0PG   40.0QH  -10.0QL 1.010VH  .000VL                      
+   L      0 bus-28   100.0   0    0 AMP 0 C  .06360 R   .20000 X  .00000 G   .02140 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-6    100.0   0    0 AMP 0 C  .01200 R   .04200 X  .00000 G   .00450 B      .0 MI                0 T     0 B     0IN 
+B      bus-9    100.0  1      .0PL     .0QL    .0PS    .0QS    .0PM     .0PG     .0QH     .0QL  .000VH  .000VL                      
+   L      0 bus-10   100.0   0    0 AMP 0 C  .00000 R   .11000 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   L      0 bus-11   100.0   0    0 AMP 0 C  .00000 R   .20800 X  .00000 G   .00000 B      .0 MI                0 T     0 B     0IN 
+   T      0 bus-6    100.0   0    0 MVA 0 C  .00000 R   .20800 X  .00000 G   .00000 B 100.00  97.80     0 T     0 L     0 B     0IN 
+
+
+PWRFLO case: EMS        proj: TEST                 * * * PRE-SOLUTION PROCESSING * * *                         Date: 04/02/ 7 
+
+* * REORDERING * *                                                                                                                  
+ NUMBER OF BRANCH ITEMS:   82 (MAXIMUM: 15293)                                                                                      
+
+
+PWRFLO case: EMS        proj: TEST                * * * SOLUTION OPTIONS * * *                                 Date: 04/02/ 7 
+
+
+
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                           Solution parameter summary                                                             *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               Iterations               (  2 )   Decoupled     ( 0 )   Modified Newton     ( 30 )   Newton                        *
+*               _________                                                                                                          *
+*                                                                                                                                  *
+*               Tolerances               (  .0050 )   Bus     (  .0050 )   Area interchange                                        *
+*               ----------               (  .0050 )   TX      (  .0050 )   Q (reactive)                                            *
+*                                                                                                                                  *
+*                                        (  .1000 )   Q residual  ( 45.001 )   Phase shift                                         *
+*                                        ( 1.0000 )   Del_angle   (  .1500 )   Del_volt                                            *
+*                                                                                                                                  *
+*               Miscellaneous controls   (X) Flat start                                                                            *
+*                                        ( ) Starting tap ratio (  .500)                                                           *
+*               ------------- --------   Type BX bus - (X) BPA  option # 1                                                         *
+*                                                      ( ) BPA  option # 2 (V_max)                                                 *
+*                                                      ( ) WSCC option                                                             *
+*                                                                                                                                  *
+*               LTC control              (X)   Type R                                                                              *
+*               --- -------              (X)   Type R (d-c commutating LTC's)                                                      *
+*                                        (X)   Types RN and RQ (LTC control of reactive flow)                                      *
+*                                        (X)   Types RM and RP (LTC phase shifter control of active flow)                          *
+*                                                                                                                                  *
+*               AI control               (X)   OFF                                                                                 *
+*               -- -------               ( )   Control (default)                                                                   *
+*                                        ( )   Monitor                                                                             *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*               Debugs                   ( )   Bus         ( )   AI                                                                *
+*               ------                   ( )   TX          ( )   D-c model                                                         *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+
+
+PWRFLO case: EMS        proj: TEST                 * * * DIAGNOSTICS * * *                                     Date: 04/02/ 7 
+
+
+
+
+
+
+PWRFLO case: EMS        proj: TEST                * * * SOLUTION ITERATION SUMMARY * * *                       Date: 04/02/ 7 
+
+
+
+
+              30 BUSES                                                 41 BRANCHES                                                  
+               5   -- WITH ADJUSTABLE TYPES                             0   -- LTC TRANSFORMERS                                     
+               0   -- CONTROLLING AREA INTERCHANGE                      0   -- D C SYSTEMS                                          
+               0   -- PERCENTAGE VAR CONTROLLED                         0   -- IDEAL PHASE SHIFTERS                                 
+               0   -- WITH SWITCHABLE REACTANCE                                                                                     
+               0   -- AGC UNITS                                                                                                     
+               1   -- SLACK BUSES                                                                                                   
+  ITERATION  --------------------ABSOLUTE ERROR SUMMATION--------------------  -------UNSOLVED--------  -ADJUSTMENTS-  JACOBIAN     
+                  P            Q           XFMRS     AREA EXPORT  BUS VOLTAGE         AUTO        D C    SLN     BUS    MATRIX      
+        NO    (P.U. MW)    (P.U.MVAR)    (P.U.MVA)    (P.U. MW)    (P.U.KV)    BUSES XFRMS AREAS LINES  TRUNC   TYPE   STORAGE      
+        --   -----------  ------------  -----------  -----------  -----------  ----- ----- ----- -----  -----   ----   -------      
+                                                                                                                                    
+ INITIAL 1       2.69924        .00000       .00000       .00000                  23     0     0           0               238      
+ INITIAL 2        .00000       4.46808       .00000       .00000                  24     0     0           0               197      
+         1       1.67882        .05124       .00000       .00000       .00000     26     0     0     0             0       291      
+         2        .00744        .00485       .00000       .00000       .00000      0     0     0     0             0       291      
+         3        .00001        .07136       .00000       .00000       .00000      1     0     0     0             1       291      
+         4        .00004        .00016       .00000       .00000       .00000      0     0     0     0             0       291      
+         5        .00001        .00001       .00000       .00000       .00000      0     0     0     0             0       291      
+ SUCCESSFUL SOLUTION REACHED.                                                                                                       
+ ENTER DUMMY "OPTSLN5"                                                                                                              
+
+
+PWRFLO case: EMS        proj: TEST                 * * * * DETAILED OUTPUT LISTING * * * *                     Date: 04/02/ 7 
+
+A COMPLETE OUTPUT LISTING OF ALL BUSSES WILL BE GIVEN                                                                               
+bus-1     100.0  106.0KV/   .0 ZONE  1   261.0PGE    -16.1QCOND     .0PLOAD      .0QLOAD               1.060PU KV      BUS TYPE S   
+       bus-2     100.0               1   177.9PIN    -21.8QIN    5.467PLOSS    10.5QLOSS                  3.0QC                     
+       bus-3     100.0               1    83.2         5.7       2.808          7.1                       2.3                       
+                                         261.0PNET   -16.1QNET                                          .0 SLACK ADJ                
+bus-10    100.0  104.5KV/-16.0 ZONE  1                             5.8PLOAD     2.0QLOAD               1.045PU KV      BUS TYPE     
+       bus-17    100.0               1     5.4PIN      4.4QIN     .014PLOSS      .0QLOSS                   .0QC                     
+       bus-20    100.0               1     9.1         3.7        .082           .2                        .0                       
+       bus-21    100.0               1    15.8        10.0        .111           .2                        .0                       
+       bus-22    100.0               1     7.6         4.6        .053           .1                        .0                       
+       bus-6     100.0               1   -15.9         1.1        .000          1.3                  100.0/ 96.9                    
+       bus-9     100.0               1   -27.8        -5.1        .000           .8                        .0                       
+                                                      20.8QUSED   20.8QCAP SCHEDULED                                                
+                                          -5.8PNET    18.8QNET                                                                      
+bus-11    100.0  108.2KV/-14.4 ZONE  1                16.2QCOND     .0PLOAD      .0QLOAD               1.082PU KV      BUS TYPE Q   
+       bus-9     100.0               1      .0PIN     16.2QIN     .000PLOSS      .5QLOSS                   .0QC                     
+                                            .0PNET    16.2QNET                                                                      
+bus-12    100.0  105.7KV/-15.3 ZONE  1                            11.2PLOAD     7.5QLOAD               1.057PU KV      BUS TYPE     
+       bus-13    100.0               1      .0PIN    -10.5QIN     .000PLOSS      .1QLOSS                   .0QC                     
+       bus-14    100.0               1     7.8         2.4        .074           .2                        .0                       
+       bus-15    100.0               1    17.8         6.8        .216           .4                        .0                       
+       bus-16    100.0               1     7.2         3.4        .053           .1                        .0                       
+       bus-4     100.0               1   -44.1        -9.5        .000          4.7                  100.0/ 93.2                    
+                                         -11.2PNET    -7.5QNET                                                                      
+bus-13    100.0  107.1KV/-15.3 ZONE  1                10.7QCOND     .0PLOAD      .0QLOAD               1.071PU KV      BUS TYPE Q   
+       bus-12    100.0               1      .0PIN     10.7QIN     .000PLOSS      .1QLOSS                   .0QC                     
+                                            .0PNET    10.7QNET                                                                      
+bus-14    100.0  104.2KV/-16.2 ZONE  1                             6.2PLOAD     1.6QLOAD               1.042PU KV      BUS TYPE     
+       bus-12    100.0               1    -7.8PIN     -2.3QIN     .074PLOSS      .2QLOSS                   .0QC                     
+       bus-15    100.0               1     1.6          .7        .006           .0                        .0                       
+                                          -6.2PNET    -1.6QNET                                                                      
+bus-15    100.0  103.8KV/-16.3 ZONE  1                             8.2PLOAD     2.5QLOAD               1.038PU KV      BUS TYPE     
+       bus-12    100.0               1   -17.6PIN     -6.4QIN     .216PLOSS      .4QLOSS                   .0QC                     
+       bus-14    100.0               1    -1.6         -.6        .006           .0                        .0                       
+       bus-18    100.0               1     6.0         1.6        .038           .1                        .0                       
+       bus-23    100.0               1     5.0         2.9        .031           .1                        .0                       
+                                          -8.2PNET    -2.5QNET                                                                      
+bus-16    100.0  104.4KV/-15.9 ZONE  1                             3.5PLOAD     1.8QLOAD               1.044PU KV      BUS TYPE     
+       bus-12    100.0               1    -7.1PIN     -3.3QIN     .053PLOSS      .1QLOSS                   .0QC                     
+       bus-17    100.0               1     3.6         1.5        .007           .0                        .0                       
+                                          -3.5PNET    -1.8QNET                                                                      
+bus-17    100.0  104.0KV/-16.2 ZONE  1                             9.0PLOAD     5.8QLOAD               1.040PU KV      BUS TYPE     
+       bus-10    100.0               1    -5.4PIN     -4.4QIN     .014PLOSS      .0QLOSS                   .0QC                     
+       bus-16    100.0               1    -3.6        -1.4        .007           .0                        .0                       
+                                          -9.0PNET    -5.8QNET                                                                      
+bus-18    100.0  102.8KV/-16.9 ZONE  1                             3.2PLOAD      .9QLOAD               1.028PU KV      BUS TYPE     
+       bus-15    100.0               1    -5.9PIN     -1.5QIN     .038PLOSS      .1QLOSS                   .0QC                     
+       bus-19    100.0               1     2.7          .6        .005           .0                        .0                       
+                                          -3.2PNET     -.9QNET                                                                      
+bus-19    100.0  102.6KV/-17.0 ZONE  1                             9.5PLOAD     3.4QLOAD               1.026PU KV      BUS TYPE     
+       bus-18    100.0               1    -2.7PIN      -.6QIN     .005PLOSS      .0QLOSS                   .0QC                     
+       bus-20    100.0               1    -6.8        -2.8        .017           .0                        .0                       
+                                          -9.5PNET    -3.4QNET                                                                      
+bus-2     100.0  104.3KV/ -5.5 ZONE  1    40.0PGE     50.0QCOND   21.7PLOAD    12.7QLOAD               1.043PU KV      BUS TYPE Q   
+       bus-1     100.0               1  -172.4PIN     32.3QIN    5.467PLOSS    10.5QLOSS                  2.9QC                     
+       bus-4     100.0               1    45.7         3.3       1.110          -.5                       2.0                       
+       bus-5     100.0               1    83.1         1.6       3.003          8.2                       2.3                       
+       bus-6     100.0               1    61.9          .0       2.050          2.3                       2.0                       
+                                          18.3PNET    37.3QNET                                                         QMAX         
+bus-20    100.0  103.0KV/-16.9 ZONE  1                             2.2PLOAD      .7QLOAD               1.030PU KV      BUS TYPE     
+       bus-10    100.0               1    -9.0PIN     -3.5QIN     .082PLOSS      .2QLOSS                   .0QC                     
+       bus-19    100.0               1     6.8         2.8        .017           .0                        .0                       
+                                          -2.2PNET     -.7QNET                                                                      
+bus-21    100.0  103.3KV/-16.5 ZONE  1                            17.5PLOAD    11.2QLOAD               1.033PU KV      BUS TYPE     
+       bus-10    100.0               1   -15.7PIN     -9.8QIN     .111PLOSS      .2QLOSS                   .0QC                     
+       bus-22    100.0               1    -1.8        -1.4        .001           .0                        .0                       
+                                         -17.5PNET   -11.2QNET                                                                      
+bus-22    100.0  103.3KV/-16.5 ZONE  1                              .0PLOAD      .0QLOAD               1.033PU KV      BUS TYPE     
+       bus-10    100.0               1    -7.6PIN     -4.5QIN     .053PLOSS      .1QLOSS                   .0QC                     
+       bus-21    100.0               1     1.8         1.4        .001           .0                        .0                       
+       bus-24    100.0               1     5.8         3.1        .046           .1                        .0                       
+                                            .0PNET      .0QNET                                                                      
+bus-23    100.0  102.7KV/-16.7 ZONE  1                             3.2PLOAD     1.6QLOAD               1.027PU KV      BUS TYPE     
+       bus-15    100.0               1    -5.0PIN     -2.9QIN     .031PLOSS      .1QLOSS                   .0QC                     
+       bus-24    100.0               1     1.8         1.3        .006           .0                        .0                       
+                                          -3.2PNET    -1.6QNET                                                                      
+bus-24    100.0  102.2KV/-16.8 ZONE  1                             8.7PLOAD     6.7QLOAD               1.022PU KV      BUS TYPE     
+       bus-22    100.0               1    -5.7PIN     -3.0QIN     .046PLOSS      .1QLOSS                   .0QC                     
+       bus-23    100.0               1    -1.8        -1.3        .006           .0                        .0                       
+       bus-25    100.0               1    -1.2         2.0        .010           .0                        .0                       
+                                                       4.5QUSED    4.5QCAP SCHEDULED                                                
+                                          -8.7PNET    -2.2QNET                                                                      
+bus-25    100.0  101.7KV/-16.4 ZONE  1                              .0PLOAD      .0QLOAD               1.017PU KV      BUS TYPE     
+       bus-24    100.0               1     1.2PIN     -2.0QIN     .010PLOSS      .0QLOSS                   .0QC                     
+       bus-26    100.0               1     3.5         2.4        .045           .1                        .0                       
+       bus-27    100.0               1    -4.8         -.4        .024           .0                        .0                       
+                                            .0PNET      .0QNET                                                                      
+bus-26    100.0  100.0KV/-16.8 ZONE  1                             3.5PLOAD     2.3QLOAD               1.000PU KV      BUS TYPE     
+       bus-25    100.0               1    -3.5PIN     -2.3QIN     .045PLOSS      .1QLOSS                   .0QC                     
+                                          -3.5PNET    -2.3QNET                                                                      
+bus-27    100.0  102.3KV/-15.9 ZONE  1                              .0PLOAD      .0QLOAD               1.023PU KV      BUS TYPE     
+       bus-25    100.0               1     4.8PIN       .4QIN     .024PLOSS      .0QLOSS                   .0QC                     
+       bus-28    100.0               1   -18.1        -3.7        .000          1.3                  100.0/ 96.8                    
+       bus-29    100.0               1     6.2         1.7        .086           .2                        .0                       
+       bus-30    100.0               1     7.1         1.7        .162           .3                        .0                       
+                                            .0PNET      .0QNET                                                                      
+bus-28    100.0  100.7KV/-12.0 ZONE  1                              .0PLOAD      .0QLOAD               1.007PU KV      BUS TYPE     
+       bus-27    100.0               1    18.1PIN      5.0QIN     .000PLOSS     1.3QLOSS              96.8/100.0                    
+       bus-6     100.0               1   -18.6        -1.0        .058         -1.1                        .7                       
+       bus-8     100.0               1      .5        -4.0        .002         -4.3                       2.2                       
+                                            .0PNET      .0QNET                                                                      
+bus-29    100.0  100.3KV/-17.1 ZONE  1                             2.4PLOAD      .9QLOAD               1.003PU KV      BUS TYPE     
+       bus-27    100.0               1    -6.1PIN     -1.5QIN     .086PLOSS      .2QLOSS                   .0QC                     
+       bus-30    100.0               1     3.7          .6        .034           .1                        .0                       
+                                          -2.4PNET     -.9QNET                                                                      
+bus-3     100.0  102.0KV/ -8.0 ZONE  1                             2.4PLOAD     1.2QLOAD               1.020PU KV      BUS TYPE     
+       bus-1     100.0               1   -80.4PIN      1.4QIN    2.808PLOSS     7.1QLOSS                  2.1QC                     
+       bus-4     100.0               1    78.0        -2.6        .771          1.3                        .4                       
+                                          -2.4PNET    -1.2QNET                                                                      
+bus-30    100.0   99.2KV/-18.0 ZONE  1                            10.6PLOAD     1.9QLOAD                .992PU KV      BUS TYPE     
+       bus-27    100.0               1    -6.9PIN     -1.4QIN     .162PLOSS      .3QLOSS                   .0QC                     
+       bus-29    100.0               1    -3.7         -.5        .034           .1                        .0                       
+                                         -10.6PNET    -1.9QNET                                                                      
+bus-4     100.0  101.2KV/ -9.6 ZONE  1                             7.6PLOAD     1.6QLOAD               1.012PU KV      BUS TYPE     
+       bus-12    100.0               1    44.1PIN     14.2QIN     .000PLOSS     4.7QLOSS              93.2/100.0                    
+       bus-2     100.0               1   -44.6        -3.8       1.110          -.5                       1.9                       
+       bus-3     100.0               1   -77.2         3.9        .771          1.3                        .4                       
+       bus-6     100.0               1    70.1       -15.9        .599          1.2                        .5                       
+                                          -7.6PNET    -1.6QNET                                                                      
+bus-5     100.0  101.0KV/-14.4 ZONE  1                37.1QCOND   94.2PLOAD    19.0QLOAD               1.010PU KV      BUS TYPE Q   
+       bus-2     100.0               1   -80.1PIN      6.6QIN    3.003PLOSS     8.2QLOSS                  2.1QC                     
+       bus-7     100.0               1   -14.1        11.5        .160         -1.7                       1.0                       
+                                         -94.2PNET    18.1QNET                                                                      
+bus-6     100.0  101.0KV/-11.4 ZONE  1                              .0PLOAD      .0QLOAD               1.010PU KV      BUS TYPE     
+       bus-10    100.0               1    15.9PIN       .2QIN     .000PLOSS     1.3QLOSS              96.9/100.0                    
+       bus-2     100.0               1   -59.9         2.2       2.050          2.3                       1.9                       
+       bus-28    100.0               1    18.7         -.1        .058         -1.1                        .7                       
+       bus-4     100.0               1   -69.5        17.1        .599          1.2                        .5                       
+       bus-7     100.0               1    37.4        -2.8        .368          -.6                        .9                       
+       bus-8     100.0               1    29.6        -8.4        .110          -.5                        .5                       
+       bus-9     100.0               1    27.8        -8.2        .000          1.6                   97.8/100.0                    
+                                            .0PNET      .0QNET                                                                      
+bus-7     100.0  100.2KV/-13.1 ZONE  1                            22.8PLOAD    10.9QLOAD               1.002PU KV      BUS TYPE     
+       bus-5     100.0               1    14.3PIN    -13.1QIN     .160PLOSS    -1.7QLOSS                  1.0QC                     
+       bus-6     100.0               1   -37.1         2.2        .368          -.6                        .9                       
+                                         -22.8PNET   -10.9QNET                                                                      
+bus-8     100.0  101.0KV/-12.1 ZONE  1                37.5QCOND   30.0PLOAD    30.0QLOAD               1.010PU KV      BUS TYPE Q   
+       bus-28    100.0               1     -.5PIN      -.4QIN     .002PLOSS    -4.3QLOSS                  2.2QC                     
+       bus-6     100.0               1   -29.5         7.8        .110          -.5                        .5                       
+                                         -30.0PNET     7.5QNET                                                                      
+bus-9     100.0  105.1KV/-14.4 ZONE  1                              .0PLOAD      .0QLOAD               1.051PU KV      BUS TYPE     
+       bus-10    100.0               1    27.8PIN      5.9QIN     .000PLOSS      .8QLOSS                   .0QC                     
+       bus-11    100.0               1      .0       -15.7        .000           .5                        .0                       
+       bus-6     100.0               1   -27.8         9.8        .000          1.6                  100.0/ 97.8                    
+                                            .0PNET      .0QNET                                                                      
+ OUTPUT CHECK  ---  LINE EXPORT SUMS     LINE IMPORT SUMS         LINE LOSSES                                                       
+                      17.6     34.4        17.6     34.4        17.6     34.4                                                       
+                                        SUMMARY OF SYSTEM TOTALS             (MW)    (MVAR)                                         
+                                        SYSTEM INJECTION:                                                                           
+                                           GENERATION                       301.0     135.3                                         
+                                           LOAD                            -283.4    -126.2                                         
+                                           BUS SHUNT ADMITTANCE                .0      25.2                                         
+                                           UNSCHEDULED SOURCES                 .0        .0                                         
+                                        SUBTOTAL (INJECTION)                 17.6      34.4                                         
+                                        SYSTEM LOSSES:                                                                              
+                                            EQUIVALENT SHUNT ADMITTANCE        .0        .0                                         
+                                            LINE AND TRANSFORMER LOSSES     -17.6     -34.4                                         
+                                             LINE INJECTION (QC)                       34.6                                         
+                                            DC CONVERTER LOSSES                .0        .0                                         
+                                        SUBTOTAL (LOSSES)                   -17.6     -34.4                                         
+                                        NET SYSTEM EXPORT:                     .0        .0                                         
+
+
+PWRFLO case: EMS        proj: TEST                 * * * * OUTPUT ANALYSIS LISTING * * * *                     Date: 04/02/ 7 
+
+************************************************************************************************************************************
+*                                                                                                                                  *
+*                                                                                                                                  *
+*       LEGEND:    F = FULL SUMMARY                                                                                                *
+*                  Z = RESTRICTED BY ZONES                                                                                         *
+*                  O = RESTRICTED BY OWNERS                                                                                        *
+*                  B = RESTRICTED BY BOTH                                                                                          *
+*              BLANK = NO SUMMARY REQUESTED                                                                                        *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                        PAPER    FICHE         SUMMARY NAME                                                                       *
+*                        -----    -----         -------  ----                                                                      *
+*                          (F)      ( )         Buses With Unscheduled Reactive                                                    *
+*                                                                                                                                  *
+*                          (F)      ( )         Total System Generations and Loads by Owner                                        *
+*                          (F)      ( )         System Generations,Loads,Losses and Shunts by Zones                                *
+*                          (F)      ( )         Undervoltage-Overvoltage Buses                                                     *
+*                          (F)      ( )         Transmission Lines Loaded Above  80.0% of Ratings                                  *
+*                          (F)      ( )         Transformers Loaded Above  80.0% of Ratings                                        *
+*                          (F)      ( )         Transformers Excited Above 5.0% over Tap                                            
+*                          (F)      ( )         Transmission System Losses                                                         *
+*                          (F)      ( )         BPA Industrial Loads                                                               *
+*                          (F)      ( )         DC System                                                                          *
+*                          (F)      ( )         Shunt Reactive Summary                                                             *
+*                          (F)      ( )         Summary of LTC Transformers                                                        *
+*                          (F)      ( )         Summary of LTC Reactive Utilization                                                *
+*                          (F)      ( )         Summary of Phase-shifters                                                          *
+*                          (F)      ( )         Summary of %Var-controlled buses                                                   *
+*                          (F)      ( )         Summary of AGC Control                                                             *
+*                          (F)      ( )         Summary of Type BX buses                                                           *
+*                          (F)      ( )         Summary of Adjustable Var compensation                                             *
+*                          (F)      ( )         Transmission Lines Containing Series Compensation                                  *
+*                                                                                                                                  *
+*                          (F)      ( )         Bus Quantities                                                                     *
+*                                                                                                                                  *
+*                          (F)      ( )         Spinning Reserves                                                                  *
+*                          (F)      ( )         Transmission Line Efficiency Analysis                                              *
+*                                               Lines Loaded Above  90.0 % of Nominal Ratings                                      *
+*                          (F)      ( )         Transformer Efficiency Analysis                                                    *
+*                                               Total Losses Above   .04 % of Nominal Ratings                                      *
+*                          (F)      ( )         Transformer Efficiency Analysis                                                    *
+*                                               Core Losses Above   .02 % of Nominal Ratings                                       *
+*                                                                                                                                  *
+*                                                                                                                                  *
+*                                                                                                                                  *
+************************************************************************************************************************************
+
+
+                                                  Summary of Unscheduled Reactive                                                   
+                                        OWN  ZN  BUS        BASE   TYPE   UNSCHEDULED  KV                                           
+                                                                             MVAR                                                   
+
+                   UNSCHEDULED CAPACITORS        .0                                                                                 
+                   UNSCHEDULED REACTORS          .0                                                                                 
+                   UNSCHEDULED TOTAL             .0                                                                                 
+
+
+                                        System Generations and Loads Summary by Owner                                               
+   Ownership                          /-- Generation --//--------------------------  Composite Loads --------------------------/    
+                                                           Total composite        Constant P        Constant I        Constant Z    
+                                             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR    
+                                                                                                                                    
+
+    NON-CLASSIFIED                        301.0    135.3    283.4    126.2    283.4    126.2       .0       .0       .0       .0    
+                                          _____    _____    _____    _____    _____    _____    _____    _____    _____    _____    
+    SYSTEM TOTAL                          301.0    135.3    283.4    126.2    283.4    126.2       .0       .0       .0       .0    
+
+
+                   System Generations, Loads, Losses and Bus Shunt Summary by Zones                                                 
+Zone  /-- Generation --//--------------------------  Composite Loads --------------------------//---- Losses ----//-- Bus Shunt ---/
+                           Total composite        Constant P        Constant I        Constant Z                                    
+             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR
+                                                                                                                                    
+
+ 1        301.0    135.3    283.4    126.2    283.4    126.2       .0       .0       .0       .0     17.6     34.4       .0     25.2
+          -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----    -----
+Totals    301.0    135.3    283.4    126.2    283.4    126.2       .0       .0       .0       .0     17.6     34.4       .0     25.2
+
+
+                                        Summary of Undervoltage - Overvoltage Buses (Sorted by ownerships)                          
+               Own  Zone  Bus name  base    Type      Voltage        Voltage range         Violation                                
+                                                     KV       PU       minimum    maximum          PU                               
+                                                                         PU         PU                                              
+                                                                                                                                    
+
+                     1    bus-1     100.0     S    106.00   1.0600       .9500    1.0520         .0080                              
+                     1    bus-11    100.0     Q    108.20   1.0820       .9500    1.0520         .0300                              
+                     1    bus-12    100.0          105.70   1.0570       .9500    1.0520         .0050                              
+                     1    bus-13    100.0     Q    107.10   1.0710       .9500    1.0520         .0190                              
+
+
+                             Transmission Lines Loaded Above  80.0 % of Ratings   (Sorted by ownerships)                            
+Own Zn Bus1      Base Zn Bus2      Base  ID SC   Case   Thermal Bottle- Nominal     Case   Thermal Bottle- Nominal  Power    Angle  
+                                               current  rating   neck   rating             rating   neck   rating   factor  degrees 
+                                                                rating                             rating                           
+                                                  amps  amps      amps    amps       MVA     MVA    MVA     MVA                     
+
+           NO OVERLOADED LINES DETECTED                                                                                             
+
+
+                                         Transformers Loaded Above  80.0% of Ratings  (Sorted by ownerships)                        
+Own Zn Bus1      Base Zn Bus2      Base  ID SC   Case       Thermal   %     Loss-of         Bottlenk  %     Nominal    %     Power  
+                                                 Loading    Rating          Life            Rating          Rating           factor 
+                                                                            Rating                                                  
+                                                 MVA        MVA             MVA             MVA             MVA                     
+
+          NO OVERLOADED TRANSFORMERS DETECTED                                                                                       
+
+
+                                            Transformers Excited Above 5.0% over Tap (Sorted by Owner)                              
+    Own  Zn  Bus.1     Base  Bus.2    Base  Ckt Sect   Tap.1 / Tap.2      Bus.1   Ratio     <  Excitation >   Nomin    MVA          
+                                                                          Volts   Bus.1     <  Violation  >   MVA      Flow         
+                                                                          (kV)    /Tap.1      p.u.     kV     Rating                
+                                                                                                                                    
+
+          1  bus-12    100.0 bus-4     100.0          100.00F/ 93.20F    105.70   1.0570     .0070     .703       .0    46.3        
+          1  bus-4     100.0 bus-12    100.0           93.20F/100.00F    101.16   1.0854     .0354    3.300       .0    46.3        
+          1  bus-9     100.0 bus-6     100.0          100.00F/ 97.80F    105.09   1.0509     .0009     .085       .0    29.5        
+
+
+                                            Transmission System Loss Summary by Owner                                               
+   Ownership                Line loss       Transformer loss      DC converter        Total loss           Miles     MW-Miles       
+                           MW      MVAR       MW      MVAR          MW      MVAR       MW      MVAR                                 
+                                                                                                                                    
+
+   NON-CLASSIFIED                                                                                                                   
+       100.0 KV           17.6     25.5        .0      8.9        .0       .0      17.6     34.4              .0              .0    
+                         _____    _____     _____    _____     _____    _____     _____    _____           _____           _____    
+   SYSTEM TOTAL           17.6     25.5        .0      8.9        .0       .0      17.6     34.4              .0              .0    
+
+
+                                                  BPA Industrial Loads                                                              
+Bus            Zone   Load Type       /----------------------- BPA Load Classification ----------------------/                      
+                                      /----- Firm -----//- Interruptible //-- Potential ---//-- Type Total --/                      
+                                             MW     MVAR       MW     MVAR       MW     MVAR       MW     MVAR                      
+
+     Case contains no Industrial-type loads                                                                                         
+
+
+                                              Shunt Reactive Summary                                                                
+              ------------- CAPACITORS (MVAR) -----------------         ---------------- REACTORS (MVAR) ---------------            
+ AREA/ZONE    EXISTING         EXISTING    RESERVE  UNSCHEDULED         EXISTING        EXISTING     RESERVE  UNSCHEDULED           
+              APPROVED         APPROVED    UNUSED                   APPROVED        APPROVED     UNUSED                             
+              AVAILABLE          USED                                   AVAILABLE         USED                                      
+
+    1              25.2        25.2          .0          .0                  .0           .0           .0           .0              
+                  _____       _____       _____       _____               _____        _____        _____        _____              
+ TOTAL             25.2        25.2          .0          .0                  .0           .0           .0           .0              
+
+
+                                            TRANSMISSION LINES CONTAINING COMPENSATION                                              
+                                 OWN  ZONE  BUS1      BASE1  ZONE  BUS2      BASE2   ID  PERCENT                                    
+                                                                                                                                    
+
+        CASE CONTAINS NO TRANSMISSION LINES WITH SERIES COMPENSATION                                                                
+
+
+                                                  Summary of Bus Quantities                                                         
+Bus name       Voltage  Bank taps     Generation        Load           Statics and reactors     Bus  Own  Zone   Gen  Voltage/angle 
+                                     MW      MVAR    MW      MVAR    Used     Exist    Unsched  Type             PF       PU/DEG    
+                                                                     MVAR    Apprvd     MVAR                                        
+                                                                              MVAR                                                  
+
+bus-1    100.0  106.0               261.0   -16.1      .0      .0       .0       .0       .0    S          1 -1.00    1.060/    .0  
+bus-10   100.0  104.5                  .0      .0     5.8     2.0     20.8     20.8       .0               1          1.045/ -16.0  
+bus-11   100.0  108.2                COND    16.2      .0      .0       .0       .0       .0    Q          1          1.082/ -14.4  
+bus-12   100.0  105.7                  .0      .0    11.2     7.5       .0       .0       .0               1          1.057/ -15.3  
+bus-13   100.0  107.1                COND    10.7      .0      .0       .0       .0       .0    Q          1          1.071/ -15.3  
+bus-14   100.0  104.2                  .0      .0     6.2     1.6       .0       .0       .0               1          1.042/ -16.2  
+bus-15   100.0  103.8                  .0      .0     8.2     2.5       .0       .0       .0               1          1.038/ -16.3  
+bus-16   100.0  104.4                  .0      .0     3.5     1.8       .0       .0       .0               1          1.044/ -15.9  
+bus-17   100.0  104.0                  .0      .0     9.0     5.8       .0       .0       .0               1          1.040/ -16.2  
+bus-18   100.0  102.8                  .0      .0     3.2      .9       .0       .0       .0               1          1.028/ -16.9  
+bus-19   100.0  102.6                  .0      .0     9.5     3.4       .0       .0       .0               1          1.026/ -17.0  
+bus-2    100.0  104.3                40.0    50.0    21.7    12.7       .0       .0       .0    Q          1   .62    1.043/  -5.5  
+bus-20   100.0  103.0                  .0      .0     2.2      .7       .0       .0       .0               1          1.030/ -16.9  
+bus-21   100.0  103.3                  .0      .0    17.5    11.2       .0       .0       .0               1          1.033/ -16.5  
+bus-22   100.0  103.3                  .0      .0      .0      .0       .0       .0       .0               1          1.033/ -16.5  
+bus-23   100.0  102.7                  .0      .0     3.2     1.6       .0       .0       .0               1          1.027/ -16.7  
+bus-24   100.0  102.2                  .0      .0     8.7     6.7      4.5      4.5       .0               1          1.022/ -16.8  
+bus-25   100.0  101.7                  .0      .0      .0      .0       .0       .0       .0               1          1.017/ -16.4  
+bus-26   100.0  100.0                  .0      .0     3.5     2.3       .0       .0       .0               1          1.000/ -16.8  
+bus-27   100.0  102.3                  .0      .0      .0      .0       .0       .0       .0               1          1.023/ -15.9  
+bus-28   100.0  100.7                  .0      .0      .0      .0       .0       .0       .0               1          1.007/ -12.0  
+bus-29   100.0  100.3                  .0      .0     2.4      .9       .0       .0       .0               1          1.003/ -17.1  
+bus-3    100.0  102.0                  .0      .0     2.4     1.2       .0       .0       .0               1          1.020/  -8.0  
+bus-30   100.0   99.2                  .0      .0    10.6     1.9       .0       .0       .0               1           .992/ -18.0  
+bus-4    100.0  101.2                  .0      .0     7.6     1.6       .0       .0       .0               1          1.012/  -9.6  
+bus-5    100.0  101.0                COND    37.1    94.2    19.0       .0       .0       .0    Q          1          1.010/ -14.4  
+bus-6    100.0  101.0                  .0      .0      .0      .0       .0       .0       .0               1          1.010/ -11.4  
+bus-7    100.0  100.2                  .0      .0    22.8    10.9       .0       .0       .0               1          1.002/ -13.1  
+bus-8    100.0  101.0                COND    37.5    30.0    30.0       .0       .0       .0    Q          1          1.010/ -12.1  
+bus-9    100.0  105.1                  .0      .0      .0      .0       .0       .0       .0               1          1.051/ -14.4  
+                                   ______   _____   _____   _____    _____    _____    _____                                        
+          TOTAL SYSTEM              301.0   135.3   283.4   126.2     25.2     25.2       .0                                        
+          TOTAL STATICS                                               25.2     25.2       .0                                        
+          TOTAL REACTORS                                                .0       .0       .0                                        
+          TOTAL GENERATORS                  151.5                                                                                   
+          TOTAL CONDENSERS                  -16.1                                                                                   
+
+
+                                              Spinning Reserve Summary                                                              
+                ------- ACTIVE  POWER (1) -------     ------------------------ REACTIVE  POWER (2) -----------------------------    
+ AREA/ZONE      SUM PMAX    SUM PGEN      RESERVE     SUM QMAX    SUM QMIN  SUM Q BOOST  SUM Q BUCK   BOOST RESERVE  BUCK RESERVE   
+                   (MW)        (MW)        (MW)       AVAILABLE   AVALIABLE     USED        USED          (MVAR)        (MVAR)      
+                                                       (MVAR)       (MVAR)     (MVAR)      (MVAR)                                   
+
+    1              301.0       301.0          .0            .0          .0          .0          .0            .0            .0      
+                  ______      ______       _____        ______     _______      ______      ______        ______       _______      
+ TOTAL             301.0       301.0          .0            .0          .0          .0          .0            .0            .0      
+ Notes:                                                                                                                             
+       1. Active Spinning Reserve excludes all quantities pertaining to synchronous motors (i.e., pumped storage plants).           
+          All negative generation (synchronous motorload) is interpreted as load.                                                   
+          This exclusion is invoked by requiring PGEN and PMAX both be greater than zero.                                           
+       2. Reactive Spinning Reserve excludes all quantities pertaining to synchronous condensers.                                   
+          This exclusion is invoked by requiring both PGEN be greater than zero and the base be greater than 30 KV.                 
+
+
+                    Transmission Line Efficiency Analysis -- Lines Loaded Above  90.0 % of Nominal Ratings                          
+                                                                      |     Load    |              Losses             |  Loading    
+_________________________________________________________________________________________________________________________________   
+OWN  ZN  BUS1      BASE   ZN  BUS2      BASE   ID SC  LENGTH  COND.   | MVA    AMPS |      MW        MW/MILE    %  OF | % OF LN     
+                                                      MILES  NR AMPS  |             |                         LN FLOW |FLOW/100 MI  
+
+       NO LINE EFFICIENCY CANDIDATES DETECTED                                                                                       
+ END OF ANALYSIS LISTINGS                                                                                                           
+
+
+PWRFLO case: EMS        proj: TEST                **** CASE PROCESSING SUMMARY ****                            Date: 04/02/ 7 
+
+
+
+
+THERE WERE   0 TYPE "I" (INFORMATIONAL) ERRORS                                                                                      
+             1 TYPE "W" (WARNING) ERRORS                                                                                            
+             0 TYPE "E" ERROR                                                                                                       
+             0 TYPE "F" (FATAL) ERRORS                                                                                              
+       AND   0 TYPE "A" (ABORT) ERRORS                                                                                              
+  * * * ERROR MESSAGES ENCOUNTERED * * *                                                                                            
+*** WARNING    ILLEGAL DATA RECORD IGNORED.                                                                             *** WARNING 
+*** WARNING             (-999                                                                            )              *** WARNING 

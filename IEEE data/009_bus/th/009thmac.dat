@@ -1,0 +1,7 @@
+P.M.Anderson and A.A.fouad <Power System Control and Stability> pp.39
+ldtype.h
+*********************
+SYSFREQ  ...   60 
+MAC_CMXD   MBUS-1   100     23.64    0.0608      
+MAC_CMXD   MBUS-2   100      6.40    0.1198
+MAC_CMXD   MBUS-3   100      3.01    0.1813

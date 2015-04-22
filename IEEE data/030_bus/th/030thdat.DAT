@@ -1,0 +1,80 @@
+IEEE-bus30 Test System 15/11//98 ok
+lftype.h
+*
+THLOAD  LD1  bus-2          0.2170         0.1270
+THLOAD  LD2  bus-3          0.0240         0.0120
+THLOAD  LD3  bus-4          0.0760         0.0160
+THLOAD  LD4  bus-5          0.9420         0.1900
+THLOAD  LD5  bus-7          0.2280         0.1090
+THLOAD  LD6  bus-8          0.3000         0.3000
+THLOAD  LD7  bus-10          0.0580         0.0200
+THLOAD  LD8  bus-12          0.1120         0.0750
+THLOAD  LD9  bus-14          0.0620         0.0160
+THLOAD  LD10  bus-15          0.0820         0.0250
+THLOAD  LD11  bus-16          0.0350         0.0180
+THLOAD  LD12  bus-17          0.0900         0.0580
+THLOAD  LD13  bus-18          0.0320         0.0090
+THLOAD  LD14  bus-19          0.0950         0.0340
+THLOAD  LD15  bus-20          0.0220         0.0070
+THLOAD  LD16  bus-21          0.1750         0.1120
+THLOAD  LD17  bus-23          0.0320         0.0160
+THLOAD  LD18  bus-24          0.0870         0.0670
+THLOAD  LD19  bus-26          0.0350         0.0230
+THLOAD  LD20  bus-29          0.0240         0.0090
+THLOAD  LD21  bus-30          0.1060         0.0190
+THSHUNT sh_1  bus-10          0.0000        -0.1900
+THSHUNT sh_2  bus-24          0.0000        -0.0430
+GENER   GEN-1 bus-1  260.20000  -16.10000  1 
+THSLACK GEN-1 1.06 0  
+GENERCV GEN-2 bus-2         40.0000        50.0000  1.04500 1
+*GENER GEN-2 bus-2         40.0000        50.0000   1
+GENERCV GEN-3 bus-5          0.0000        37.0000  1.01000 1
+GENERCV GEN-4 bus-8          0.0000        37.3000  1.01000 1
+GENERCV GEN-5 bus-11          0.0000        16.2000  1.08200 1
+GENERCV GEN-6 bus-13          0.0000        10.6000  1.07100 1
+GENERDATA GEN-2 0. 0. 0. 0. 1. 99999. -99999.   50.00  -40.00 1.5 0 0 0. 99999 1 
+GENERDATA GEN-3 0. 0. 0. 0. 1. 99999. -99999.   40.00  -40.00 1.5 0 0 0. 99999 1 
+GENERDATA GEN-4 0. 0. 0. 0. 1. 99999. -99999.   40.00  -10.00 1.5 0 0 0. 99999 1 
+GENERDATA GEN-5 0. 0. 0. 0. 1. 99999. -99999.   24.00   -6.00 1.5 0 0 0. 99999 1 
+GENERDATA GEN-6 0. 0. 0. 0. 1. 99999. -99999.   24.00   -6.00 1.5 0 0 0. 99999 1 
+THLINE LN1     bus-2    bus-1        0.01920    0.05750   -0.02640
+THLINE LN2     bus-3    bus-1        0.04520    0.18520   -0.02040
+THLINE LN3     bus-4    bus-2        0.05700    0.17370   -0.01840
+THLINE LN4     bus-4    bus-3        0.01320    0.03790   -0.00420
+THLINE LN5     bus-5    bus-2        0.04720    0.19830   -0.02090
+THLINE LN6     bus-6    bus-2        0.05810    0.17630   -0.01870
+THLINE LN7     bus-6    bus-4        0.01190    0.04140   -0.00450
+THLINE LN8     bus-7    bus-5        0.04600    0.11600   -0.01020
+THLINE LN9     bus-7    bus-6        0.02670    0.08200   -0.00850
+THLINE LN10    bus-8    bus-6        0.01200    0.04200   -0.00450
+THTRFO TR11    bus-9    bus-6        0.00000    0.20800   97.80000
+THTRFO TR12    bus-10   bus-6        0.00000    0.55600   96.90000
+THLINE LN13    bus-11   bus-9        0.00000    0.20800    0.00000
+THLINE LN14    bus-10   bus-9        0.00000    0.11000    0.00000
+THTRFO TR15    bus-12   bus-4        0.00000    0.25600   93.20000
+THLINE LN16    bus-13   bus-12       0.00000    0.14000    0.00000
+THLINE LN17    bus-14   bus-12       0.12310    0.25590    0.00000
+THLINE LN18    bus-15   bus-12       0.06620    0.13040    0.00000
+THLINE LN19    bus-16   bus-12       0.09450    0.19870    0.00000
+THLINE LN20    bus-15   bus-14       0.22100    0.19970    0.00000
+THLINE LN21    bus-17   bus-16       0.05240    0.19230    0.00000
+THLINE LN22    bus-18   bus-15       0.10730    0.21850    0.00000
+THLINE LN23    bus-19   bus-18       0.06390    0.12920    0.00000
+THLINE LN24    bus-20   bus-19       0.03400    0.06800    0.00000
+THLINE LN25    bus-20   bus-10       0.09360    0.20900    0.00000
+THLINE LN26    bus-17   bus-10       0.03240    0.08450    0.00000
+THLINE LN27    bus-21   bus-10       0.03480    0.07490    0.00000
+THLINE LN28    bus-22   bus-10       0.07270    0.14990    0.00000
+THLINE LN29    bus-22   bus-21       0.01160    0.02360    0.00000
+THLINE LN30    bus-23   bus-15       0.10000    0.20200    0.00000
+THLINE LN31    bus-24   bus-22       0.11500    0.17900    0.00000
+THLINE LN32    bus-24   bus-23       0.13200    0.27000    0.00000
+THLINE LN33    bus-25   bus-24       0.18850    0.32920    0.00000
+THLINE LN34    bus-26   bus-25       0.25440    0.38000    0.00000
+THLINE LN35    bus-27   bus-25       0.10930    0.20870    0.00000
+THTRFO TR36    bus-27   bus-28       0.00000    0.39600   96.80000
+THLINE LN37    bus-29   bus-27       0.21980    0.41530    0.00000
+THLINE LN38    bus-30   bus-27       0.32020    0.60270    0.00000
+THLINE LN39    bus-30   bus-29       0.23990    0.45330    0.00000
+THLINE LN40    bus-28   bus-8        0.06360    0.20000   -0.02140
+THLINE LN41    bus-28   bus-6        0.01690    0.05990   -0.00650
