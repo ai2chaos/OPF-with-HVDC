@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "dataStruct.h"
+#include "PowerFlow.h"
 #define BUS "BUS DATA FOLLOWS"
 #define BRANCH "BRANCH DATA FOLLOWS"
 
@@ -11,6 +11,8 @@ int main (void)
 	char DataName[20];
 	//printf ("Please enter the Power Flow Data name:");
 	//scanf (" %s", DataName);
+	RawData_Type * RawData;
+	RawData = (RawData_Type *)malloc (sizeof(RawData_Type));
 	ImportData (DataName);
 	Branch_Type Branch[Nbranch];
 	Bus_Type Bus[Nbus];

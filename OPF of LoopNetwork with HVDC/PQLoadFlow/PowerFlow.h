@@ -1,10 +1,9 @@
 /************************************************************************/
 /*This file defines the struct of load flow data and contains the 		*/
-/*variablze declarations and NetWork Data                               */
+/*variablze declarations and                                            */
 /************************************************************************/
 
-#define _DATASTRUCT_H_
-
+/*定义潮流数据中需要的常数 */
 //#define _TestCase_
 #define _IEEE14_
 
@@ -25,6 +24,7 @@
 #define Npv 1
 #	endif
 
+/*定义数据结构*/
 typedef struct 	
 {
 	/*
@@ -62,14 +62,14 @@ typedef struct
 	Columns 113-119 Minimum voltage, MVAR or MW limit (F)
 	Columns 120-126 Maximum voltage, MVAR or MW limit (F)
 	*/
-	int i, j;	// i is headend node, j is end node
-	int LFarea, LossZone;	//LFarea is not zero
-	int Circuit, Type;
-	float R, X, B;	
-	int LineRate1, LineRate2, LineRate3;
-	int CtrlBusNum, CtrlBusSide;
-	float K, PhaseShifterDeg;
-	float MinTap, MaxTap, StepSize, MinSorVol, MaxSorVol;
+	int * i, * j;	// i is headend node, j is end node
+	int * LFarea, * LossZone;	//LFarea is not zero
+	int * Circuit, * Type;
+	float * R, * X, * B;	
+	int * LineRate1, * LineRate2, * LineRate3;
+	int * CtrlBusNum, * CtrlBusSide;
+	float * K, * PhaseShifterDeg;
+	float * MinTap, * MaxTap, * StepSize, * MinSorVol, * MaxSorVol;
 }Branch_Type;
 
 typedef struct 
@@ -88,7 +88,7 @@ typedef struct
 	Columns 28 - 33   Final voltage, p.u. (F)*
 	Columns 34 - 40   Final angle, degrees (F) *
 	Columns 41 - 49   Load MW (F) *
-	Columns 50 - 59   Load MVAR (F) *
+	Columns 50 - 59   Load MVAR (F) *				 
 	Columns 60 - 67   Generation MW (F) *
 	Columns 68 - 75   Generation MVAR (F) *
 	Columns 77 - 83   Base KV (F)
@@ -100,13 +100,13 @@ typedef struct
 	Columns 115 - 122 Shunt susceptance B (per unit) (F)*
 	Columns 124 - 127 Remote controlled bus number
 	*/
-	int BusNum;
-	char Name[3][4];
-	int LFarea, LossZone;	//LFarea is not zero
-	int Type;
-	float Vol, Deg, PL, QL, PG, QG, BaseVol, DesiredVol, MaxVol, MinVol;
-	float ShuntG, ShuntB;
-	int RemoteCtrlBus;
+	int * BusNum;
+	char * Name[3];
+	int * LFarea, * LossZone;	//LFarea is not zero
+	int * Type;
+	float * Vol, * Deg, * PL, * QL, * PG, * QG, * BaseVol, * DesiredVol, * MaxVol, * MinVol;
+	float * ShuntG, * ShuntB;
+	int * RemoteCtrlBus;
 }Bus_Type;
 
 typedef struct Generator_Type
@@ -125,16 +125,17 @@ typedef struct Load_type
 
 typedef struct PVNode_Type
 {
-	double *V;	//
+	double *V;	
 	int *i;
 }PVNode;
 
-typedef struct RawData_Type
+typedef struct 
 {
-	Bus_Type * BusData[Nbus];
-	Branch_Type * BranchData[Nbranch];
-};
+	Bus_Type * BusData;
+	Branch_Type * BranchData;
+}RawData_Type;
 
-
+/*函数原型声明*/
+int ImportData (void);
 
 

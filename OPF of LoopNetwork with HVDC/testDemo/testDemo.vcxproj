@@ -79,9 +79,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ImportData.c" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="..\..\IEEE data\readme.txt" />
     <Text Include="..\..\IEEE data\readme_english.txt" />
     <Text Include="..\..\IEEE data\TH_FORMAT.txt" />
@@ -95,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="testDemo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="testimportchar.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
