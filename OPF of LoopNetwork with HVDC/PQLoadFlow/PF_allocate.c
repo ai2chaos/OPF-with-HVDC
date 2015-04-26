@@ -19,7 +19,7 @@ void allocate_memory_rawdata (RawData_Type *rawdata)
     }
 	for ( j = 0; j < Nbranch; j++ )
 	{
-		allocate_memory_branch (&(rawdata->BranchData[j]);
+		allocate_memory_branch (&(rawdata->BranchData[j]));
 	}
     return;
 }
