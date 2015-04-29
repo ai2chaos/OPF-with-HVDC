@@ -35,6 +35,8 @@ void initialize_RawData (RawData_Type * RawData, FILE * fptmp)
 void initialize_BusData (Bus_Type * bus, char * Line)
 {
 	printf ("%s", Line);
+	sscanf (Line, "%4i %12[0-9-A-Z- ] %i", bus->BusNum, bus->Name, bus->LFarea);
+	//printf ("%d %s %d\n", *(bus->BusNum), bus->BusNum, *(bus->LFarea));
 	return;
 }
 

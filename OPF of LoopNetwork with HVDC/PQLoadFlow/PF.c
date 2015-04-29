@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "PowerFlow.h"
-//#define _CHECKPOINT_
+#define _CHECKPOINT_
 
 int main (void)
 {
