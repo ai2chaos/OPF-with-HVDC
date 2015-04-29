@@ -2,6 +2,7 @@
 /*This file defines the struct of load flow data and contains the 		*/
 /*variablze declarations and                                            */
 /************************************************************************/
+#include <stdio.h>
 
 /*定义潮流数据中需要的常数 */
 //#define _TestCase_
@@ -9,6 +10,7 @@
 
 #	ifdef _IEEE14_
 #define IEEE14 "014ieee.DAT"
+//#define  IEEE14 "ieee14cdf.txt"
 #define Nbus 14
 #define Nbranch 20
 #define Ng 5
@@ -101,7 +103,7 @@ typedef struct
 	Columns 124 - 127 Remote controlled bus number
 	*/
 	int * BusNum;
-	char * Name[3];
+	char * Name;
 	int * LFarea, * LossZone;	//LFarea is not zero
 	int * Type;
 	float * Vol, * Deg, * PL, * QL, * PG, * QG, * BaseVol, * DesiredVol, * MaxVol, * MinVol;
@@ -131,11 +133,15 @@ typedef struct PVNode_Type
 
 typedef struct 
 {
-	Bus_Type * BusData;
-	Branch_Type * BranchData;
+	Bus_Type * BusData;//指向Nbus个bus数据结构
+	Branch_Type * BranchData;//指向Nbranch个branch数据结构
 }RawData_Type;
 
 /*函数原型声明*/
-int ImportData (void);
-
-
+void ImportData (RawData_Type * RawData);
+void allocate_memory_rawdata (RawData_Type * RawData);
+void allocate_memory_bus (Bus_Type * bus);
+void allocate_memory_branch (Branch_Type * branch);
+void initialize_RawData (RawData_Type * RawData, FILE * fptmp);
+void initialize_BusData (Bus_Type * bus, char * Line);
+void initialize_BranchData (Branch_Type * branch, char * Line);

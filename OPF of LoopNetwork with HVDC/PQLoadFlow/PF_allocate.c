@@ -1,25 +1,22 @@
 /* Memory allocation and deallocation routines */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
 #include <malloc.h>
 #include "PowerFlow.h"
 
 
 /* Function to allocate memory to a population */
-void allocate_memory_rawdata (RawData_Type *rawdata)
+void allocate_memory_rawdata (RawData_Type * RawData)
 {
 	int i, j;
-	rawdata->BusData = (Bus_Type *)malloc (Nbus * sizeof (Bus_Type));
-	rawdata->BranchData = (Branch_Type *)malloc (Nbranch * sizeof (Branch_Type));
+	RawData->BusData = (Bus_Type *)malloc (Nbus * sizeof (Bus_Type));
+	RawData->BranchData = (Branch_Type *)malloc (Nbranch * sizeof (Branch_Type));
     for ( i = 0; i < Nbus; i++)
     {
-        allocate_memory_bus (&(rawdata->BusData[i]));
+        allocate_memory_bus (&(RawData->BusData[i]));
     }
 	for ( j = 0; j < Nbranch; j++ )
 	{
-		allocate_memory_branch (&(rawdata->BranchData[j]));
+		allocate_memory_branch (&(RawData->BranchData[j]));
 	}
     return;
 }
@@ -28,9 +25,7 @@ void allocate_memory_rawdata (RawData_Type *rawdata)
 void allocate_memory_bus (Bus_Type * bus)
 {
 	bus->BusNum = (int *)malloc (sizeof(int));
-	bus->Name[0] = (char *)malloc (5*sizeof(char));
-	bus->Name[1] = (char *)malloc (5*sizeof(char));
-	bus->Name[2] = (char *)malloc (5*sizeof(char));
+	bus->Name = (char *)malloc (13*sizeof(char));
 	bus->LFarea = (int *)malloc (sizeof(int));
 	bus->LossZone = (int *)malloc (sizeof(int));
 	bus->Type = (int *)malloc (sizeof(int));
@@ -76,8 +71,7 @@ void allocate_memory_branch (Branch_Type * branch)
 	branch->MaxSorVol = (float *)malloc (sizeof(float));
 	return;
 }
-
-/* Function to deallocate memory to a population */
+/*
 void deallocate_memory_pop (population *pop, int size)
 {
     int i;
@@ -89,7 +83,6 @@ void deallocate_memory_pop (population *pop, int size)
     return;
 }
 
-/* Function to deallocate memory to an individual */
 void deallocate_memory_ind (individual *ind)
 {
     int j;
@@ -113,3 +106,4 @@ void deallocate_memory_ind (individual *ind)
     }
     return;
 }
+*/

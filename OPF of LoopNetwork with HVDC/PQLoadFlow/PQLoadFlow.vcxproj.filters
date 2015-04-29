@@ -26,5 +26,11 @@
     <ClCompile Include="PF_allocate.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PF_initialize.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="importdata.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

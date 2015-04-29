@@ -85,8 +85,10 @@
     <ClInclude Include="PowerFlow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="importdata.c" />
     <ClCompile Include="PF_allocate.c" />
     <ClCompile Include="PF.c" />
+    <ClCompile Include="PF_initialize.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
