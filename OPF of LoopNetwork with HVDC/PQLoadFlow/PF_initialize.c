@@ -35,8 +35,17 @@ void initialize_RawData (RawData_Type * RawData, FILE * fptmp)
 void initialize_BusData (Bus_Type * bus, char * Line)
 {
 	printf ("%s", Line);
-	sscanf (Line, "%4i %12[0-9-A-Z- ] %i", bus->BusNum, bus->Name, bus->LFarea);
-	//printf ("%d %s %d\n", *(bus->BusNum), bus->BusNum, *(bus->LFarea));
+	sscanf (Line, "%4d %12[0-9A-Za-z- ] %d %d %d %f %f %f %f %f %f %f %f %f %f %f %f %d",
+		bus->BusNum, bus->Name, bus->LFarea, bus->LossZone, bus->Type, bus->Vol,
+		bus->Deg, bus->PL, bus->QL, bus->PG, bus->QG,
+		bus->BaseVol, bus->DesiredVol, bus->MaxVol, bus->MinVol, bus->ShuntG,
+		bus->ShuntB, bus->RemoteCtrlBus);
+	//解决bus->type缺少数值问题,此处不严谨，一定要注意导入的数据与原数据是否一致
+	if ((*(bus->Type) == (1||0)) && (*(bus->Vol) <= 1))
+	{
+		*(bus->Vol) = *(bus->Vol) + *(bus->Type);
+		*(bus->Type) = 0;
+	}
 	return;
 }
 

@@ -9,7 +9,7 @@
 #define _IEEE14_
 
 #	ifdef _IEEE14_
-#define IEEE14 "014ieee.DAT"
+#define DataName "014ieee.DAT"
 //#define  IEEE14 "ieee14cdf.txt"
 #define Nbus 14
 #define Nbranch 20
@@ -19,6 +19,7 @@
 #	endif
 
 #	ifdef _TestCase_
+#define DataName "testcase.txt"
 #define Nbus 5
 #define Nbranch 5
 #define Ng 2
