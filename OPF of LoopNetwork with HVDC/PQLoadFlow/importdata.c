@@ -16,23 +16,7 @@ void ImportData (RawData_Type * RawData)
 		exit (1);
 	}
 	fptmp = tmpfile ();		//创建临时文件用于储存trim后的数据文件
-	//char Line[303];
-	//向缓冲文件读入数据
-	/*
-	//trim blank
-	while ( (ch = getc (fpin)) != EOF )
-	{
-	if ( ch != ' ' )	//输出不为空格字符和换行字符
-	putc (ch, fptmp);
-	else
-	{
-	//只保留一个空格，后输出字符
-	while ( (ch = getc (fpin)) == ' ' );
-	putc (' ', fptmp);
-	putc (ch, fptmp);
-	}
-	}
-	*/
+	//向临时文件写入IEEE标准格式的潮流数据
 	while ( (ch = getc (fpin)) != EOF )
 	{
 		putc (ch, fptmp);
@@ -40,12 +24,22 @@ void ImportData (RawData_Type * RawData)
 
 	if ( fclose (fpin) != 0 )	//关闭输入文件及判断其是否正常关闭
 	{
-		printf ("Error in closing file\n");
+		printf ("Error in closing file %s\n", DataName);
 		printf ("Press Enter to Quit!!");
 		getchar ();
 		getchar ();
 		exit (2);
 	}
-	initialize_RawData (RawData, fptmp);
+	
+	initialize_RawData (RawData, fptmp);	//初始化潮流数据结构体并赋值
+
+	if ( fclose (fptmp) != 0 )	//关闭临时文件及判断其是否正常关闭
+	{
+		printf ("Error in closing temporary file\n");
+		printf ("Press Enter to Quit!!");
+		getchar ();
+		getchar ();
+		exit (2);
+	}
 	return;
 }

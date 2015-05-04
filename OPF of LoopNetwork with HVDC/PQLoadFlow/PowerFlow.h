@@ -5,12 +5,12 @@
 #include <stdio.h>
 
 /*定义潮流数据中需要的常数 */
-//#define _TestCase_
-#define _IEEE14_
+#define _TestCase_
+//#define _IEEE14_
 
 #	ifdef _IEEE14_
 #define DataName "014ieee.DAT"
-//#define  IEEE14 "ieee14cdf.txt"
+//#define DataName "ieee14cdf.txt"
 #define Nbus 14
 #define Nbranch 20
 #define Ng 5
