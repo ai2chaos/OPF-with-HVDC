@@ -5,12 +5,11 @@
 
 int main (void)
 {
-	//char DataName[20];
-	//printf ("Please enter the Power Flow Data name:");
-	//scanf (" %s", DataName);
-	RawData_Type * RawData;
-	RawData = (RawData_Type *)malloc (sizeof(RawData_Type));
+	RawData_Type * RawData;		//定义一个指向原始数据结构体的指针
+	//为原始数据分配内存
+	RawData = (RawData_Type *)malloc (sizeof(RawData_Type));	
 	allocate_memory_rawdata (RawData);
+
 	ImportData (RawData);
 
 #ifdef _CHECKPOINT_

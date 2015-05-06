@@ -112,30 +112,30 @@ typedef struct
 	int * RemoteCtrlBus;
 }Bus_Type;
 
-typedef struct Generator_Type
+typedef struct 
 {
 	double *P, *Q;	//P, Q is positive.
 	int *i;
 	double *V;
-}Generator;
+}Generator_Type;
 
-typedef struct Load_type
+typedef struct 
 {
 	double *P, *Q;	//P, Q is negative.
 	int *i;
 	double *V;
-}Load;
-
-typedef struct PVNode_Type
-{
-	double *V;	
-	int *i;
-}PVNode;
+}Load_Type;
 
 typedef struct 
 {
-	Bus_Type * BusData;//指向Nbus个bus数据结构
-	Branch_Type * BranchData;//指向Nbranch个branch数据结构
+	double *V;	
+	int *i;
+}PVNode_Type;
+
+typedef struct 
+{
+	Bus_Type * BusData;		//指向Nbus个bus数据结构
+	Branch_Type * BranchData;	//指向Nbranch个branch数据结构
 }RawData_Type;
 
 /*函数原型声明*/
