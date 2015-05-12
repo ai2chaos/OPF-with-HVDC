@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>		//提供malloc()原型函数
+#include <malloc.h>
+#include <stdbool.h>
+
+typedef struct Element
+{
+	double VA;			//稀疏矩阵中非0元素aij
+	int IA;				//元素aij所在行
+	int JA;				//元素aij所在列
+	struct Elem * NEXT;	//下一个元素的地址，最后一个元素的下一个元素地址为NULL
+}Elem;
+
+typedef struct SparseMatix
+{
+	struct Elem * HEAD;	//稀疏矩阵第一个元素地址
+	int Ni;			//稀疏矩阵行数
+	int Nj;			//稀疏矩阵列数
+	int NElement;	//非0元素个数
+}SparseMat;
+
+typedef SparseMat * Mat; //Mat类型指向一个稀疏矩阵链表
+
+/*操作：  创建并初始化稀疏矩阵
+ *操作前：PMat稀疏矩阵指针
+ *操作后：该列表初始化为0值
+ */
+void InitMat (Mat * pMat);
+
+/*操作：	  创建并初始化新元素
+ *操作前：pElem为新元素指针
+ *操作后：该元素及相关信息初始化为0值
+ */
+void InitElem (Elem * pElem);
+
+/*操作：  确定列表是否为空
+ *操作前：PMat指向一个已经初始化的矩阵
+ *操作后：如果矩阵为空返回ture，否则返回false
+ */
+bool MatIsEmpty (const Mat * pMat);
+
+/*操作：  为矩阵中新元素分配内存，并对其赋值
+ *操作前：添加double类型的元素，pMat指向已经初始化后的指针
+ *操作后：把新元素添加到链表的末尾
+ */
+bool addElement (double aij, int i, int j, Mat * pMat);
+
+/*操作：  向链表添加新元素
+ *操作前：传入新元素的值与行、列号，并且完成对新元素指针的初始化
+ *操作后：把对新元素进行赋值，同时给定其行号与列号，并插入矩阵中
+ */
+bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew);
+
+/*操作：  移除矩阵中的元素Aij
+ *操作前：pMat是已经初始化的矩阵
+ *操作后：在矩阵中移除元素Aij
+ */
+bool removeElement (Mat * pMat, int i, int j);
+
+/*操作：  打印稀疏矩阵
+ *操作前：pMat为初始化并含有元素的矩阵
+ *操作后：向标准输出中打印稀疏矩阵
+ */
+void showMat (Mat * pMat);

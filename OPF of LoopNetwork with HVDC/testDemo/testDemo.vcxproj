@@ -87,14 +87,14 @@
     <None Include="..\..\IEEE data\th数据格式说明.doc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\PQLoadFlow\dataStruct.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="testDemo.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="testimportchar.c" />
+    <ClCompile Include="matix.c" />
+    <ClCompile Include="testMat.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sparsematrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
