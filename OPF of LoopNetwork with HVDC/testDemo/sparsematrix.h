@@ -9,12 +9,12 @@ typedef struct Element
 	double VA;			//稀疏矩阵中非0元素aij
 	int IA;				//元素aij所在行
 	int JA;				//元素aij所在列
-	struct Elem * NEXT;	//下一个元素的地址，最后一个元素的下一个元素地址为NULL
+	struct Element * NEXT;	//下一个元素的地址，最后一个元素的下一个元素地址为NULL
 }Elem;
 
 typedef struct SparseMatix
 {
-	struct Elem * HEAD;	//稀疏矩阵第一个元素地址
+	struct Element * HEAD;	//稀疏矩阵第一个元素地址
 	int Ni;			//稀疏矩阵行数
 	int Nj;			//稀疏矩阵列数
 	int NElement;	//非0元素个数
