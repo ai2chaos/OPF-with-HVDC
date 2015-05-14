@@ -58,6 +58,12 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew);
  */
 bool removeElement (Mat * pMat, int i, int j);
 
+/*操作：	  检测删除元素是否成功
+ *操作前：删除元素的Mat类型矩阵，但是没有更改Ni，Nj，NElement
+ *操作后：重新计算Ni，Nj，NElement，并验证是否删除元素
+ */
+bool IsRomved (Mat * pMat);
+
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵
  *操作后：向标准输出中打印稀疏矩阵

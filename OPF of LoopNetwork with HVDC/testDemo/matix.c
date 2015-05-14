@@ -83,6 +83,7 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 		(*pMat)->HEAD = pNew;
 		pNew->NEXT = NULL;
 		pCurrent = (*pMat)->HEAD;
+		return true;
 	}
 	else if ( (*pMat)->HEAD != NULL )
 	{
@@ -152,55 +153,93 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 				pNew->NEXT = NULL;
 				return true;
 			}
+			else
+			{
+				printf ("Can't add element A%d%d to matix\n", i, j);
+				return false;
+			}
+		}
+		else
+		{
+			printf ("Can't add element A%d%d to matix\n", i, j);
+			return false;
 		}
 	}
 	else
 	{
-		printf ("Can't add element A%d%d to matix", i, j);
+		printf ("Can't add element A%d%d to matix\n", i, j);
 		return false;
 	}
+	printf ("Can't add element A%d%d to matix\n", i, j);
+	return false;
 }
 
 bool removeElement (Mat * pMat, int i, int j)
 {
 	Elem * pCurrent, * pNext;
+	bool flag = false;
 
 	pCurrent = (*pMat)->HEAD;
-	if ((pCurrent->IA == i)&&(pCurrent->JA == j))
+	if ( (pCurrent->IA == i) && (pCurrent->JA == j) )	//检测矩阵第一个元素是否为要删除元素
 	{
 		pNext = pCurrent->NEXT;
 		free ((*pMat)->HEAD);	//释放矩阵的第一个元素aij
-		if ( (*pMat)->HEAD != NULL )
-		{
-			printf ("Can't remove A%d%d\n", i, j);
-			return false;
-		}
 		(*pMat)->HEAD = pNext;	//新矩阵中第一个元素为原矩阵中第二个元素
-		return true;
+		flag = true;
+		
 	}
+	//else if ( (pCurrent->IA != i) || (pCurrent->JA != j) )	//检测除矩阵第一个元素及最后个元素是否为要删除元素
 	else
 	{
 		while ( (pNext = pCurrent->NEXT) != NULL )
 		{
-			if (( pNext->IA == i ) && ( pNext->JA == j ))
+			if ( ( pNext->IA == i ) && ( pNext->JA == j ) )
 			{
 				pCurrent->NEXT = pNext->NEXT;
 				free (pNext);
-				if (pNext != NULL)
-				{
-					printf ("Can't remove A%d%d\n", i, j);
-					return false;
-				}
 				break;
-				return true;
 			}
+			pCurrent = pNext;
 		}
+		flag = true;
 	}
+	if (flag && IsRomved(pMat))
+	{
+		return true;
+	}
+	else
+	{
+		printf ("Can't find A%d%d\n", i, j);
+		return false;
+	}
+}
+
+bool IsRomved (Mat * pMat)
+{
+	int Num;
+	Elem * pCurrent;
+	pCurrent = (*pMat)->HEAD;
+	//重新计算矩阵中的最大行数与列数
+	for (Num = 1; pCurrent->NEXT != NULL; Num++)
+	{
+		pCurrent = pCurrent->NEXT;
+	}
+	//判断矩阵非零元素时候等于删除前非0个数-1
+	if ( Num == ((*pMat)->NElement-1) )
+	{
+		(*pMat)->NElement = Num;
+		return true;
+	}
+	else
+		return false;
 }
 
 void showMat (Mat * pMat)
 {
 	Elem * pCurrent;
+	//int i, j;
+	//i = (*pMat)->Ni;
+	//j = (*pMat)->Nj;
 	pCurrent = (*pMat)->HEAD;
 	printf ("%8s %4s %4s\n", "Num", "Ni", "Nj");
 	printf ("%8d %4d %4d\n", (*pMat)->NElement, (*pMat)->Ni, (*pMat)->Nj);
