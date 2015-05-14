@@ -155,22 +155,25 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 			}
 			else
 			{
-				printf ("Can't add element A%d%d to matix\n", i, j);
+				printf ("addElement: Can't add element A%d%d to matix,maybe it already exists!!\n", i, j);
 				return false;
 			}
 		}
 		else
 		{
-			printf ("Can't add element A%d%d to matix\n", i, j);
+			printf ("addElement: Can't add element A%d%d to matix,maybe it already exists!!\n", i, j);
+
 			return false;
 		}
 	}
 	else
 	{
-		printf ("Can't add element A%d%d to matix\n", i, j);
+		printf ("addElement: Can't add element A%d%d to matix,maybe it already exists!!\n", i, j);
+
 		return false;
 	}
-	printf ("Can't add element A%d%d to matix\n", i, j);
+	printf ("addElement: Can't add element A%d%d to matix,maybe it already exists!!\n", i, j);
+
 	return false;
 }
 
@@ -188,7 +191,7 @@ bool removeElement (Mat * pMat, int i, int j)
 		flag = true;
 		
 	}
-	//else if ( (pCurrent->IA != i) || (pCurrent->JA != j) )	//检测除矩阵第一个元素及最后个元素是否为要删除元素
+	//检测除矩阵第一个元素及最后个元素是否为要删除元素
 	else
 	{
 		while ( (pNext = pCurrent->NEXT) != NULL )
@@ -209,7 +212,7 @@ bool removeElement (Mat * pMat, int i, int j)
 	}
 	else
 	{
-		printf ("Can't find A%d%d\n", i, j);
+		printf ("removeElement: Can't find A%d%d\n", i, j);
 		return false;
 	}
 }
@@ -220,9 +223,17 @@ bool IsRomved (Mat * pMat)
 	Elem * pCurrent;
 	pCurrent = (*pMat)->HEAD;
 	//重新计算矩阵中的最大行数与列数
-	for (Num = 1; pCurrent->NEXT != NULL; Num++)
+	if ( pCurrent != NULL )
 	{
-		pCurrent = pCurrent->NEXT;
+		for ( Num = 1; pCurrent->NEXT != NULL; Num++ )
+		{
+			pCurrent = pCurrent->NEXT;
+		}	
+	}
+	else
+	{
+		printf ("IsRemoved: Mat is empty!!\n");
+		Num = 0;
 	}
 	//判断矩阵非零元素时候等于删除前非0个数-1
 	if ( Num == ((*pMat)->NElement-1) )
@@ -234,19 +245,48 @@ bool IsRomved (Mat * pMat)
 		return false;
 }
 
+double findElemValue (Mat * pMat, int i, int j)
+{
+	Elem * pCurrent;
+	double result = 0 ;
+	pCurrent = (*pMat)->HEAD;
+	while (pCurrent != NULL)
+	{
+		if ( pCurrent->IA == i && pCurrent->JA == j )
+		{
+			result = (double)pCurrent->VA;
+			break;
+		}
+		else
+			pCurrent = pCurrent->NEXT;
+	}
+	return result;
+}
+
 void showMat (Mat * pMat)
 {
 	Elem * pCurrent;
-	//int i, j;
-	//i = (*pMat)->Ni;
-	//j = (*pMat)->Nj;
+	int maxi, maxj, i, j;
+	maxi = (*pMat)->Ni;
+	maxj = (*pMat)->Nj;
 	pCurrent = (*pMat)->HEAD;
 	printf ("%8s %4s %4s\n", "Num", "Ni", "Nj");
 	printf ("%8d %4d %4d\n", (*pMat)->NElement, (*pMat)->Ni, (*pMat)->Nj);
+	//矩阵显示形式
+	for ( i = 1; i <= maxi; i++ )
+	{
+		for ( j = 1; j <= maxj; j++ )
+		{
+			printf ("%8.2f", findElemValue (pMat, i, j));
+		}
+		printf ("\n");
+	}
+	/*数值-行号-列号 显示形式
 	while (pCurrent != NULL)
 	{
 		printf ("%8.2f %4d %4d\n", pCurrent->VA, pCurrent->IA, pCurrent->JA);
 		pCurrent = pCurrent->NEXT;
 	}
+	*/
 	return;
 }
