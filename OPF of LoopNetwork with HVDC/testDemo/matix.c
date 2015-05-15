@@ -8,7 +8,7 @@
 
 void InitMat (Mat * pMat)
 {
-	*pMat = (SparseMat *)malloc(sizeof(SparseMat));
+	*pMat = (SparseMat *)malloc(sizeof(SparseMat));//malloc返回新建稀疏矩阵的地址
 	(*pMat)->HEAD = NULL;
 	(*pMat)->NElement = 0;
 	(*pMat)->Ni = 0;
@@ -245,7 +245,7 @@ bool IsRomved (Mat * pMat)
 		return false;
 }
 
-double findElemValue (Mat * pMat, int i, int j)
+double findElemValue (const Mat * pMat, int i, int j)
 {
 	Elem * pCurrent;
 	double result = 0 ;
@@ -263,7 +263,28 @@ double findElemValue (Mat * pMat, int i, int j)
 	return result;
 }
 
-void showMat (Mat * pMat)
+Mat * productMat (Mat * pMatA, Mat * pMatB)
+{
+	int iA, iB, jA, jB;
+	Mat pResult;	//创建结果稀疏矩阵指针
+	InitMat (&pResult);
+	
+	iA = (*pMatA)->Ni;
+	jA = (*pMatA)->Nj;
+	iB = (*pMatB)->Ni;
+	jB = (*pMatB)->Nj;
+	if (jA != iB)
+	{
+
+	}
+	else
+	{
+		printf ("productMat: Matrix dimension mismatch!!");
+		return NULL;
+	}
+}
+
+void showMat (const Mat * pMat)
 {
 	Elem * pCurrent;
 	int maxi, maxj, i, j;

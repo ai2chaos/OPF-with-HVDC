@@ -19,14 +19,14 @@ int main (void)
 		}
 	}
 	showMat (&matA);  
-	addElement (100, 3, 4, &matA);
+	addElement (100, 6, 4, &matA);
 	showMat (&matA);
-	//removeElement (&matA, 6, 2);
+	removeElement (&matA, 6, 2);
 	showMat (&matA);
-	addElement (100, 2, 2, &matA);
-	//removeElement (&matA, 2, 4);
-	//removeElement (&matA, 3, 4);
-	//removeElement (&matA, 4, 4);
+	addElement (100, 7, 2, &matA);
+	removeElement (&matA, 2, 4);
+	removeElement (&matA, 3, 4);
+	removeElement (&matA, 4, 4);
 	showMat (&matA);
 	getchar ();
 	getchar ();
