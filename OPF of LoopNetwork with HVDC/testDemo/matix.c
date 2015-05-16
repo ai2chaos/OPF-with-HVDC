@@ -265,7 +265,8 @@ double findElemValue (const Mat * pMat, int i, int j)
 
 Mat * productMat (Mat * pMatA, Mat * pMatB)
 {
-	int iA, iB, jA, jB;
+	int n, m, iA, iB, jA, jB, k;
+	double value, VA, VB;
 	Mat pResult;	//创建结果稀疏矩阵指针
 	InitMat (&pResult);
 	
@@ -273,9 +274,34 @@ Mat * productMat (Mat * pMatA, Mat * pMatB)
 	jA = (*pMatA)->Nj;
 	iB = (*pMatB)->Ni;
 	jB = (*pMatB)->Nj;
-	if (jA != iB)
+	if (jA == iB)
 	{
-
+		for ( n = 1; n <= iA; n++ )
+		{
+			for ( m = 1; m <= jB; m++ )
+			{
+				/*
+				计算C[n m]的value
+				C[n m]=A[n 1]*B[1 m]+A[n 2]*B[2 m]+...+A[n k]*B[k m]
+				k = jA = iB
+				 */
+				for ( k = 1; k <= jA; k++ )
+				{
+					//元素的值有一个为0则二者相乘直接为0
+					if ( ((VA = findElemValue (pMatA, n, k)) == 0) ||
+						((VB = findElemValue (pMatB, k, m)) == 0) )
+					{
+						value += 0;
+					}
+					//二者都不为0，则计算其乘积并进行累加
+					else
+					{
+						value += VA*VB;
+					}
+				}
+				addElement (value, n, m, &pResult);
+			}
+		}
 	}
 	else
 	{
