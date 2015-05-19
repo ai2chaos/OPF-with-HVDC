@@ -213,7 +213,7 @@ bool IsRomved (Mat * pMat)
 	int Num;
 	Elem * pCurrent;
 	pCurrent = (*pMat)->HEAD;
-	//重新计算矩阵中的最大行数与列数
+	//重新计算矩阵中非0元素个数
 	if ( pCurrent != NULL )
 	{
 		for ( Num = 1; pCurrent->NEXT != NULL; Num++ )
@@ -252,6 +252,31 @@ double findElemValue (const Mat * pMat, int i, int j)
 			pCurrent = pCurrent->NEXT;
 	}
 	return result;
+}
+
+Mat productK (Mat * pMatA, double K)
+{
+	Elem * pCurrent, * pNext;
+	pCurrent = (*pMatA)->HEAD;
+
+	Mat pResult;
+	InitMat (&pResult, (*pMatA)->Ni, (*pMatA)->Nj);
+	if ( *pMatA != NULL )	//检测矩阵指针是否为空
+	{
+		while ( (pNext = pCurrent->NEXT) != NULL )
+		{
+			addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
+			pCurrent = pNext;
+		}
+		addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
+		return pResult;
+	}
+	else
+	{
+		printf ("productK: pMatix is NULL!!\n ");
+		return NULL;
+	}
+	
 }
 
 Mat productMat (Mat * pMatA, Mat * pMatB)
@@ -386,7 +411,7 @@ void showMat (const Mat * pMat)
 	}
 	else
 	{
-		printf ("ShowMat: This is empty Mat!!\n");
+		printf ("ShowMat: This is empty pMat!!\n");
 		return;
 	}
 }

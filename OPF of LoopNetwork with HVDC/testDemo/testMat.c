@@ -57,6 +57,15 @@ int main (void)
 	Mat matAB;
 	matAB = addMat (&matA, &matB);
 	showMat (&matAB);
+	Mat matKAB;
+	matKAB = productK (&matAB, 2);
+	showMat (&matKAB);
+	Mat matC;
+	Mat matKC;
+	InitMat (&matC, 1, 1);
+	addElement (5, 1, 1, &matC);
+	matKC = productK (&matC, 2);
+	showMat (&matKC);
 	getchar ();
 	getchar ();
 	return 0;

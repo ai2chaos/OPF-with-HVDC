@@ -78,6 +78,12 @@ bool IsRomved (Mat * pMat);
  */
 double findElemValue (const Mat * pMat, int i, int j);
 
+/*操作：  计算稀疏矩阵与常数相乘
+*操作前：pMatA为稀疏矩阵，K为常数
+*操作后：返回A矩阵与K的乘积的稀疏矩阵的指针
+*/
+Mat productK (Mat * pMatA, double K);
+
 /*操作：  计算两个稀疏矩阵乘积
  *操作前：pMatA、pMatB为稀疏矩阵
  *操作后：返回A、B矩阵乘积的稀疏矩阵的指针
