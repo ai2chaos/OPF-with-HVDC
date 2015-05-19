@@ -10,24 +10,31 @@ int main (void)
 	int i, j, k;
 	Mat matA;
 	InitMat (&matA);
-	for ( i = 4, k = 1; i > 0; i-- )
+	for ( i = 1, k = 1; i < 5; i++ )
 	{
-		for ( j = 4; j > 0; j--, k++ )
+		for ( j = 1; j < 5; j++, k++ )
 		{
 			A[i][j] = k;
 			addElement (A[i][j], i, j, &matA);
 		}
 	}
 	showMat (&matA);  
-	addElement (100, 6, 4, &matA);
-	showMat (&matA);
-	removeElement (&matA, 6, 2);
-	showMat (&matA);
-	addElement (100, 7, 2, &matA);
-	removeElement (&matA, 2, 4);
-	removeElement (&matA, 3, 4);
-	removeElement (&matA, 4, 4);
-	showMat (&matA);
+	Mat matB;
+	InitMat (&matB);
+	for ( i = 1; i < 5; i++ )
+	{
+		for ( j = 1; j < 5; j++ )
+		{
+			if (i == j)
+			{
+				addElement (1, i, j, &matB);
+			}
+		}
+	}
+	showMat (&matB);
+	Mat matAB;
+	matAB = productMat (&matA, &matB);
+	showMat (&matAB);
 	getchar ();
 	getchar ();
 	return 0;

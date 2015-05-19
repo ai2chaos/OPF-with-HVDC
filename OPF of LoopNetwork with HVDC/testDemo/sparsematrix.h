@@ -82,7 +82,7 @@ double findElemValue (const Mat * pMat, int i, int j);
  *操作前：pMatA、pMatB为稀疏矩阵
  *操作后：返回A、B矩阵乘积的稀疏矩阵的指针
  */
-Mat * productMat (Mat * pMatA, Mat * pMatB);
+Mat productMat (Mat * pMatA, Mat * pMatB);
 
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵
