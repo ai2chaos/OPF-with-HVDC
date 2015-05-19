@@ -208,7 +208,7 @@ bool removeElement (Mat * pMat, int i, int j)
 	}
 }
 
-bool IsRomved (Mat * pMat)
+bool IsRomved (const Mat * pMat)
 {
 	int Num;
 	Elem * pCurrent;
@@ -254,7 +254,7 @@ double findElemValue (const Mat * pMat, int i, int j)
 	return result;
 }
 
-Mat productK (Mat * pMatA, double K)
+Mat productK (const Mat * pMatA, double K)
 {
 	Elem * pCurrent, * pNext;
 	pCurrent = (*pMatA)->HEAD;
@@ -279,7 +279,7 @@ Mat productK (Mat * pMatA, double K)
 	
 }
 
-Mat productMat (Mat * pMatA, Mat * pMatB)
+Mat productMat (const Mat * pMatA, const Mat * pMatB)
 {
 	int n, m, iA, iB, jA, jB, k;
 	double value, VA, VB;
@@ -331,7 +331,7 @@ Mat productMat (Mat * pMatA, Mat * pMatB)
 	}
 }
 
-Mat addMat (Mat * pMatA, Mat * pMatB)
+Mat addMat (const Mat * pMatA, const Mat * pMatB)
 {
 	int n, m, iA, iB, jA, jB;
 	double value, VA, VB;

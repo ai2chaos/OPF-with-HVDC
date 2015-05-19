@@ -70,7 +70,7 @@ bool removeElement (Mat * pMat, int i, int j);
  *操作前：删除元素的Mat类型矩阵，但是没有更改Ni，Nj，NElement
  *操作后：重新计算Ni，Nj，NElement，并验证是否删除元素
  */
-bool IsRomved (Mat * pMat);
+bool IsRomved (const Mat * pMat);
 
 /*操作：	 按行列查找元素，并返回double类型数值
  *操作前：指向元素所在矩阵的指针pMat，元素的行号与列号i，j
@@ -82,19 +82,19 @@ double findElemValue (const Mat * pMat, int i, int j);
 *操作前：pMatA为稀疏矩阵，K为常数
 *操作后：返回A矩阵与K的乘积的稀疏矩阵的指针
 */
-Mat productK (Mat * pMatA, double K);
+Mat productK (const Mat * pMatA, double K);
 
 /*操作：  计算两个稀疏矩阵乘积
  *操作前：pMatA、pMatB为稀疏矩阵
  *操作后：返回A、B矩阵乘积的稀疏矩阵的指针
  */
-Mat productMat (Mat * pMatA, Mat * pMatB);
+Mat productMat (const Mat * pMatA, const Mat * pMatB);
 
 /*操作：  计算两个稀疏矩阵相加
 *操作前：pMatA、pMatB为稀疏矩阵
 *操作后：返回A、B矩阵相加后的稀疏矩阵的指针
 */
-Mat addMat (Mat * pMatA, Mat * pMatB);
+Mat addMat (const Mat * pMatA, const Mat * pMatB);
 
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵
