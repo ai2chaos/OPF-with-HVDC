@@ -6,13 +6,13 @@
 #include "sparsematrix.h"
 
 
-void InitMat (Mat * pMat)
+void InitMat (Mat * pMat, int n, int m)
 {
 	*pMat = (SparseMat *)malloc(sizeof(SparseMat));//malloc返回新建稀疏矩阵的地址
 	(*pMat)->HEAD = NULL;
 	(*pMat)->NElement = 0;
-	(*pMat)->Ni = 0;
-	(*pMat)->Nj = 0;
+	(*pMat)->Ni = n;
+	(*pMat)->Nj = m;
 	return;
 }
 
@@ -49,16 +49,6 @@ bool addElement (double aij, int i, int j, Mat * pMat)
 		{
 
 			(*pMat)->NElement += 1;
-
-			if ((*pMat)->Ni < i)
-			{
-				(*pMat)->Ni = i;
-			}
-
-			if ((*pMat)->Nj < j)
-			{
-				(*pMat)->Nj = j;
-			}
 			return true;
 		}
 		else
@@ -206,6 +196,7 @@ bool removeElement (Mat * pMat, int i, int j)
 		}
 		flag = true;
 	}
+	//判断是否删除
 	if (flag && IsRomved(pMat))
 	{
 		return true;
@@ -266,15 +257,15 @@ double findElemValue (const Mat * pMat, int i, int j)
 Mat productMat (Mat * pMatA, Mat * pMatB)
 {
 	int n, m, iA, iB, jA, jB, k;
-	double VA, VB;
-	double value = 0;
+	double value, VA, VB;
 	Mat pResult;	//创建结果稀疏矩阵指针
-	InitMat (&pResult);
-	
 	iA = (*pMatA)->Ni;
 	jA = (*pMatA)->Nj;
 	iB = (*pMatB)->Ni;
 	jB = (*pMatB)->Nj;
+
+	InitMat (&pResult, iA, jB);
+
 	if (jA == iB)
 	{
 		for ( n = 1; n <= iA; n++ )
@@ -286,7 +277,7 @@ Mat productMat (Mat * pMatA, Mat * pMatB)
 				C[n m]=A[n 1]*B[1 m]+A[n 2]*B[2 m]+...+A[n k]*B[k m]
 				k = jA = iB
 				 */
-				for ( k = 1; k <= jA; k++ )
+				for ( k = 1, value = 0; k <= jA; k++ )
 				{
 					//元素的值有一个为0则二者相乘直接为0
 					if ( ((VA = findElemValue (pMatA, n, k)) == 0) ||
@@ -300,11 +291,11 @@ Mat productMat (Mat * pMatA, Mat * pMatB)
 						value += VA*VB;	//+=运算前要记得先对value进行初始化
 					}
 				}
-				if ( addElement (value, n, m, &pResult) )
-					pResult->NElement += 1;
-				pResult->Nj += 1;
+				if ( value != 0 )
+					addElement (value, n, m, &pResult);
+				else
+					continue;
 			}
-			pResult->Ni += 1;
 		}
 		return pResult;
 	}
@@ -333,7 +324,8 @@ void showMat (const Mat * pMat)
 		}
 		printf ("\n");
 	}
-	/*数值-行号-列号 显示形式
+	//数值-行号-列号 显示形式
+	/*
 	while (pCurrent != NULL)
 	{
 		printf ("%8.2f %4d %4d\n", pCurrent->VA, pCurrent->IA, pCurrent->JA);

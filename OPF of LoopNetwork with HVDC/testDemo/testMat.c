@@ -9,19 +9,21 @@ int main (void)
 	int A[5][5];
 	int i, j, k;
 	Mat matA;
-	InitMat (&matA);
+	InitMat (&matA, 4, 3);
 	for ( i = 1, k = 1; i < 5; i++ )
 	{
-		for ( j = 1; j < 5; j++, k++ )
+		for ( j = 1; j < 4; j++, k++ )
 		{
 			A[i][j] = k;
 			addElement (A[i][j], i, j, &matA);
 		}
 	}
 	showMat (&matA);  
+	removeElement (&matA, 4, 3);
+	showMat (&matA);
 	Mat matB;
-	InitMat (&matB);
-	for ( i = 1; i < 5; i++ )
+	InitMat (&matB, 3, 4);
+	for ( i = 1; i < 4; i++ )
 	{
 		for ( j = 1; j < 5; j++ )
 		{

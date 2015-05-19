@@ -34,7 +34,7 @@ Mat类型是指向稀疏矩阵类型的指针
  *操作前：PMat稀疏矩阵指针
  *操作后：该列表初始化为0值
  */
-void InitMat (Mat * pMat);
+void InitMat (Mat * pMat, int n, int m);
 
 /*操作：	  创建并初始化新元素
  *操作前：pElem为新元素指针
