@@ -26,11 +26,11 @@ Mat类型是指向稀疏矩阵类型的指针
 函数调用稀疏矩阵时默认传递进函数的为指向稀疏矩阵指针的指针
 新建稀疏矩阵:
 1）声明稀疏矩阵指针 --> Mat newMat;
-2）初始化稀疏矩阵   --> InitMat (&newMat);
+2）初始化稀疏矩阵   --> InitMat (&newMat, n, m);
    此处传入InitMat的是newMat的地址
 */
 
-/*操作：  创建并初始化稀疏矩阵
+/*操作：  创建并初始化稀疏矩阵并且需要指定矩阵的行数n与列数n
  *操作前：PMat稀疏矩阵指针
  *操作后：该列表初始化为0值
  */
@@ -83,6 +83,12 @@ double findElemValue (const Mat * pMat, int i, int j);
  *操作后：返回A、B矩阵乘积的稀疏矩阵的指针
  */
 Mat productMat (Mat * pMatA, Mat * pMatB);
+
+/*操作：  计算两个稀疏矩阵相加
+*操作前：pMatA、pMatB为稀疏矩阵
+*操作后：返回A、B矩阵相加后的稀疏矩阵的指针
+*/
+Mat addMat (Mat * pMatA, Mat * pMatB);
 
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵

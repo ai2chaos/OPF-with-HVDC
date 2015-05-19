@@ -301,7 +301,55 @@ Mat productMat (Mat * pMatA, Mat * pMatB)
 	}
 	else
 	{
-		printf ("productMat: Matrix dimension mismatch!!");
+		printf ("productMat: Matrix dimension mismatch!!\n");
+		return NULL;
+	}
+}
+
+Mat addMat (Mat * pMatA, Mat * pMatB)
+{
+	int n, m, iA, iB, jA, jB;
+	double value, VA, VB;
+	Mat pResult;	//创建结果稀疏矩阵指针
+	iA = (*pMatA)->Ni;
+	jA = (*pMatA)->Nj;
+	iB = (*pMatB)->Ni;
+	jB = (*pMatB)->Nj;
+
+	InitMat (&pResult, iA, jB);
+
+	if ( iA == iB && jA == jB )
+	{
+		for ( n = 1; n <= iA; n++ )
+		{
+			for ( m = 1, value = 0; m <= jA; m++ )
+			{
+				/*
+				计算C[n m]的value
+				C[n m]=A[n m]+B[n m]
+				*/
+				if ( ((VA = findElemValue (pMatA, n, m)) == 0) &
+					((VB = findElemValue (pMatB, n, m)) == 0) )	
+					//不要用&&，其具有短路性质，导致另一个表达式没有计算
+				{
+					value = 0;
+				}
+				//二者都不为0
+				else
+				{
+					value = VA + VB;	//运算前要记得先对value进行初始化
+				}
+				if ( value != 0 )
+					addElement (value, n, m, &pResult);
+				else
+					continue;
+			}
+		}
+    	return pResult;
+	}
+	else
+	{
+		printf ("addMat: Matrix dimension mismatch!!\n");
 		return NULL;
 	}
 }
@@ -310,27 +358,35 @@ void showMat (const Mat * pMat)
 {
 	Elem * pCurrent;
 	int maxi, maxj, i, j;
-	maxi = (*pMat)->Ni;
-	maxj = (*pMat)->Nj;
-	pCurrent = (*pMat)->HEAD;
-	printf ("%8s %4s %4s\n", "Num", "Ni", "Nj");
-	printf ("%8d %4d %4d\n", (*pMat)->NElement, (*pMat)->Ni, (*pMat)->Nj);
-	//矩阵显示形式
-	for ( i = 1; i <= maxi; i++ )
+	if ( *pMat != NULL )
 	{
-		for ( j = 1; j <= maxj; j++ )
+		maxi = (*pMat)->Ni;
+		maxj = (*pMat)->Nj;
+		pCurrent = (*pMat)->HEAD;
+		printf ("%8s %4s %4s\n", "Num", "Ni", "Nj");
+		printf ("%8d %4d %4d\n", (*pMat)->NElement, (*pMat)->Ni, (*pMat)->Nj);
+		//矩阵显示形式
+		for ( i = 1; i <= maxi; i++ )
 		{
-			printf ("%8.2f", findElemValue (pMat, i, j));
+			for ( j = 1; j <= maxj; j++ )
+			{
+				printf ("%8.2f", findElemValue (pMat, i, j));
+			}
+			printf ("\n");
 		}
-		printf ("\n");
-	}
-	//数值-行号-列号 显示形式
-	/*
-	while (pCurrent != NULL)
-	{
+		//数值-行号-列号 显示形式
+		/*
+		while (pCurrent != NULL)
+		{
 		printf ("%8.2f %4d %4d\n", pCurrent->VA, pCurrent->IA, pCurrent->JA);
 		pCurrent = pCurrent->NEXT;
+		}
+		*/
+		return;
 	}
-	*/
-	return;
+	else
+	{
+		printf ("ShowMat: This is empty Mat!!\n");
+		return;
+	}
 }
