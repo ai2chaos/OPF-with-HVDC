@@ -78,6 +78,12 @@ bool IsRomved (const Mat * pMat);
  */
 double findElemValue (const Mat * pMat, int i, int j);
 
+/*操作：  计算稀疏矩阵的转置
+*操作前：pMatA为稀疏矩阵
+*操作后：返回A矩阵的转置矩阵的指针
+*/
+Mat TransposeMat (const Mat * pMatA);
+
 /*操作：  计算稀疏矩阵与常数相乘
 *操作前：pMatA为稀疏矩阵，K为常数
 *操作后：返回A矩阵与K的乘积的稀疏矩阵的指针
@@ -95,6 +101,12 @@ Mat productMat (const Mat * pMatA, const Mat * pMatB);
 *操作后：返回A、B矩阵相加后的稀疏矩阵的指针
 */
 Mat addMat (const Mat * pMatA, const Mat * pMatB);
+
+/*操作：  计算两个稀疏矩阵相减
+*操作前：pMatA、pMatB为稀疏矩阵
+*操作后：返回A、B矩阵相减后的稀疏矩阵的指针
+*/
+Mat minusMat (const Mat * pMatA, const Mat * pMatB);
 
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵

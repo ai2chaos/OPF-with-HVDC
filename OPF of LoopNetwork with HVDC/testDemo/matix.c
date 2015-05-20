@@ -5,10 +5,18 @@
 #include <stdbool.h>	//bool类型源文件
 #include "sparsematrix.h"
 
+/************************************************************************/
+/* tips:																*/
+/*		1.注意矩阵指针为空和空稀疏矩阵（不含非0元素但是已经初始化）的区别!!*/
+/*      2.当某些矩阵计算失败时，返回新建的、已经初始化的空稀疏矩阵         */
+/*      3.不是所有函数都检测了传入的稀疏矩阵指针是否为空，需要改进         */
+/************************************************************************/
+
 
 void InitMat (Mat * pMat, int n, int m)
 {
-	*pMat = (SparseMat *)malloc(sizeof(SparseMat));//malloc返回新建稀疏矩阵的地址
+	*pMat = (SparseMat *)malloc(sizeof(SparseMat));
+	//malloc返回新建稀疏矩阵的地址
 	(*pMat)->HEAD = NULL;
 	(*pMat)->NElement = 0;
 	(*pMat)->Ni = n;
@@ -65,6 +73,12 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 	pNew->VA = aij;
 	pNew->IA = i;
 	pNew->JA = j;
+	//检测添加元素是否超过矩阵维度
+	if ( i > (*pMat)->Ni || j > (*pMat)->Nj)
+	{
+		printf ("addList: Elements of the %d row or %d column number exceeds matrix dimensions!!\n", i, j);
+		return false;
+	}
 
 	//更新链表指针
 	if ((*pMat)->HEAD == NULL)
@@ -91,7 +105,8 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 			(*pMat)->HEAD = pNew;
 			return true;
 		}
-		else if ( ((pCurrent->IA == i) && (pCurrent->JA < j)) || (pCurrent->IA < i) )
+		else if ( ((pCurrent->IA == i) && (pCurrent->JA < j)) ||
+			(pCurrent->IA < i) )
 		{
 			//向链表中间插入元素
 			while ( (pNext = pCurrent->NEXT) != NULL )
@@ -137,7 +152,8 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 			}
 			//向链表末尾添加元素
 			if ( (pNext == NULL) &&
-				( (pCurrent->IA < i) || ( (pCurrent->IA == i) && (pCurrent->JA < j) ) ) )
+				( (pCurrent->IA < i) ||
+				( (pCurrent->IA == i) && (pCurrent->JA < j) ) ) )
 			{
 				pCurrent->NEXT = pNew;
 				pNew->NEXT = NULL;
@@ -145,7 +161,7 @@ bool addList (double aij, int i, int j, Mat * pMat, Elem * pNew)
 			}
 			else
 			{
-				printf ("addElement: Can't add element A%d%d to matix,maybe it already exists!!\n", i, j);
+				printf ("addElement: Can't add element A%d%d to matix, maybe it already exists!!\n", i, j);
 				return false;
 			}
 		}
@@ -173,7 +189,8 @@ bool removeElement (Mat * pMat, int i, int j)
 	bool flag = false;
 
 	pCurrent = (*pMat)->HEAD;
-	if ( (pCurrent->IA == i) && (pCurrent->JA == j) )	//检测矩阵第一个元素是否为要删除元素
+	if ( (pCurrent->IA == i) && (pCurrent->JA == j) )	
+		//检测矩阵第一个元素是否为要删除元素
 	{
 		pNext = pCurrent->NEXT;
 		free ((*pMat)->HEAD);	//释放矩阵的第一个元素aij
@@ -253,28 +270,49 @@ double findElemValue (const Mat * pMat, int i, int j)
 	}
 	return result;
 }
-
-Mat productK (const Mat * pMatA, double K)
+Mat TransposeMat (const Mat * pMatA)
 {
-	Elem * pCurrent, * pNext;
-	pCurrent = (*pMatA)->HEAD;
-
+	Elem * pCurrent;
 	Mat pResult;
-	InitMat (&pResult, (*pMatA)->Ni, (*pMatA)->Nj);
-	if ( *pMatA != NULL )	//检测矩阵指针是否为空
+	InitMat (&pResult, (*pMatA)->Nj, (*pMatA)->Ni);
+
+	if ( *pMatA != NULL )
 	{
-		while ( (pNext = pCurrent->NEXT) != NULL )
+		pCurrent = (*pMatA)->HEAD;
+		while ( pCurrent != NULL)
 		{
-			addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
-			pCurrent = pNext;
+			addElement (pCurrent->VA, pCurrent->JA, pCurrent->IA, &pResult);
+			pCurrent = pCurrent->NEXT;
 		}
-		addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
 		return pResult;
 	}
 	else
 	{
-		printf ("productK: pMatix is NULL!!\n ");
-		return NULL;
+		printf ("TransposeMat: Matix is Empty!!\n ");
+		return pResult;
+	}
+}
+
+Mat productK (const Mat * pMatA, double K)
+{
+	Elem * pCurrent;
+	pCurrent = (*pMatA)->HEAD;
+
+	Mat pResult;
+	InitMat (&pResult, (*pMatA)->Ni, (*pMatA)->Nj);
+	if ( *pMatA != NULL && K !=0 )	//检测矩阵指针是否为空
+	{
+		while ( pCurrent != NULL )
+		{
+			addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
+			pCurrent = pCurrent->NEXT;
+		}
+		return pResult;
+	}
+	else
+	{
+		printf ("productK: Matix is Empty!!\n ");
+		return pResult;	//此处返回的矩阵不含有非0元素，但其指针不为NULL	
 	}
 	
 }
@@ -327,7 +365,7 @@ Mat productMat (const Mat * pMatA, const Mat * pMatB)
 	else
 	{
 		printf ("productMat: Matrix dimension mismatch!!\n");
-		return NULL;
+		return pResult;	//此处返回的矩阵不含有非0元素，但其指针不为NULL
 	}
 }
 
@@ -375,8 +413,16 @@ Mat addMat (const Mat * pMatA, const Mat * pMatB)
 	else
 	{
 		printf ("addMat: Matrix dimension mismatch!!\n");
-		return NULL;
+		return pResult;	//此处返回的矩阵不含有非0元素，但其指针不为NULL
 	}
+}
+
+Mat minusMat (const Mat * pMatA, const Mat * pMatB)
+{
+	Mat pResult, pMatNB;
+	pMatNB = productK (pMatB, -1);
+	pResult = addMat (pMatA, &pMatNB);
+	return pResult;
 }
 
 void showMat (const Mat * pMat)
