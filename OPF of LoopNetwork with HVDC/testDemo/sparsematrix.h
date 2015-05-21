@@ -21,6 +21,16 @@ typedef struct SparseMatix
 }SparseMat;
 
 typedef SparseMat * Mat; //Mat类型指向一个稀疏矩阵链表
+
+typedef struct LDUFactorTable	//LDU因子表
+{
+	Mat matL;
+	Mat matD;
+	Mat matU;
+}matLDU;
+
+typedef matLDU * LDU;	
+//LDU类型指向一个含有三个稀疏矩阵指针的结构体
 /*
 Mat类型是指向稀疏矩阵类型的指针
 函数调用稀疏矩阵时默认传递进函数的为指向稀疏矩阵指针的指针
@@ -113,3 +123,9 @@ Mat minusMat (const Mat * pMatA, const Mat * pMatB);
  *操作后：向标准输出中打印稀疏矩阵
  */
 void showMat (const Mat * pMat);
+
+/*操作： 计算稀疏矩阵的LDU因子表
+ *操作前：已经初始化的稀疏矩阵pMat
+ *操作后：返回LDU因子表LDU类型指针
+ */
+LDU CalFactorT (Mat * pMat);

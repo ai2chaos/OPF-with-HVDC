@@ -13,6 +13,9 @@
 /************************************************************************/
 
 
+/************************************************************************/
+/*                         矩阵基本操作                                  */
+/************************************************************************/
 void InitMat (Mat * pMat, int n, int m)
 {
 	*pMat = (SparseMat *)malloc(sizeof(SparseMat));
@@ -296,12 +299,11 @@ Mat TransposeMat (const Mat * pMatA)
 Mat productK (const Mat * pMatA, double K)
 {
 	Elem * pCurrent;
-	pCurrent = (*pMatA)->HEAD;
-
 	Mat pResult;
-	InitMat (&pResult, (*pMatA)->Ni, (*pMatA)->Nj);
 	if ( *pMatA != NULL && K !=0 )	//检测矩阵指针是否为空
 	{
+		pCurrent = (*pMatA)->HEAD;
+		InitMat (&pResult, (*pMatA)->Ni, (*pMatA)->Nj);
 		while ( pCurrent != NULL )
 		{
 			addElement (K*pCurrent->VA, pCurrent->IA, pCurrent->JA, &pResult);
@@ -312,6 +314,7 @@ Mat productK (const Mat * pMatA, double K)
 	else
 	{
 		printf ("productK: Matix is Empty!!\n ");
+		InitMat (&pResult, 1, 1);
 		return pResult;	//此处返回的矩阵不含有非0元素，但其指针不为NULL	
 	}
 	
@@ -457,7 +460,89 @@ void showMat (const Mat * pMat)
 	}
 	else
 	{
-		printf ("ShowMat: This is empty pMat!!\n");
+		printf ("ShowMat: This is an empty pMat!!\n");
 		return;
+	}
+}
+
+/************************************************************************/
+/*                       线性方程组求解                                  */
+/************************************************************************/
+
+LDU CalFactorT (Mat * pMat)
+{
+	int n, m, i, j, p;
+	double Vpj1, Vpj2, Vpp, Vij1, Vij2, Vip;
+	//检测pMat指针是否为空
+	if ( pMat == NULL )
+	{
+		printf ("CalFactorT: This is an empty pMat!!\n");
+		return NULL;
+	}
+	//检测矩阵是否为空
+	else if (MatIsEmpty (pMat))
+	{
+		printf ("CalFactorT: Matix is empty!!\n");
+		return NULL;
+	}
+	else
+	{
+		n = (*pMat)->Ni;
+		m = (*pMat)->Nj;
+		if ( n != m )
+		{
+			printf ("CalFactorT: Matix is [%d %d], can't calculate FactorTable", n, m);
+			return NULL;
+		}
+		else
+		{
+			//初始化LDU因子表指针及其指向的因子表
+			LDU factorTable;
+			factorTable = (matLDU *)malloc (sizeof(matLDU));
+			Mat matL, matD, matU;
+
+			//初始化因子表中的稀疏矩阵
+			InitMat (&matL, n, m);
+			InitMat (&matD, n, m);
+			InitMat (&matU, n, m);
+
+			//对LDU因子表中个稀疏矩阵进行赋值
+			factorTable->matL = matL;
+			factorTable->matD = matD;
+			factorTable->matU = matU;
+
+			//因子表中L、D、U矩阵求解及赋值
+			/*
+			for ( p = 1; p <= n - 1; p++ )
+			{
+				for ( j = p + 1; j <= m; j++ )
+				{
+					if ( (Vpp = findElemValue (pMat, p, p)) != 0 )
+					{
+						if ( (Vpj1 = findElemValue (pMat, p, j)) != 0 )
+						{
+							Vpj2 = Vpj1 / Vpp;
+						}
+						else
+							Vpj2 = 0;
+					}
+					else
+						printf ("CalFactorT: Division by zero!!\n");
+					for ( i = p + 1; i <= n; i++ )
+					{
+						if ( (Vij1 = findElemValue (pMat, i, j)) != 0 &
+							(Vip = findElemValue (pMat, i, j)) != 0 )
+						{
+							Vij2 = Vij1 - Vip*Vpj2;
+						}
+						else
+							Vij2 = 0;
+					}
+				}
+			}
+
+			*/
+			return factorTable;
+		}
 	}
 }
