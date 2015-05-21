@@ -260,20 +260,29 @@ bool updateElement (double aij, int i, int j, Mat * pMat)
 {
 	if ( *pMat != NULL )
 	{
-		if ( removeElement (pMat, i, j) )
+		if ( findElemValue (pMat, i, j) != 0 )
 		{
-			if ( !addElement (aij, i, j, pMat) )
+			if ( removeElement (pMat, i, j) )
+			{
+				if ( !addElement (aij, i, j, pMat) )
+				{
+					printf ("updateElement: Can't update element a%d%d", i, j);
+					return false;
+				}
+				return true;
+			}
+			else
 			{
 				printf ("updateElement: Can't update element a%d%d", i, j);
 				return false;
 			}
-			return true;
 		}
 		else
 		{
-			printf ("updateElement: Can't update element a%d%d", i, j);
-			return false;
+			addElement (aij, i, j, pMat);
+			return true;
 		}
+		
 	}
 	else
 	{
@@ -498,7 +507,8 @@ void showMat (const Mat * pMat)
 LDU CalFactorT (Mat * pMat)
 {
 	int n, m, i, j, p;
-	double Vpj1, Vpj2, Vpp, Vij1, Vij2, Vip;
+	double Vpj1, Vpj2, Vpj, Vpp, Vij1, Vij2, Vip;
+	Elem * pCurrent;
 	//检测pMat指针是否为空
 	if ( pMat == NULL )
 	{
@@ -538,35 +548,60 @@ LDU CalFactorT (Mat * pMat)
 			factorTable->matU = matU;
 
 			//因子表中L、D、U矩阵求解及赋值
-			/*
+
+			//复制矩阵*pMat到matD
+			pCurrent = (*pMat)->HEAD;
+			while (pCurrent != NULL)
+			{
+				addElement (pCurrent->VA, pCurrent->IA, pCurrent->JA, &matD);
+				pCurrent = pCurrent->NEXT;
+			}
+
+			//求FactorTable
 			for ( p = 1; p <= n - 1; p++ )
 			{
-				for ( j = 1; j <= m; j++ )
+				for ( j = p + 1; j <= m; j++ )
 				{
-					if ( (Vpp = findElemValue (pMat, p, p)) != 0 )
+					if ( (Vpp = findElemValue (&matD, p, p)) != 0 )
 					{
-						if ( (Vpj1 = findElemValue (pMat, p, j)) != 0 )
+						if ( (Vpj1 = findElemValue (&matD, p, j)) != 0 )
 						{
 							Vpj2 = Vpj1 / Vpp;
+							updateElement (Vpj2, p, j, &matD);
 						}
-						else
-							Vpj2 = 0;
 					}
 					else
-						printf ("CalFactorT: Division by zero!!\n");
-					for ( i = 1; i <= n; i++ )
+						printf ("CalFactorTError: A[%d %d]=0, Division by zero!!\n", p, p);
+					for ( i = p + 1; i <= n; i++ )
 					{
-						if ( (Vij1 = findElemValue (pMat, i, j)) != 0 &
-							(Vip = findElemValue (pMat, i, j)) != 0 )
+						if ( ((Vpj = findElemValue (&matD, p, j))== 0) |
+							((Vip = findElemValue (&matD, i, p)) == 0) )
 						{
-							Vij2 = Vij1 - Vip*Vpj2;
 						}
 						else
-							Vij2 = 0;
+						{
+							Vij1 = findElemValue (&matD, i, j);
+							Vij2 = Vij1 - Vpj*Vip;
+							if ( (Vij2 != 0) & (Vij1 != 0) )
+							{  
+								updateElement (Vij2, i, j, &matD);
+							}
+							else if ( (Vij2 == 0) & (Vij1 != 0) )
+							{
+								removeElement (&matD, i, j);
+							}
+							else if ( (Vij2 != 0) & (Vij1 == 0) )
+							{
+								addElement (Vij2, i, j, &matD);
+							}
+							else
+							{
+							}
+						}
 					}
 				}
 			}
-			*/
+			showMat (&matD);
 			return factorTable;
 		}
 	}

@@ -39,21 +39,17 @@ int main (void)
 	showMat (&matAB);
 	*/
 	Mat matA;
-	InitMat (&matA, 2, 3);
-	addElement (8, 1, 1, &matA);
-	addElement (8, 1, 2, &matA);
-	addElement (6, 1, 3, &matA);
-	addElement (6, 2, 3, &matA);
+	InitMat (&matA, 4, 4);
+	addElement (2, 1, 1, &matA);
+	addElement (7, 1, 2, &matA);
+	addElement (-3, 1, 4, &matA);
+	addElement (5, 2, 1, &matA);
+	addElement (4, 2, 2, &matA);
+	addElement (5, 3, 3, &matA);
+	addElement (-2, 4, 2, &matA);
+	addElement (6, 4, 4, &matA);
 	showMat (&matA);
-	Mat matB;
-	InitMat (&matB, 2, 3);
-	addElement (5, 1, 1, &matB);
-	addElement (2, 1, 2, &matB);
-	addElement (1, 2, 1, &matB);
-	addElement (3, 2, 2, &matB);
-	showMat (&matB);
-	updateElement (10, 2, 2, &matB);
-	showMat (&matB);
+	CalFactorT (&matA);
 	/*
 	Mat C;
 	C = minusMat (&matA, &matB);
