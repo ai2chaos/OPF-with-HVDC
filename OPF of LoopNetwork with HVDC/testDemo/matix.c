@@ -256,6 +256,32 @@ bool IsRomved (const Mat * pMat)
 		return false;
 }
 
+bool updateElement (double aij, int i, int j, Mat * pMat)
+{
+	if ( *pMat != NULL )
+	{
+		if ( removeElement (pMat, i, j) )
+		{
+			if ( !addElement (aij, i, j, pMat) )
+			{
+				printf ("updateElement: Can't update element a%d%d", i, j);
+				return false;
+			}
+			return true;
+		}
+		else
+		{
+			printf ("updateElement: Can't update element a%d%d", i, j);
+			return false;
+		}
+	}
+	else
+	{
+		printf ("updateElement: This is an empty pMat!!\n");
+		return false;
+	}
+}
+
 double findElemValue (const Mat * pMat, int i, int j)
 {
 	Elem * pCurrent;
@@ -491,7 +517,7 @@ LDU CalFactorT (Mat * pMat)
 		m = (*pMat)->Nj;
 		if ( n != m )
 		{
-			printf ("CalFactorT: Matix is [%d %d], can't calculate FactorTable", n, m);
+			printf ("CalFactorT: Matix is [%d %d], can't calculate FactorTable!!\n", n, m);
 			return NULL;
 		}
 		else
@@ -515,7 +541,7 @@ LDU CalFactorT (Mat * pMat)
 			/*
 			for ( p = 1; p <= n - 1; p++ )
 			{
-				for ( j = p + 1; j <= m; j++ )
+				for ( j = 1; j <= m; j++ )
 				{
 					if ( (Vpp = findElemValue (pMat, p, p)) != 0 )
 					{
@@ -528,7 +554,7 @@ LDU CalFactorT (Mat * pMat)
 					}
 					else
 						printf ("CalFactorT: Division by zero!!\n");
-					for ( i = p + 1; i <= n; i++ )
+					for ( i = 1; i <= n; i++ )
 					{
 						if ( (Vij1 = findElemValue (pMat, i, j)) != 0 &
 							(Vip = findElemValue (pMat, i, j)) != 0 )
@@ -540,7 +566,6 @@ LDU CalFactorT (Mat * pMat)
 					}
 				}
 			}
-
 			*/
 			return factorTable;
 		}

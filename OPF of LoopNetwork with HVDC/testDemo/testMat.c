@@ -52,6 +52,9 @@ int main (void)
 	addElement (1, 2, 1, &matB);
 	addElement (3, 2, 2, &matB);
 	showMat (&matB);
+	updateElement (10, 2, 2, &matB);
+	showMat (&matB);
+	/*
 	Mat C;
 	C = minusMat (&matA, &matB);
 	showMat (&C);
@@ -60,6 +63,7 @@ int main (void)
 	Mat D;
 	D = productK (&C, 3);
 	showMat (&D);
+	*/
 	getchar ();
 	getchar ();
 	return 0;
