@@ -507,7 +507,7 @@ void showMat (const Mat * pMat)
 LDU CalFactorT (Mat * pMat)
 {
 	int n, m, i, j, p;
-	double Vpj1, Vpj2, Vpj, Vpp, Vij1, Vij2, Vip;
+	double Vpj1, Vpj2, Vpj, Vpp, Vij1, Vij2, Vij, Vip;
 	Elem * pCurrent;
 	//检测pMat指针是否为空
 	if ( pMat == NULL )
@@ -601,8 +601,117 @@ LDU CalFactorT (Mat * pMat)
 					}
 				}
 			}
-			showMat (&matD);
+			//showMat (&matD);
+
+			//分别求解matU，matL，matD
+
+			//追加matL与matU矩阵元素
+			pCurrent = matD->HEAD;
+			while (pCurrent != NULL)
+			{
+				i = pCurrent->IA;
+				j = pCurrent->JA;
+				Vij = pCurrent->VA;
+				if ( i > j )
+				{
+					Vij = Vij / findElemValue (&matD, j, j);
+					addElement (Vij, i, j, &matL);
+				}
+				else if ( i < j )
+				{
+					addElement (Vij, i, j, &matU);
+				}
+				else
+				{
+					addElement (1, i, j, &matU);
+					addElement (1, i, j, &matL);
+				}
+				pCurrent = pCurrent->NEXT;
+			}
+
+			//matD矩阵单位化（删除非对角线元素）
+			pCurrent = matD->HEAD;
+			while (pCurrent != NULL)
+			{
+				i = pCurrent->IA;
+				j = pCurrent->JA;
+				if ( i != j )
+				{
+					pCurrent = pCurrent->NEXT;
+					removeElement (&matD, i, j);
+				}
+				else
+					pCurrent = pCurrent->NEXT;
+			}
 			return factorTable;
 		}
 	}
+}
+
+Mat solveEqs (LDU * factorTable, Mat * pMat)
+{
+	//factorTable
+	Mat L, D, U;
+	int Li, Lj, Di, Dj, Ui, Uj;
+	double Lij, Dij, Uij;
+	Elem * pCurrentL, *pCurrentD, *pCurrentU;
+
+	//pMat
+	int Bi, Bj;
+	double Bij;
+	Elem * pCurrentB;
+
+	//result: factorTable * result = B
+	Mat result;
+
+	//检测因子表指针是否为空
+	if ( factorTable == NULL )
+	{
+		printf ("solveEqs:The point of factorTable is empty!!\n");
+		return NULL;
+	}
+
+	//检测因子表中LDU矩阵是否为空
+	U = (*factorTable)->matU;
+	D = (*factorTable)->matD;
+	L = (*factorTable)->matL;
+	if ( MatIsEmpty (&L) || MatIsEmpty (&D) || MatIsEmpty (&U) )
+	{
+		printf ("solveEqs:There is an empty Matix in the factorTable!!\n");
+		return NULL;
+	}
+	else
+	{
+		Li = L->Ni;
+		Lj = L->Nj;
+		Di = D->Ni;
+		Dj = D->Nj; 
+		Ui = U->Ni;
+		Uj = U->Nj;
+		pCurrentL = L->HEAD;
+		pCurrentD = D->HEAD;
+		pCurrentU = U->HEAD;
+	}
+
+	//检测pMat指针是否为空
+	if ( pMat == NULL )
+	{
+		printf ("solveEqs: This is an empty pMat!!\n");
+		return NULL;
+	}
+	//检测矩阵是否为空
+	else if ( MatIsEmpty (pMat) )
+	{
+		printf ("solveEqs: Matix is empty!!\n");
+		return NULL;
+	}
+	else
+	{
+		Bi = (*pMat)->Ni;
+		Bj = (*pMat)->Nj;
+		pCurrentB = (*pMat)->HEAD;
+	}
+
+	//初始化Mat result
+	InitMat (&result, Bi, 1);
 }

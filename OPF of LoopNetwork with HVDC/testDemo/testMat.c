@@ -39,17 +39,24 @@ int main (void)
 	showMat (&matAB);
 	*/
 	Mat matA;
+	LDU Test;
 	InitMat (&matA, 4, 4);
-	addElement (2, 1, 1, &matA);
-	addElement (7, 1, 2, &matA);
-	addElement (-3, 1, 4, &matA);
-	addElement (5, 2, 1, &matA);
-	addElement (4, 2, 2, &matA);
-	addElement (5, 3, 3, &matA);
-	addElement (-2, 4, 2, &matA);
-	addElement (6, 4, 4, &matA);
+	addElement (1, 1, 1, &matA);
+	addElement (1, 1, 4, &matA);
+	addElement (1, 2, 2, &matA);
+	addElement (2, 2, 4, &matA);
+	addElement (1, 3, 3, &matA);
+	addElement (1, 3, 4, &matA);
+	addElement (1, 4, 1, &matA);
+	addElement (2, 4, 2, &matA);
+	addElement (1, 4, 3, &matA);
+	addElement (1, 4, 4, &matA);
 	showMat (&matA);
-	CalFactorT (&matA);
+	Test = CalFactorT (&matA);
+	
+	showMat (&(Test->matU));
+	showMat (&(Test->matD));
+	showMat (&(Test->matL));
 	/*
 	Mat C;
 	C = minusMat (&matA, &matB);

@@ -135,3 +135,9 @@ void showMat (const Mat * pMat);
  *操作后：返回LDU因子表LDU类型指针
  */
 LDU CalFactorT (Mat * pMat);
+
+/*操作：  求解factorTable*x=pMat方程组的解
+ *操作前：factorTalbe是因子表指针的指针，pMat是稀疏矩阵指针的指针
+ *操作后：返回稀疏矩阵Mat类型指针
+ */
+Mat solveEqs (LDU * factorTable, Mat * pMat);
