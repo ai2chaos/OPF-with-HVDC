@@ -243,7 +243,6 @@ bool IsRomved (const Mat * pMat)
 	}
 	else
 	{
-		printf ("IsRemoved: Mat is empty!!\n");
 		Num = 0;
 	}
 	//判断矩阵非零元素时候等于删除前非0个数-1
@@ -504,7 +503,7 @@ void showMat (const Mat * pMat)
 /*                       线性方程组求解                                  */
 /************************************************************************/
 
-LDU CalFactorT (Mat * pMat)
+LDU CalFactorT (const Mat * pMat)
 {
 	int n, m, i, j, p;
 	double Vpj1, Vpj2, Vpj, Vpp, Vij1, Vij2, Vij, Vip;
@@ -601,7 +600,7 @@ LDU CalFactorT (Mat * pMat)
 					}
 				}
 			}
-			//showMat (&matD);
+			showMat (&matD);
 
 			//分别求解matU，matL，matD
 
@@ -652,13 +651,10 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 {
 	//factorTable
 	Mat L, D, U;
-	int Li, Lj, Di, Dj, Ui, Uj;
-	double Lij, Dij, Uij;
-	Elem * pCurrentL, *pCurrentD, *pCurrentU;
+	Elem * pCurrentL, * pCurrentD, * pCurrentU;
 
 	//pMat
-	int Bi, Bj;
-	double Bij;
+	int n;
 	Elem * pCurrentB;
 
 	//result: factorTable * result = B
@@ -680,19 +676,7 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 		printf ("solveEqs:There is an empty Matix in the factorTable!!\n");
 		return NULL;
 	}
-	else
-	{
-		Li = L->Ni;
-		Lj = L->Nj;
-		Di = D->Ni;
-		Dj = D->Nj; 
-		Ui = U->Ni;
-		Uj = U->Nj;
-		pCurrentL = L->HEAD;
-		pCurrentD = D->HEAD;
-		pCurrentU = U->HEAD;
-	}
-
+	
 	//检测pMat指针是否为空
 	if ( pMat == NULL )
 	{
@@ -707,11 +691,53 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 	}
 	else
 	{
-		Bi = (*pMat)->Ni;
-		Bj = (*pMat)->Nj;
+		n = (*pMat)->Ni;
 		pCurrentB = (*pMat)->HEAD;
 	}
 
 	//初始化Mat result
-	InitMat (&result, Bi, 1);
+	InitMat (&result, n, 1);
+	//复制pMat->result
+	while ( pCurrentB != NULL )
+	{
+		addElement (pCurrentB->VA, pCurrentB->IA, pCurrentB->JA, &result);
+		pCurrentB = pCurrentB->NEXT;
+	}
+	 
+	//利用L矩阵进行前代运算
+	int i, k;
+	double Dk, Lik, Bk, Bi;
+	for ( k = 1; k <= n - 1; k++ )
+	{
+		if ( (Bk = findElemValue (&result, k, 1)) != 0 )
+		{
+			for ( i = k + 1; i <= n; i++ )
+			{
+				if ( (Lik = findElemValue (&L, i, k)) !=0 )
+				{
+					Bi = findElemValue (&result, i, 1);
+					Bi = Bi - Lik*Bk;
+					if ( Bi == 0 )
+					{
+						if ( findElemValue (&result, i, 1) != 0 )
+						{
+							removeElement (&result, i, 1);
+						}
+					}
+					else
+					{
+						updateElement (Bi, i, 1, &result);
+					}
+				}
+			}
+		}
+	}
+
+	//利用D矩阵进行除法运算
+	for ( k = 1; k <= n; k++ )
+	{
+	}
+
+	return result;
+
 }

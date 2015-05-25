@@ -42,21 +42,29 @@ int main (void)
 	LDU Test;
 	InitMat (&matA, 4, 4);
 	addElement (1, 1, 1, &matA);
+	addElement (2, 1, 2, &matA);
+	addElement (1, 1, 3, &matA);
 	addElement (1, 1, 4, &matA);
+	addElement (2, 2, 1, &matA);
 	addElement (1, 2, 2, &matA);
-	addElement (2, 2, 4, &matA);
+	addElement (1, 3, 1, &matA);
 	addElement (1, 3, 3, &matA);
-	addElement (1, 3, 4, &matA);
 	addElement (1, 4, 1, &matA);
-	addElement (2, 4, 2, &matA);
-	addElement (1, 4, 3, &matA);
 	addElement (1, 4, 4, &matA);
 	showMat (&matA);
 	Test = CalFactorT (&matA);
+	Mat B;
+	InitMat (&B, 4, 1);
+	addElement (-1, 1, 1, &B);
+	addElement (1, 2, 1, &B);
+	addElement (2, 3, 1, &B);
 	
 	showMat (&(Test->matU));
 	showMat (&(Test->matD));
 	showMat (&(Test->matL));
+	Mat result;
+	result = solveEqs (&Test, &B);
+	showMat (&result);
 	/*
 	Mat C;
 	C = minusMat (&matA, &matB);
