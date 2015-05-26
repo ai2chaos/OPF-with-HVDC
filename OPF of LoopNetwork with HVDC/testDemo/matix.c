@@ -600,7 +600,7 @@ LDU CalFactorT (const Mat * pMat)
 					}
 				}
 			}
-			showMat (&matD);
+			//showMat (&matD);
 
 			//分别求解matU，matL，matD
 
@@ -651,7 +651,6 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 {
 	//factorTable
 	Mat L, D, U;
-	Elem * pCurrentL, * pCurrentD, * pCurrentU;
 
 	//pMat
 	int n;
@@ -706,7 +705,7 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 	 
 	//利用L矩阵进行前代运算
 	int i, k;
-	double Dk, Lik, Bk, Bi;
+	double Dk, Lik, Bk, Bi, Uik;
 	for ( k = 1; k <= n - 1; k++ )
 	{
 		if ( (Bk = findElemValue (&result, k, 1)) != 0 )
@@ -736,8 +735,54 @@ Mat solveEqs (LDU * factorTable, Mat * pMat)
 	//利用D矩阵进行除法运算
 	for ( k = 1; k <= n; k++ )
 	{
+		if ( (Dk = findElemValue (&D, k, k)) != 0 )
+		{
+			if ( (Bk = findElemValue (&result, k, 1)) != 0)
+			{
+				Bk = Bk / Dk;
+				updateElement (Bk, k, 1, &result);
+			}
+			else
+				continue;
+		}
+		else
+		{
+			printf ("solveEqs: D[%d %d] is zero!!\n");
+			return NULL;
+		}
+	}
+
+	//showMat (&result);
+	//利用U矩阵进行回代运算
+	for ( k = n; k >= 2; k-- )
+	{
+		if ( (Bk = findElemValue (&result, k, 1)) != 0 )
+		{
+			for ( i = k - 1; i >= 1; i-- )
+			{
+				if ( (Uik = findElemValue (&U, i, k)) != 0 )
+				{
+					Bi = findElemValue (&result, i, 1);
+					Bi = Bi - Uik*Bk;
+					if ( Bi == 0 )
+					{
+						if ( findElemValue (&result, i, 1) != 0 )
+						{
+							removeElement (&result, i, 1);
+						}
+					}
+					else
+					{
+						updateElement (Bi, i, 1, &result);
+					}
+				}
+			}
+		}
+		else
+			continue;
 	}
 
 	return result;
+
 
 }
