@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "PowerFlow.h"
+#include "sparsematrix.h"
 #define _CHECKPOINT_
 
 int main (void)

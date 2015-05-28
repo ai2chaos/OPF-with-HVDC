@@ -18,6 +18,9 @@
     <ClInclude Include="PowerFlow.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sparsematrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PF.c">
@@ -30,6 +33,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="importdata.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="matix.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

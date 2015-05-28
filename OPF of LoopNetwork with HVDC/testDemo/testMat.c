@@ -99,6 +99,8 @@ int main (void)
 	D = productK (&C, 3);
 	showMat (&D);
 	*/
+	addElement (100, 2, 5, &result);
+	showMat (&result);
 	getchar ();
 	getchar ();
 	return 0;
