@@ -86,8 +86,10 @@
     <ClInclude Include="sparsematrix.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="adjacencyMatix.c" />
     <ClCompile Include="importdata.c" />
     <ClCompile Include="matix.c" />
+    <ClCompile Include="nodeAdmittanceMatix.c" />
     <ClCompile Include="PF_allocate.c" />
     <ClCompile Include="PF.c" />
     <ClCompile Include="PF_initialize.c" />

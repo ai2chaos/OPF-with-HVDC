@@ -38,5 +38,11 @@
     <ClCompile Include="matix.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="nodeAdmittanceMatix.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="adjacencyMatix.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 /*variablze declarations and                                            */
 /************************************************************************/
 #include <stdio.h>
+#include "sparsematrix.h"
 
 /*定义潮流数据中需要的常数 */
 #define _TestCase_
@@ -114,22 +115,22 @@ typedef struct
 
 typedef struct 
 {
-	double *P, *Q;	//P, Q is positive.
-	int *i;
-	double *V;
+	double P, Q;	//P, Q is positive.
+	int i;
+	double V;
 }Generator_Type;
 
 typedef struct 
 {
-	double *P, *Q;	//P, Q is negative.
-	int *i;
-	double *V;
+	double P, Q;	//P, Q is negative.
+	int i;
+	double V;
 }Load_Type;
 
 typedef struct 
 {
-	double *V;	
-	int *i;
+	double V;	
+	int i;
 }PVNode_Type;
 
 typedef struct 
@@ -137,6 +138,14 @@ typedef struct
 	Bus_Type * BusData;		//指向Nbus个bus数据结构
 	Branch_Type * BranchData;	//指向Nbranch个branch数据结构
 }RawData_Type;
+typedef struct
+{
+	Mat * A_Re;		//邻接矩阵
+	Mat * A_Im;
+	Mat * yb_Re;	//支路导纳矩阵
+	Mat * yb_Im;
+}AdjacencyMat_type;
+typedef AdjacencyMat_type * AdjacencyMat;	//邻接矩阵指针
 
 /*函数原型声明*/
 void ImportData (RawData_Type * RawData);
@@ -146,3 +155,4 @@ void allocate_memory_branch (Branch_Type * branch);
 void initialize_RawData (RawData_Type * RawData, FILE * fptmp);
 void initialize_BusData (Bus_Type * bus, char * Line);
 void initialize_BranchData (Branch_Type * branch, char * Line);
+AdjacencyMat CreatAdjacencyMatix (RawData_Type * RawData);

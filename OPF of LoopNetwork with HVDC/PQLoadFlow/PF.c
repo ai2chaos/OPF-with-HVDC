@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "PowerFlow.h"
-#include "sparsematrix.h"
 #define _CHECKPOINT_
 
 int main (void)
@@ -66,6 +65,12 @@ int main (void)
 			*RawData->BranchData[j].MaxSorVol);
 	}
 #endif
+	AdjacencyMat A;
+	A = CreatAdjacencyMatix (RawData);
+	showMat (A->A_Re);
+	showMat (A->A_Im);
+	showMat (A->yb_Re);
+	showMat (A->yb_Im);
 	getchar ();
 	getchar ();
 	return 0;
