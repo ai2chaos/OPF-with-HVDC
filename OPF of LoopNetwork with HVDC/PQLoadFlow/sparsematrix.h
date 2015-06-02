@@ -84,7 +84,7 @@ bool IsRomved (const Mat * pMat);
 
 /*操作： 更改矩阵中的元素Aij，但是不改变矩阵的大小
 *操作前：pMat是已经初始化的矩阵
-*操作后：在矩阵中移除元素Aij
+*操作后：在矩阵中移除元素Aij，后添加新元素
 */
 bool updateElement (double aij, int i, int j, Mat * pMat);
 

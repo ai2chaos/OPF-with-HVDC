@@ -6,12 +6,12 @@
 #include "sparsematrix.h"
 
 /*定义潮流数据中需要的常数 */
-#define _TestCase_
-//#define _IEEE14_
+//#define _TestCase_
+#define _IEEE14_
 
 #	ifdef _IEEE14_
-#define DataName "014ieee.DAT"
-//#define DataName "ieee14cdf.txt"
+//#define DataName "014ieee.DAT"
+#define DataName "ieee14cdf.txt"
 #define Nbus 14
 #define Nbranch 20
 #define Ng 5
@@ -47,6 +47,7 @@ typedef struct
 	2 - Variable tap for voltage control (TCUL, LTC)
 	3 - Variable tap (turns ratio) for MVAR control
 	4 - Variable phase angle for MW control (phase shifter)
+	5 - DC Line直流传输线路 
 	Columns 20-29   Branch resistance R, per unit (F) *
 	Columns 30-40   Branch reactance X, per unit (F) * No zero impedance lines
 	Columns 41-50   Line charging B, per unit (F) * (total line charging, +B)
