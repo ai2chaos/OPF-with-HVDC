@@ -36,6 +36,20 @@ void InitElem (Elem * pElem)
 	return;
 }
 
+void deallocateMemoryMat (Mat * pMat)
+{
+	Elem * pNext, * pCurrent;
+	pCurrent = (*pMat)->HEAD;
+	while (pCurrent != NULL)
+	{
+		pNext = pCurrent->NEXT;
+		free (pCurrent);
+		pCurrent = pNext;
+	}
+	free (*pMat);
+	return;
+}
+
 bool MatIsEmpty (const Mat * pMat)
 {
 	if ( (*pMat)->HEAD == NULL )

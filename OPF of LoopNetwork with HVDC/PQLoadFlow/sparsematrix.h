@@ -46,6 +46,12 @@ Mat类型是指向稀疏矩阵类型的指针
  */
 void InitMat (Mat * pMat, int n, int m);
 
+/*操作： 释放矩阵占用的动态内存空间
+*操作前：已经初始化的Mat类型矩阵
+*操作后：释放矩阵占用的动态内存空间，并释放指针
+*/
+void deallocateMemoryMat (Mat * pMat);
+
 /*操作：	  创建并初始化新元素
  *操作前：pElem为新元素指针
  *操作后：该元素及相关信息初始化为0值
