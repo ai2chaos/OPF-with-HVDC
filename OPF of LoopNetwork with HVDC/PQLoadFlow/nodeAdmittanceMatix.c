@@ -30,8 +30,10 @@ AdmittanceMat CreatAdmittanceMatix (const AdjacencyMat * A)
 		deallocateMemoryMat (&A_ReT);
 		deallocateMemoryMat (&tempMatARyR);
 		deallocateMemoryMat (&tempMatARyI);
-		result->Y_Re = &tempMatARyRART;
-		result->Y_Im = &tempMatARyIART;
+		copyMat (&tempMatARyRART, result->Y_Re);
+		copyMat (&tempMatARyIART, result->Y_Im);
+		deallocateMemoryMat (&tempMatARyRART);
+		deallocateMemoryMat (&tempMatARyIART);
 		return result;
 	}
 	else
@@ -51,14 +53,16 @@ AdmittanceMat CreatAdmittanceMatix (const AdjacencyMat * A)
 		tempMatB = minusMat (&tempMatA, &tempMatAIyRAIT);
 		deallocateMemoryMat (&tempMatA);
 		tempMatA = minusMat (&tempMatB, &tempMatARyIAIT);
-		result->Y_Re = &tempMatA;
+		copyMat (&tempMatA, result->Y_Re);
+		deallocateMemoryMat (&tempMatA);
 		deallocateMemoryMat (&tempMatB);
 		//虚部追加
 		tempMatA = minusMat (&tempMatARyIART, &tempMatAIyIAIT);
 		tempMatB = addMat (&tempMatA, &tempMatAIyRART);
 		deallocateMemoryMat (&tempMatA);
 		tempMatA = addMat (&tempMatB, &tempMatARyRAIT);
-		result->Y_Im = &tempMatA;
+		copyMat (&tempMatA, result->Y_Im);
+		deallocateMemoryMat (&tempMatA);
 		deallocateMemoryMat (&tempMatB);
 
 		//释放临时矩阵

@@ -6,8 +6,8 @@
 #include "sparsematrix.h"
 
 /*定义潮流数据中需要的常数 */
-//#define _TestCase_
-#define _IEEE14_
+#define _TestCase_
+//#define _IEEE14_
 
 #	ifdef _IEEE14_
 //#define DataName "014ieee.DAT"

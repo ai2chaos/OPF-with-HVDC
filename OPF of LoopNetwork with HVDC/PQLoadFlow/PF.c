@@ -67,18 +67,14 @@ int main (void)
 #endif
 	AdjacencyMat A;
 	AdmittanceMat YMat;
-	Mat C;
-	InitMat (&C, Nbranch+Nbus, Nbranch+Nbus);
 	A = CreatAdjacencyMatix (RawData);
-	//YMat = CreatAdmittanceMatix (&A);
-	//showMat (A->A_Re);
-	//showMat (A->A_Im);
-	//showMat (A->yb_Re);
+	YMat = CreatAdmittanceMatix (&A);
+	showMat (A->A_Re);
+	showMat (A->A_Im);
+	showMat (A->yb_Re);
 	showMat (A->yb_Im);
-	copyMat (A->yb_Im, &C);
-	showMat (&C);
-	//showMat (YMat->Y_Re);
-	//showMat (YMat->Y_Im);
+	showMat (YMat->Y_Re);
+	showMat (YMat->Y_Im);
 	getchar ();
 	getchar ();
 	return 0;
