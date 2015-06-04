@@ -65,26 +65,20 @@ int main (void)
 			*RawData->BranchData[j].MaxSorVol);
 	}
 #endif
-	/*
 	AdjacencyMat A;
+	AdmittanceMat YMat;
+	Mat C;
+	InitMat (&C, Nbranch+Nbus, Nbranch+Nbus);
 	A = CreatAdjacencyMatix (RawData);
-	showMat (A->A_Re);
-	showMat (A->A_Im);
-	showMat (A->yb_Re);
+	//YMat = CreatAdmittanceMatix (&A);
+	//showMat (A->A_Re);
+	//showMat (A->A_Im);
+	//showMat (A->yb_Re);
 	showMat (A->yb_Im);
-	*/
-	Mat testMat;
-	double k;
-	InitMat (&testMat, 4, 4);
-	for ( i = 1, k = 1; i < 5; i++ )
-	{
-		for ( j = 1; j < 5; j++, k++ )
-		{
-			addElement (k, i, j, &testMat);
-		}
-	}
-	showMat (&testMat);
-	deallocateMemoryMat (&testMat);
+	copyMat (A->yb_Im, &C);
+	showMat (&C);
+	//showMat (YMat->Y_Re);
+	//showMat (YMat->Y_Im);
 	getchar ();
 	getchar ();
 	return 0;

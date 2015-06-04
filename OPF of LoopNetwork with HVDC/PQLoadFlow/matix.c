@@ -476,6 +476,23 @@ Mat minusMat (const Mat * pMatA, const Mat * pMatB)
 	return pResult;
 }
 
+void copyMat (const Mat * pMatA, Mat * pMatB)
+{
+	Elem * pCurrent;
+	double VA;
+	int i, j;
+	pCurrent = (*pMatA)->HEAD;
+	while (pCurrent != NULL)
+	{
+		i = pCurrent->IA;
+		j = pCurrent->JA;
+		VA = pCurrent->VA;
+		addElement (VA, i, j, pMatB);
+		pCurrent = pCurrent->NEXT;
+	}
+	return;
+}
+
 void showMat (const Mat * pMat)
 {
 	Elem * pCurrent;

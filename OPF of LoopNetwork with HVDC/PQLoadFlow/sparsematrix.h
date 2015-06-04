@@ -130,6 +130,12 @@ Mat addMat (const Mat * pMatA, const Mat * pMatB);
 */
 Mat minusMat (const Mat * pMatA, const Mat * pMatB);
 
+/*操作： 把矩阵MatA复制给矩阵MatB
+ *操作前：已经初始化的矩阵A与矩阵B，并且二者维度相同
+ *操作后：把矩阵MatA复制给矩阵MatB
+ */
+void copyMat (const Mat * pMatA, Mat * pMatB);
+
 /*操作：  打印稀疏矩阵
  *操作前：pMat为初始化并含有元素的矩阵
  *操作后：向标准输出中打印稀疏矩阵

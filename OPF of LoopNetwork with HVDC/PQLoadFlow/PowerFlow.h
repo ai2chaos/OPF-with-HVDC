@@ -148,6 +148,13 @@ typedef struct
 }AdjacencyMat_type;
 typedef AdjacencyMat_type * AdjacencyMat;	//邻接矩阵指针
 
+typedef struct
+{
+	Mat * Y_Re;		//导纳矩阵实部
+	Mat * Y_Im;		//导纳矩阵虚部
+}AdmittanceMat_type;
+typedef AdmittanceMat_type * AdmittanceMat;	//导纳矩阵指针
+
 /*函数原型声明*/
 void ImportData (RawData_Type * RawData);
 void allocate_memory_rawdata (RawData_Type * RawData);
@@ -156,4 +163,5 @@ void allocate_memory_branch (Branch_Type * branch);
 void initialize_RawData (RawData_Type * RawData, FILE * fptmp);
 void initialize_BusData (Bus_Type * bus, char * Line);
 void initialize_BranchData (Branch_Type * branch, char * Line);
-AdjacencyMat CreatAdjacencyMatix (RawData_Type * RawData);
+AdjacencyMat CreatAdjacencyMatix (const RawData_Type * RawData);
+AdmittanceMat CreatAdmittanceMatix (const AdjacencyMat * A);

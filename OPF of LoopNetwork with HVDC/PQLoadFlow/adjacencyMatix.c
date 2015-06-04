@@ -5,7 +5,7 @@
 
 #define PI 3.14159
 
-AdjacencyMat CreatAdjacencyMatix (RawData_Type * RawData)
+AdjacencyMat CreatAdjacencyMatix (const RawData_Type * RawData)
 {
 	AdjacencyMat result;
 	double Fi, Fj, Bi, Bj, k, deg, R, X, G, B, absZ;
